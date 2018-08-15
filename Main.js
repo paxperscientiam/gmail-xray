@@ -75,12 +75,14 @@ function CardSection(args) {
         .setIcon(CardService.Icon.PERSON)
         .setContent(sender);
 
-    var widgetButton = CardService.newButtonSet().addButton(CardService.newTextButton()
-                                                            .setText('Open Thread' + ' (' + args.count + ')' )
-                                                            .setOpenLink(CardService.newOpenLink()
-                                                                         .setUrl(args.link)
-                                                                         .setOpenAs(CardService.OpenAs.FULL_SIZE)
-                                                                         .setOnClose(CardService.OnClose.NOTHING)));
+    var widgetButton = CardService
+        .newButtonSet()
+        .addButton(CardService.newTextButton()
+                   .setText("Open Thread" + " (" + args.count + ") ⬀" )
+                   .setOpenLink(CardService.newOpenLink()
+                                .setUrl(args.link)
+                                .setOpenAs(CardService.OpenAs.FULL_SIZE)
+                                .setOnClose(CardService.OnClose.NOTHING)));
 
     var widgetDonate = CardService
         .newKeyValue()
