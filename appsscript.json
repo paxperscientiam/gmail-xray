@@ -12,7 +12,7 @@
     "https://www.charitynavigator.org/index.cfm"
   ],
   "gmail": {
-    "name": "eMail X-Ray",
+    "name": "Email X-Ray",
     "useLocaleFromApp": true,
     "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/img/radiation-64.png",
     "contextualTriggers": [{
@@ -40,7 +40,6 @@
     },{
       "text": "🌐 My website",
       "openLink": "https://paxperscientiam.com/"
-    }]                               
+    }]
   }
 }
-
