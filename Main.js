@@ -94,8 +94,6 @@ function CardSection(args) {
                     .getContent())
         .setMultiline(true);
 
-
-
     this.section = CardService.newCardSection()
     //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
         .setHeader("Message: " + index + "/" + args.count)
