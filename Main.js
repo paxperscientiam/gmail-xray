@@ -22,6 +22,7 @@ function CardHeader(args) {
     this.header = CardService.newCardHeader()
         .setTitle("<font color=\"#1257e0\">" + args.subject + "</font>")
         .setSubtitle("creator: " + args.sender + "</br>" + args.age)
+        .setSubtitle("creator: " + args.sender + "</br>" + args.age)
         .setImageStyle(CardService.ImageStyle.CIRCLE)
         .setImageUrl(imgIndex);
 
@@ -52,7 +53,8 @@ function CardSection(args) {
     var sender = msg.sender;
 
     var index = args.index + 1;
-
+    //
+    //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
 
@@ -100,7 +102,7 @@ function CardSection(args) {
         .addWidget(widgetTime)
         .addWidget(widgetBody)
         .addWidget(widgetButton)
-        .addWidget(widgetDonate)
+        .addWidget(widgetDonate);
 
     return this.section;
 
@@ -115,6 +117,7 @@ function SectionChainer(args) {
 }
 
 function buildAddOn() {
+
     var threads = GmailApp.search('in:inbox newer_than:5d', 0, MAX_THREADS);
     var cards = [];
 
@@ -251,3 +254,7 @@ function buildAddOn() {
 // references
 // https://developers.google.com/apps-script/reference/card-service/card-header
 //
+
+function testing() {
+    Logger.log("FAK")
+}
