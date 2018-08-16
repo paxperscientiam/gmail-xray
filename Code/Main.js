@@ -52,7 +52,7 @@ function CardSection(args) {
     // table#bodyTable
     // var tmp = output.asTemplate();
     // Logger.log(tmp.getRawContent());
-    var html = HtmlService.createTemplateFromFile("Templates/donationContent");
+    var html = HtmlService.createTemplateFromFile("Templates/body");
     var barf = {};
     barf.shit = "HAHAHAHHA";
     html.data = barf;
