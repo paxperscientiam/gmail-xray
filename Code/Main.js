@@ -63,15 +63,9 @@ function CardSection(args) {
         .newTextParagraph()
         .setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
-    var html = HtmlService.createTemplateFromFile("Templates/body");
-    html.data = [];
-//    html.data.ms = "BALLS ON YOUR CHIN";
-
-    //.evaluate().getContent();
-
     var widgetBody = CardService
         .newTextParagraph()
-        .setText("yada");
+        .setText(getTpl("Templates/body", {body: body}));
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
