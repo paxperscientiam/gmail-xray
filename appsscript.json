@@ -2,7 +2,8 @@
   "oauthScopes": [
     "https://www.googleapis.com/auth/gmail.addons.execute",
     "https://www.googleapis.com/auth/gmail.readonly",
-    "https://www.googleapis.com/auth/script.locale"
+      "https://www.googleapis.com/auth/script.locale",
+      "https://www.googleapis.com/auth/contacts.readonly"
   ],
   "urlFetchWhitelist":[
     "https://flattr.com/@paxperscientiam",
@@ -14,7 +15,7 @@
   "gmail": {
     "name": "Email X-Ray",
     "useLocaleFromApp": true,
-    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
+    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img[<8;81;17m/radiation-64.png",
     "contextualTriggers": [{
       "unconditional": {
       },
