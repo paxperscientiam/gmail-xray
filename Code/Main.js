@@ -94,7 +94,7 @@ function CardSection(args) {
 
     var widgetDonate = CardService
         .newKeyValue()
-        .setContent(getTpl("Templates/donationContent")
+        .setContent(getTpl("Templates/donationContent", {})
         .setMultiline(true);
 
     this.section = CardService.newCardSection()
