@@ -3,7 +3,8 @@
 function getTpl(templateFileName, data) {
     var html = HtmlService.createTemplateFromFile(templateFileName);
 
-    html.data = {...data};
+    Logger.log(data);
+    //html.data = {...data};
 
     return html.evaluate().getContent();
 
