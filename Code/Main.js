@@ -65,7 +65,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(body)
+        .setContent(getTpl("Templates/donationContent", {}))
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
