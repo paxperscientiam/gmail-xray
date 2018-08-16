@@ -142,7 +142,7 @@ function buildAddOn() {
             .setHeader(cardHeader);
 
         for (var j = 0; j < count; j++) {
-            Logger.log(Thread.message[j].getFrom());
+            Logger.log(Thread.message[j].getBody());
             var msg = new CardSection({
                 count: count,
                 index: j,
