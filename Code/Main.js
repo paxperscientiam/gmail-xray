@@ -20,8 +20,8 @@ function CardHeader(args) {
     }
 
     this.header = CardService.newCardHeader()
-        .setTitle(getTpl("Templates/headerTitle", {subject: args.subject}))
-        .setSubtitle(getTpl("Templates/headerSubtitle", {sender: args.sender}))
+        .setTitle(doGet("Templates/headerTitle", {subject: args.subject}))
+        .setSubtitle(doGet("Templates/headerSubtitle", {sender: args.sender}))
         .setImageStyle(CardService.ImageStyle.CIRCLE)
         .setImageUrl(imgIndex);
 
@@ -40,6 +40,7 @@ function CardMetaSection(args) {
     //
     return this.section;
 }
+
 
 function CardSection(args) {
     var msg = MessageData(args.message);
@@ -97,12 +98,12 @@ function CardSection(args) {
 
     var widgetDonate = CardService
         .newKeyValue()
-        .setContent(getTpl("Templates/donationContent", {}))
+        .setContent(doGet("Templates/donationContent", {}))
         .setMultiline(true);
 
     this.section = CardService.newCardSection()
     //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
-        .setHeader(getTpl("Templates/sectionHeader", { index: index, count: args.count, msgAge: msgAge }))
+        .setHeader(doGet("Templates/sectionHeader", { index: index, count: args.count, msgAge: msgAge }))
         .addWidget(widgetLabels)
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
