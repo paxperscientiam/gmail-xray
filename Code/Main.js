@@ -104,7 +104,7 @@ function CardSection(args) {
 
     this.section = CardService.newCardSection()
     //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
-        .setHeader("Message: " + index + "/" + args.count + "&nbsp;" + msgAge)
+        .setHeader(getTpl("Templates/sectionHeader", { index: index, count: args.count, msgAge: msgAge }))
         .addWidget(widgetLabels)
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
