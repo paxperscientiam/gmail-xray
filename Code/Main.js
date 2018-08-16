@@ -60,7 +60,7 @@ function CardSection(args) {
 
     var widgetLabels = CardService.newTextParagraph().setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
-    var html = HtmlService.createTemplateFromFile("body");
+    var html = HtmlService.createTemplateFromFile("Templates/body");
     html.data = [];
     data['msg'] = "BALLS ON YOUR CHIN";
 
