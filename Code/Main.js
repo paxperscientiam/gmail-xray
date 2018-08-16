@@ -68,7 +68,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newTextParagraph()
-        .setText(html);
+        .setText("yada");
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
