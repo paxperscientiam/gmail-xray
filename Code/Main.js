@@ -165,5 +165,9 @@ function buildAddOn() {
 }
 
 function testing() {
-    ContactsApp.createContact("Maxwell", "Roberts", "beakman.213132@gmail.com");
+    var contacts = ContactsApp.getContacts();
+
+    for (var x in contacts) {
+        Logger.log(x);
+    }
 }
