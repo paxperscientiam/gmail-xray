@@ -18,9 +18,10 @@ function CardHeader(args) {
     if (args.status) {
         imgIndex = IMG.indexImportant[count];
     }
-    //
+    // .setTitle("<font color=\"#1257e0\">" + args.subject + "</font>")
+
     this.header = CardService.newCardHeader()
-        .setTitle("<font color=\"#1257e0\">" + args.subject + "</font>")
+        .setTitle(getTpl(headerTitle))
         .setSubtitle("creator: " + args.sender + "</br>" + args.age)
         .setSubtitle("creator: " + args.sender + "</br>" + args.age)
         .setImageStyle(CardService.ImageStyle.CIRCLE)
