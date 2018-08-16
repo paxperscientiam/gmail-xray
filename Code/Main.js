@@ -165,5 +165,5 @@ function buildAddOn() {
 }
 
 function testing() {
-    Logger.log(ContactsApp.getContact("chrisdavidramos@gmail.com"));
+    Logger.log(ContactsApp.getContactsByEmailAddress("chrisdavidramos@gmail.com"));
 }

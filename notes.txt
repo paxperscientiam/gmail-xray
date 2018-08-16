@@ -1,1 +1,3 @@
 https://developers.google.com/identity/protocols/googlescopes
+
+don't define auth scopes in the manfiest, better to let google deduce what's needed
