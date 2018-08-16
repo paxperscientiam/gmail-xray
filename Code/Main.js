@@ -21,7 +21,7 @@ function CardHeader(args) {
 
     this.header = CardService.newCardHeader()
         .setTitle(getTpl("Templates/headerTitle", {subject: args.subject}))
-        .setSubtitle(getTpl("Templates/headerSubtitle", {sender: args.sender, age: args.age}))
+        .setSubtitle(getTpl("Templates/headerSubtitle", {sender: args.sender}))
         .setImageStyle(CardService.ImageStyle.CIRCLE)
         .setImageUrl(imgIndex);
 
@@ -53,11 +53,15 @@ function CardSection(args) {
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
 
-    var ifInbox = args.message.isInInbox() ? "inbox":"";
+    var msgAge = formatAge(msg.date);
 
-    var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>":"";
+    var ifInbox = args.message.isInInbox() ? "inbox" : "&nbsp;";
 
-    var widgetLabels = CardService.newTextParagraph().setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
+    var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>" : "&nbsp;";
+
+    var widgetLabels = CardService
+        .newTextParagraph()
+        .setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
     var html = HtmlService.createTemplateFromFile("Templates/body");
     html.data = [];
@@ -100,7 +104,7 @@ function CardSection(args) {
 
     this.section = CardService.newCardSection()
     //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
-        .setHeader("Message: " + index + "/" + args.count)
+        .setHeader("Message: " + index + "/" + args.count + "&nbsp;" + msgAge)
         .addWidget(widgetLabels)
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
@@ -122,7 +126,7 @@ function SectionChainer(args) {
 
 function buildAddOn() {
 
-    var threads = GmailApp.search('in:inbox newer_than:5d', 0, MAX_THREADS);
+    var threads = GmailApp.search("in:inbox newer_than:5d", 0, MAX_THREADS);
     var cards = [];
 
     var Thread = {};
@@ -133,11 +137,11 @@ function buildAddOn() {
         Message = new MessageData(Thread.message[0]);
 
         var count = Thread.count;
-        var age = formatAge(Message.date);
+        var msgAge = formatAge(Message.date);
 
         var msgStatus = Thread.message[0].isInPriorityInbox();
         cardHeader = new CardHeader({
-            age: age,
+            age: msgAge,
             count: count,
             sender: Message.sender,
             status: msgStatus,
@@ -165,91 +169,6 @@ function buildAddOn() {
     return cards;
 }
 
-//function buildAddOn() {
-//
-//  // grab no more than 10
-//  var threads = GmailApp.search('newer_than:24h', 0, MAX_THREADS);
-//
-//
-//  var cards = [];
-//
-//  for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-//
-//    if (threads[i].isInInbox() || threads[i].isInPriorityInbox()) {
-//
-//      var thread = threads[i]
-//
-//      var header = buildCardHeader(thread);
-//
-//
-//      var message = threads[i].getMessages()[0],
-//          sender = message.getFrom(),
-//          dateBegan = message.getDate(),
-//          starred = message.isStarred();
-//
-//      subject = threads[i].getFirstMessageSubject();
-//
-//      var dateRecent = threads[i].getLastMessageDate();
-//      var dateBegan = Utilities.formatDate(dateRecent,'GMT',"'Began on 'E, d MMM y");
-//
-//      var imgStar = CardService.newImage();
-//
-//      var kvStarredSubject = CardService.newKeyValue()
-//      .setIcon(CardService.Icon.STAR)
-//      .setContent(subject);
-//
-//
-//
-//
-//      var card = CardService.newCardBuilder();
-//
-//
-//      cards.push(card
-//                 .setHeader(header)
-//                 .addSection(
-//                   CardService.newCardSection()
-//                   .setHeader(dateBegan)
-//                   .addWidget(CardService.newTextParagraph().setText(
-//                     threads[i].getMessages()[0].getPlainBody()
-//                   )).setCollapsible(true)
-//                 )
-//                 .build());
-//    }
-//
-//  }
-//  return cards;
-//}
-//
-//
-//function buildCardHeader(thread) {
-//  var cardHeader = CardService.newCardHeader();
-//
-//
-//
-//
-//
-//    var message = thread.getMessages()[0];
-//  var sender = message.getFrom();
-//  var threadCount = thread.getMessageCount();
-//
-//  var subject = thread.getFirstMessageSubject();
-//
-//  var link = thread.getPermalink()
-//  var senderLink = "<a href=\"" + link + "\">" + sender + "</a>";
-//
-//  cardHeader
-//  .setTitle("<font color=\"#1257e0\">" + subject + "</font>")
-//  .setSubtitle("from: " + sender)
-//  .setImageStyle(CardService.ImageStyle.SQUARE)
-//  .setImageUrl(imgSet[threadCount]);
-//
-//  return cardHeader
-//}
-
-// references
-// https://developers.google.com/apps-script/reference/card-service/card-header
-//
-
 function testing() {
-    Logger.log("FAK")
+    Logger.log("FAK");
 }
