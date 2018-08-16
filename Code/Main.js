@@ -29,11 +29,6 @@ function CardHeader(args) {
     return this.header;
 }
 
-//function HTML() {
-//  html = HtmlService.createTemplate('<b>Hello, world!</b>').evaluate().getContent();
-//
-//}
-
 function WidgetBuilder() {
     return this;
 }
@@ -62,8 +57,17 @@ function CardSection(args) {
 
     var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>":"";
 
-    var widgetLabels = CardService.newTextParagraph().setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">"+ifPriority+"</p>");
-    var widgetBody = CardService.newTextParagraph().setText(body);
+    var widgetLabels = CardService.newTextParagraph().setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
+
+    var html = HtmlService.createTemplateFromFile("body");
+    html.data = [];
+    data['msg'] = "BALLS ON YOUR CHIN";
+
+    //.evaluate().getContent();
+
+    var widgetBody = CardService
+        .newTextParagraph()
+        .setText(html);
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
@@ -146,7 +150,7 @@ function buildAddOn() {
         for (var j = 0; j < count; j++) {
             var msg = new CardSection({
                 count: count,
-                index:j,
+                index: j,
                 link: Thread.link,
                 message: Thread.message[j],
             }).setCollapsible(false);
@@ -157,18 +161,9 @@ function buildAddOn() {
                    .setName("Card name")
                    .build());
 
-
     }
     return cards;
 }
-
-
-
-
-
-
-
-
 
 //function buildAddOn() {
 //

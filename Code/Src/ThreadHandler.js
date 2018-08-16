@@ -4,5 +4,5 @@ function ThreadData(thread) {
   this.count = thread.getMessageCount();
   this.link = thread.getPermalink();
   //
-  return this;
+  return this
 }
