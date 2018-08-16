@@ -14,7 +14,7 @@
   "gmail": {
     "name": "Email X-Ray",
     "useLocaleFromApp": true,
-    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/img/radiation-64.png",
+    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
     "contextualTriggers": [{
       "unconditional": {
       },
