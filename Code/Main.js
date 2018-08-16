@@ -48,7 +48,10 @@ function CardSection(args) {
 
     var index = args.index + 1;
     //
-    Logger.log(HtmlService.createHtmlOutput(msg.getBody()));
+    var output = HtmlService.createHtmlOutput(args.message.getBody());
+    var tmp = output.asTemplate();
+    Logger.log(tmp.getRawContent());
+
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
