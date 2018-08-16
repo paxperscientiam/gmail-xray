@@ -10,15 +10,6 @@ function WidgetBuilder() {
     return this;
 }
 
-function CardMetaSection(args) {
-    // section header has to be text
-    this.section = CardService.newCardSection()
-        .setHeader(args.header)
-        .addWidget(args.widget);
-    //
-    return this.section;
-}
-
 function CardSection(args) {
     var msg = MessageData(args.message);
     var body = args.message.getPlainBody();
@@ -90,14 +81,6 @@ function CardSection(args) {
 
     return this.section;
 
-}
-
-function SectionChainer(args) {
-    var card = args.card;
-
-    card.addSection(args.msg);
-
-    return card;
 }
 
 function buildAddOn() {
