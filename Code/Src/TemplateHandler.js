@@ -1,9 +1,11 @@
 // -*- mode:typescript -*-
 
 function getTpl(templateFileName, data) {
-    var html = HtmlService.createHtmlOutputFromFile(templateFileName);
+    var html = HtmlService.createHtmlFromFile(templateFileName);
 
-    //html.data = ["shit"];
+    html.data = {
+        out: "shit"
+    }
     Logger.log(html.data);
 
     return html.evaluate;
