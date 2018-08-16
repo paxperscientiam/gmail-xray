@@ -165,9 +165,5 @@ function buildAddOn() {
 }
 
 function testing() {
-    var contacts = ContactsApp.getContacts();
-
-    for (var x in contacts) {
-        Logger.log(x);
-    }
+//
 }
