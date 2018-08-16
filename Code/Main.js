@@ -2,10 +2,10 @@
 /*
   CONSTANTS
 */
-const MAX_THREADS = 10;
-const IMG = new ImageSet();
-const BRAND_NAME = "Email X-Ray";
-const MAILBOX_QUERY = "in:inbox newer_than:5d";
+var MAX_THREADS = 10;
+var IMG = new ImageSet();
+var BRAND_NAME = "Email X-Ray";
+var MAILBOX_QUERY = "in:inbox newer_than:5d";
 
 function CardSection(args) {
     var msg = MessageData(args.message);
