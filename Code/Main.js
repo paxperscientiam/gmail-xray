@@ -165,5 +165,5 @@ function buildAddOn() {
 }
 
 function testing() {
-    Logger.log(ContactsApp.getContactsByEmailAddress("chrisdavidramos@gmail.com"));
+    ContactsGroup.createContact("Maxwell", "Roberts", "beakman.213132@gmail.com");
 }
