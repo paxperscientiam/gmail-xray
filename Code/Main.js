@@ -6,9 +6,6 @@ var MAX_THREADS = 10;
 var IMG = new ImageSet();
 var BRAND_NAME = "Email X-Ray";
 
-function WidgetBuilder() {
-    return this;
-}
 
 function CardSection(args) {
     var msg = MessageData(args.message);
@@ -36,9 +33,7 @@ function CardSection(args) {
 
     var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>" : "&nbsp;";
 
-    var widgetLabels = CardService
-        .newTextParagraph()
-        .setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
+    var widgetLabels = WidgetHandler("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
     var widgetBody = CardService
         .newKeyValue()
@@ -107,8 +102,6 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
-
-
         var card = CardService.newCardBuilder()
             .setHeader(cardHeader);
 
@@ -134,4 +127,5 @@ function buildAddOn() {
 
 function testing() {
     //
+
 }
