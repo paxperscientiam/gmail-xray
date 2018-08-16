@@ -65,7 +65,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(getTpl("Templates/donationContent", {}))
+        .setContent(getTpl("Templates/body", { gene: "xylo"}))
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
