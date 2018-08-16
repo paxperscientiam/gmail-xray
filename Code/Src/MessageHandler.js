@@ -2,10 +2,10 @@
 
 function MessageData(message) {
     var strEmail = message.getFrom();
-    var contacts = ContactsApp.getContact(strEmail);
+    var contact = ContactsApp.getContact(strEmail);
 
-    Logger.log(contacts[0]);
-    this.sender = contacts[0];
+    Logger.log(contacts);
+    this.sender = contact;
     this.subject = message.getSubject();
     this.date = message.getDate();
     this.starred = message.isStarred();
