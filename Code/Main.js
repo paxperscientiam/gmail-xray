@@ -62,7 +62,7 @@ function CardSection(args) {
 
     var html = HtmlService.createTemplateFromFile("Templates/body");
     html.data = [];
-    html.data['msg'] = "BALLS ON YOUR CHIN";
+//    html.data.ms = "BALLS ON YOUR CHIN";
 
     //.evaluate().getContent();
 
