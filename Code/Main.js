@@ -21,8 +21,8 @@ function CardHeader(args) {
 
     this.header = CardService.newCardHeader()
         .setTitle(getTpl("Templates/headerTitle", {subject: args.subject}))
-        .setSubtitle("creator: " + args.sender + "</br>" + args.age)
-        .setSubtitle("creator: " + args.sender + "</br>" + args.age)
+        .setTitle(getTpl("Templates/headerSubtitle", {sender: args.sender}))
+        .setTitle(getTpl("Templates/headerSubtitle", {sender: args.sender}))
         .setImageStyle(CardService.ImageStyle.CIRCLE)
         .setImageUrl(imgIndex);
 
@@ -49,6 +49,7 @@ function CardSection(args) {
 
     var index = args.index + 1;
     //
+
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
