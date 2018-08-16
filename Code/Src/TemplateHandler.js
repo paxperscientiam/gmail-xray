@@ -1,8 +1,10 @@
 // -*- mode:typescript -*-
 
-function getTpl(templateFileName) {
-    var html = HtmlService.createHtmlOutputFromFile(templateFileName)
-        .getContent();
+function getTpl(templateFileName, data) {
+    var html = HtmlService.createHtmlOutputFromFile(templateFileName);
 
-    return html;
+    html.data = data;
+
+    return html.evaluate;
+
 }
