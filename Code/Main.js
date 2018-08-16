@@ -64,8 +64,9 @@ function CardSection(args) {
         .setText("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
     var widgetBody = CardService
-        .newTextParagraph()
-        .setText(getTpl("Templates/body", {}));
+        .newKeyValue()
+        .setContent(getTpl("Templates/body", {}))
+        .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
