@@ -53,6 +53,7 @@ function CardSection(args) {
     // var tmp = output.asTemplate();
     // Logger.log(tmp.getRawContent());
     var html = HtmlService.createTemplateFromFile("Templates/donationContent");
+    var barf = {};
     barf.shit = "HAHAHAHHA";
     html.data = barf;
     Logger.log(html.evaluate().getContent());
