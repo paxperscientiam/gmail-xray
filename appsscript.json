@@ -5,7 +5,10 @@
       "https://www.googleapis.com/auth/script.locale",
       "https://www.googleapis.com/auth/contacts.readonly",
       "https://www.googleapis.com/auth/contacts",
-      "https://www.google.com/m8/feeds/"
+      "https://www.google.com/m8/feeds/",
+      "https://www.googleapis.com/auth/user.emails.read",
+      "https://www.googleapis.com/auth/user.phonenumbers.read",
+      "https://www.googleapis.com/auth/userinfo.email"
   ],
   "urlFetchWhitelist":[
     "https://flattr.com/@paxperscientiam",
