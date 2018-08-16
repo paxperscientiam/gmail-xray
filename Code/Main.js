@@ -48,10 +48,14 @@ function CardSection(args) {
 
     var index = args.index + 1;
     //
-    var output = HtmlService.createHtmlOutput(args.message.getBody());
-    var tmp = output.asTemplate();
-    Logger.log(tmp.getRawContent());
-
+    // var output = HtmlService.createHtmlOutput(args.message.getBody());
+    // table#bodyTable
+    // var tmp = output.asTemplate();
+    // Logger.log(tmp.getRawContent());
+    var html = HtmlService.createTemplateFromFile("Templates/donationContent");
+    barf.shit = "HAHAHAHHA";
+    html.data = barf;
+    Logger.log(html.evaluate().getContent());
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
