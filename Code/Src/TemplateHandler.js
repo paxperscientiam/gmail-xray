@@ -3,9 +3,7 @@
 function getTpl(templateFileName, data) {
     var html = HtmlService.createHtmlOutputFromFile(templateFileName);
 
-    html.data = {
-        balls: "tony"
-    }
+    html.data = ["shit"];
 
     return html.evaluate;
 
