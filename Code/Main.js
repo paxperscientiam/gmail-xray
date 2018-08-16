@@ -94,12 +94,7 @@ function CardSection(args) {
 
     var widgetDonate = CardService
         .newKeyValue()
-        .setContent(HtmlService
-                    .createTemplate('<strong>X-Ray for Gmail</strong> addon will always be free. ' +
-                                    'However, donations are appreciated. ' +
-                                    '<a href="https://flattr.com/@paxperscientiam">flattr</a> <a href="https://cash.me/$paxperscientiam">square</a>')
-                    .evaluate()
-                    .getContent())
+        .setContent(getTpl("Templates/donationContent")
         .setMultiline(true);
 
     this.section = CardService.newCardSection()
