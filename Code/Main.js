@@ -43,7 +43,7 @@ function CardMetaSection(args) {
 
 function CardSection(args) {
     var msg = MessageData(args.message);
-    var body = args.message.getBody();
+    var body = args.message.getPlainBody();
     var sender = msg.sender;
 
     var index = args.index + 1;
@@ -65,7 +65,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(getTpl("Templates/body", {}))
+        .setContent(body)
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
