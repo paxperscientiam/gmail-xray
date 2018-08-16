@@ -43,7 +43,7 @@ function CardMetaSection(args) {
 
 function CardSection(args) {
     var msg = MessageData(args.message);
-    var body = args.message.getPlainBody();
+    var body = args.message.getBody();
     var sender = msg.sender;
 
     var index = args.index + 1;
