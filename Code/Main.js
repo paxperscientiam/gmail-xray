@@ -21,7 +21,7 @@ function CardHeader(args) {
 
     this.header = CardService.newCardHeader()
         .setTitle(getTpl("Templates/headerTitle", {subject: args.subject}))
-        .setTitle(getTpl("Templates/headerSubtitle", {sender: args.sender, age: args.age}))
+        .setSubtitle(getTpl("Templates/headerSubtitle", {sender: args.sender, age: args.age}))
         .setImageStyle(CardService.ImageStyle.CIRCLE)
         .setImageUrl(imgIndex);
 
