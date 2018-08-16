@@ -138,11 +138,16 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
+        var buff = HtmlService.createHtmlOutput(Thread.message[0].getBody());
+
         var card = CardService.newCardBuilder()
-            .setHeader(cardHeader);
+            .setHeader(cardHeader)
+            .addWidget(CardService.newKeyValue()
+                       .setContent(buff));
 
         for (var j = 0; j < count; j++) {
-            Logger.log(Thread.message[j].getBody());
+            //
+            //
             var msg = new CardSection({
                 count: count,
                 index: j,
