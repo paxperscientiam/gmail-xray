@@ -48,7 +48,7 @@ function CardSection(args) {
 
     var index = args.index + 1;
     //
-
+    var buff = HtmlService.createHtmlOutput(msg.getBody());
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
@@ -138,12 +138,10 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
-        var buff = HtmlService.createHtmlOutput(Thread.message[0].getBody());
+
 
         var card = CardService.newCardBuilder()
-            .setHeader(cardHeader)
-            .addWidget(CardService.newKeyValue()
-                       .setContent(buff));
+            .setHeader(cardHeader);
 
         for (var j = 0; j < count; j++) {
             //
