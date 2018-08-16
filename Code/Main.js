@@ -165,5 +165,5 @@ function buildAddOn() {
 }
 
 function testing() {
-    Logger.log("FAK");
+    Logger.log(ContactsApp.getContact("chrisdavidramos@gmail.com"));
 }

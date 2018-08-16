@@ -2,7 +2,7 @@
 
 function MessageData(message) {
     var strEmail = message.getFrom();
-//    var contact = ContactsApp.getContact("chrisdavidramos@gmail.com");
+    var contact = ContactsApp.getContact("chrisdavidramos@gmail.com");
 
 //    Logger.log(contacts);
     this.sender = "tony";
