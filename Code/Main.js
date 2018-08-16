@@ -65,7 +65,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(getTpl("Templates/body", { gene: "xylo"}))
+        .setContent("BALLS")
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
@@ -142,6 +142,7 @@ function buildAddOn() {
             .setHeader(cardHeader);
 
         for (var j = 0; j < count; j++) {
+            Logger.log(Thread.message[j].getFrom());
             var msg = new CardSection({
                 count: count,
                 index: j,
