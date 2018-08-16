@@ -21,7 +21,7 @@ function CardHeader(args) {
     // .setTitle("<font color=\"#1257e0\">" + args.subject + "</font>")
 
     this.header = CardService.newCardHeader()
-        .setTitle(getTpl("headerTitle"))
+        .setTitle(getTpl("/Templates/headerTitle"))
         .setSubtitle("creator: " + args.sender + "</br>" + args.age)
         .setSubtitle("creator: " + args.sender + "</br>" + args.age)
         .setImageStyle(CardService.ImageStyle.CIRCLE)
