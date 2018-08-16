@@ -5,7 +5,7 @@ function MessageData(message) {
     var contact = ContactsApp.getContact("chrisdavidramos@gmail.com");
 
     Logger.log(contacts);
-    this.sender = contact;
+    this.sender = "tony";
     this.subject = message.getSubject();
     this.date = message.getDate();
     this.starred = message.isStarred();
