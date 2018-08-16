@@ -2,10 +2,10 @@
 /*
   CONSTANTS
 */
-var MAX_THREADS = 10;
-var IMG = new ImageSet();
-var BRAND_NAME = "Email X-Ray";
-
+const MAX_THREADS = 10;
+const IMG = new ImageSet();
+const BRAND_NAME = "Email X-Ray";
+const QUERY = "in:inbox newer_than:5d";
 
 function CardSection(args) {
     var msg = MessageData(args.message);
@@ -39,6 +39,7 @@ function CardSection(args) {
         .newKeyValue()
         .setContent("BALLS")
         .setMultiline(true);
+
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
@@ -80,7 +81,7 @@ function CardSection(args) {
 
 function buildAddOn() {
 
-    var threads = GmailApp.search("in:inbox newer_than:5d", 0, MAX_THREADS);
+    var threads = GmailApp.search(QUERY, 0, MAX_THREADS);
     var cards = [];
 
     var Thread = {};
