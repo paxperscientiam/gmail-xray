@@ -2,20 +2,8 @@
 /*
   CONSTANTS
 */
-var IMG = new ImageSet();
-
 function CardSection(args) {
-    var index = args.index + 1;
-
     var messageData = new MessageData(args.message);
-
-    var sender = messageData.sender;
-
-    var date = messageData.date;
-
-    var time = messageData.time;
-
-    var msgAge = messageData.age;
 
     var widgetPriority = WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
 
@@ -26,13 +14,13 @@ function CardSection(args) {
 
     var widgetTime = CardService.newKeyValue()
         .setIcon(CardService.Icon.CLOCK)
-        .setContent(date)
+        .setContent(messageData.date)
         .setMultiline(true)
-        .setBottomLabel(time);
+        .setBottomLabel(messageData.time);
 
     var widgetPerson = CardService.newKeyValue()
         .setIcon(CardService.Icon.PERSON)
-        .setContent(sender);
+        .setContent(messageData.sender);
 
     var widgetButton = CardService
         .newButtonSet()
@@ -49,8 +37,11 @@ function CardSection(args) {
         .setMultiline(true);
 
     this.section = CardService.newCardSection()
-    //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
-        .setHeader(doGet("Templates/sectionHeader", { index: index, count: args.count, msgAge: msgAge }))
+        .setHeader(doGet("Templates/sectionHeader", {
+            count: args.count,
+            index: args.index + 1,
+            msgAge: messageData.age,
+        }))
         .addWidget(widgetPriority)
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
@@ -63,6 +54,8 @@ function CardSection(args) {
 }
 
 function buildAddOn() {
+    var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
+    var MAX_THREADS = props.getProperty("MAX_THREADS");
 
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
     var cards = [];
@@ -79,16 +72,11 @@ function buildAddOn() {
         var msgAge = messageData.date;
 
         var msgStatus = message.isPriority;
+
         cardHeader = new CardHeader(threadData);
 
-        // var textParagraph = CardService.newTextParagraph().setText("ROF");
-        // var cardSection = CardService.newCardSection()
-        //     .setHeader("Soothing actions")
-        //     .addWidget(textParagraph);
-
         var card = CardService.newCardBuilder()
-            .setHeader(cardHeader)
-           // .addSection(cardSection);
+            .setHeader(cardHeader);
 
         for (var j = 0; j < count; j++) {
             //
@@ -99,6 +87,7 @@ function buildAddOn() {
                 link: threadData.link,
                 message: threadData.message[j],
             }).setCollapsible(false);
+
             card = SectionChainer({card: card, msg: msg});
         }
 
