@@ -1,6 +1,9 @@
 
 function openLinkUniversalAction() {
-    var cardBuilder1 = CardService.newCardBuilder();
+    var cardBuilder1 = CardService.newCardBuilder()
+        .setHeader(CardService.newCardHeader()
+                   .setTitle("ROFL"));
+
     var cardBuilder2 = CardService.newCardBuilder();
     // Finish building the cards ...
 
