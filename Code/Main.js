@@ -31,7 +31,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(doGet("Templates/body"))
+        .setContent(body)
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
@@ -107,7 +107,7 @@ function buildAddOn() {
                 index: j,
                 link: Thread.link,
                 message: Thread.message[j],
-            }).setCollapsible(false);
+            }).setCollapsible(true);
             card = SectionChainer({card: card, msg: msg});
         }
 
