@@ -107,7 +107,7 @@ function buildAddOn() {
                 index: j,
                 link: Thread.link,
                 message: Thread.message[j],
-            }).setCollapsible(true);
+            }).setCollapsible(false);
             card = SectionChainer({card: card, msg: msg});
         }
 
