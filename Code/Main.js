@@ -6,7 +6,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent("body text")
+        .setContent(messageData.body)
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()

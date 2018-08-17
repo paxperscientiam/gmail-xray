@@ -5,6 +5,7 @@ function MessageData(message) {
     this.subject = message.getSubject();
     this.date = formatDateService(message.getDate());
     this.time = formatTimeService(message.getDate());
+    this.body = message.getPlainBody();
     this.starred = message.isStarred();
     this.age = formatAge(this.date);
     this.isPriority = message.isInPriorityInbox();
