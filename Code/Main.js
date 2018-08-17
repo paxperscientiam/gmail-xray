@@ -9,14 +9,14 @@ var MAILBOX_QUERY = "in:inbox newer_than:5d";
 
 function CardSection(args) {
     var msg = MessageData(args.message);
-    var body = args.message.getPlainBody();
+//    var body = args.message.getPlainBody();
     var sender = msg.sender;
 
     var index = args.index + 1;
     //
-    var output = HtmlService.createHtmlOutput(args.message.getBody());
-    var tmp = output.asTemplate();
-    Logger.log(tmp.evaluate().getContent());
+    // var output = HtmlService.createHtmlOutput(args.message.getBody());
+    // var tmp = output.asTemplate();
+    // Logger.log(tmp.evaluate().getContent());
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
