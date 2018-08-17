@@ -5,6 +5,6 @@ function ThreadData(thread) {
     this.count = thread.getMessageCount();
     this.link = thread.getPermalink();
     //
-    this.sender = this.message[0].getFrom();
-    this.subject = this.message[0].getSubject();
+    this.sender = this.message.getFrom();
+    this.subject = this.message.getSubject();
 }
