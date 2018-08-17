@@ -1,5 +1,6 @@
 function ThreadData(thread) {
-    this.message = thread.getMessages();
+    this.messages = thread.getMessages();
+    this.message = this.messages[0];
     this.labels = thread.getLabels();
     this.count = thread.getMessageCount();
     this.link = thread.getPermalink();

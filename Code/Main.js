@@ -58,12 +58,10 @@ function buildAddOn() {
     var cards = [];
 
     var threadData = {};
-    var messageData = {};
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
         threadData = new ThreadData(threads[i]);
         var message = threadData.message[0];
-        messageData = new MessageData(message);
 
         var count = threadData.count;
 
@@ -72,13 +70,9 @@ function buildAddOn() {
 
         for (var j = 0; j < count; j++) {
             //
-            //
-            var msg = new CardSection({
-                count: count,
-                index: j,
-                link: threadData.link,
-                message: threadData.message[j],
-            }).setCollapsible(false);
+            // threaData -> count, link, message
+            var Obj = Object.assign({index: j, threadData});
+            var msg = new CardSection(Obj).setCollapsible(false);
 
             card = SectionChainer({card: card, msg: msg});
         }
