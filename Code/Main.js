@@ -14,15 +14,9 @@ function CardSection(args) {
 
     var index = args.index + 1;
     //
-    // var output = HtmlService.createHtmlOutput(args.message.getBody());
-    // table#bodyTable
-    // var tmp = output.asTemplate();
-    // Logger.log(tmp.getRawContent());
-    var html = HtmlService.createTemplateFromFile("Templates/body");
-    var barf = {};
-    barf.shit = "HAHAHAHHA";
-    html.data = barf;
-    Logger.log(html.evaluate().getContent());
+    var output = HtmlService.createHtmlOutput(args.message.getBody());
+    var tmp = output.asTemplate();
+    Logger.log(tmp.evaluate().getContent());
     //
     var date = formatDateService(msg.date);
     var time = formatTimeService(msg.date);
