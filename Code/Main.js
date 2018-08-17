@@ -5,30 +5,23 @@
 var IMG = new ImageSet();
 
 function CardSection(args) {
-    var msg = MessageData(args.message);
-//    var body = args.message.getPlainBody();
-    var sender = msg.sender;
-
     var index = args.index + 1;
-    //
-    // var output = HtmlService.createHtmlOutput(args.message.getBody());
-    // var tmp = output.asTemplate();
-    // Logger.log(tmp.evaluate().getContent());
-    //
-    var date = msg.date;
-    var time = msg.time;
 
-    var msgAge = msg.age;
+    var messageData = new MessageData(args.message);
 
-    var ifInbox = args.message.isInInbox() ? "inbox" : "&nbsp;";
+    var sender = messageData.sender;
 
-    var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>" : "&nbsp;";
+    var date = messageData.date;
 
-    var widgetPriority = WidgetHandler(doGet("Templates/paragraph", {priority: ifPriority}));
+    var time = messageData.time;
+
+    var msgAge = messageData.age;
+
+    var widgetPriority = WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent("ROFL")
+        .setContent("body text")
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
@@ -74,24 +67,19 @@ function buildAddOn() {
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
     var cards = [];
 
-    var Thread = {};
-    var Message = {};
+    var threadData = {};
+    var messageData = {};
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-        Thread = new ThreadData(threads[i]);
-        Message = new MessageData(Thread.message[0]);
+        var message = threadData.message[0];
+        threadData = new ThreadData(threads[i]);
+        messageData = new MessageData(message);
 
-        var count = Thread.count;
-        var msgAge = formatAge(Message.date);
+        var count = threadData.count;
+        var msgAge = messageData.date;
 
-        var msgStatus = Thread.message[0].isInPriorityInbox();
-        cardHeader = new CardHeader({
-            age: msgAge,
-            count: count,
-            sender: Message.sender,
-            status: msgStatus,
-            subject: Message.subject,
-        });
+        var msgStatus = message.isPriority;
+        cardHeader = new CardHeader(threadData);
 
         // var textParagraph = CardService.newTextParagraph().setText("ROF");
         // var cardSection = CardService.newCardSection()
@@ -108,8 +96,8 @@ function buildAddOn() {
             var msg = new CardSection({
                 count: count,
                 index: j,
-                link: Thread.link,
-                message: Thread.message[j],
+                link: threadData.link,
+                message: threadData.message[j],
             }).setCollapsible(false);
             card = SectionChainer({card: card, msg: msg});
         }
