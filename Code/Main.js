@@ -71,7 +71,7 @@ function buildAddOn() {
         for (var j = 0; j < count; j++) {
             //
             // threaData -> count, link, message
-            var Obj = Object.assign({index: j}, threadData);
+            var Obj = mergeObjs({index: j}, threadData);
             var msg = new CardSection(Obj).setCollapsible(false);
 
             card = SectionChainer({card: card, msg: msg});
