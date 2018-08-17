@@ -41,7 +41,7 @@ function CardSection(args) {
         .setMultiline(true)
         .setBottomLabel(time);
 
-    var widgetPerson = new WidgetBuider({
+    var widgetPerson = new WidgetBuilder({
         content: sender,
         icon: "PERSON",
     });
