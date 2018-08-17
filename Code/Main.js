@@ -100,6 +100,6 @@ function buildAddOn() {
 }
 
 function testing() {
-    Logger.log(scriptProperties.getProperties());
+    Logger.log(props.getProperties());
 
 }
