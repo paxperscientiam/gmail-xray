@@ -34,7 +34,7 @@
       "openLink": "https://github.com/search?l=&p=1&q=user%3Apaxperscientiam&ref=advsearch&type=Repositories&utf8=%E2%9C%93"
     },{
       "text": "🌐 My website",
-      "openLink": "https://paxperscientiam.com/"
+        "runFunction": "openLinkUniversalAction
     }]
   }
 }
