@@ -27,12 +27,11 @@ function CardSection(args) {
 
     var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>" : "&nbsp;";
 
-    // var widgetLabels = WidgetHandler("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
-    var widgetLabels = WidgetHandler("<span class=\"current\">Current navigation selection</span>");
+    var widgetLabels = WidgetHandler("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent("<span class=\"current\">Current navigation selection</span>")
+        .setContent(doGet("Templates/body"))
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
