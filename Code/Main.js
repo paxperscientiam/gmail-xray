@@ -27,8 +27,7 @@ function CardSection(args) {
 
     var ifPriority = args.message.isInPriorityInbox() ? "<b>IMPORTANT</b>" : "&nbsp;";
 
-    var widgetLabels = WidgetHandler("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
-
+    var widgetPriority = WidgetHandler(doGet("Templates/paragraph", {priority: ifPriority}));
 
     var widgetBody = CardService
         .newKeyValue()
@@ -41,10 +40,9 @@ function CardSection(args) {
         .setMultiline(true)
         .setBottomLabel(time);
 
-    var widgetPerson = new WidgetBuilder({
-        content: sender,
-        icon: "PERSON",
-    });
+    var widgetPerson = CardService.newKeyValue()
+        .setIcon(CardService.Icon.PERSON)
+        .setContent(sender);
 
     var widgetButton = CardService
         .newButtonSet()
@@ -63,7 +61,7 @@ function CardSection(args) {
     this.section = CardService.newCardSection()
     //.setHeader("Date: "+ date + "</br>Time: " + time + "</br>Message: " + index + "/" + args.count)
         .setHeader(doGet("Templates/sectionHeader", { index: index, count: args.count, msgAge: msgAge }))
-        .addWidget(widgetLabels)
+        .addWidget(widgetPriority)
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
         .addWidget(widgetBody)
