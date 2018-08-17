@@ -2,10 +2,7 @@
 /*
   CONSTANTS
 */
-var MAX_THREADS = 10;
 var IMG = new ImageSet();
-var BRAND_NAME = "Email X-Ray";
-var MAILBOX_QUERY = "in:inbox newer_than:5d";
 
 function CardSection(args) {
     var msg = MessageData(args.message);
@@ -126,6 +123,6 @@ function buildAddOn() {
 }
 
 function testing() {
-    //
+    Logger.log(scriptProperties.getProperties());
 
 }
