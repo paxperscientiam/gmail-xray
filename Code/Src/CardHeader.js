@@ -15,9 +15,7 @@ function CardHeader(args) {
 
     this.header = CardService.newCardHeader()
         .setTitle(doGet("Templates/headerTitle", {subject: args.subject}))
-        .setSubtitle(doGet("Templates/headerSubtitle", {sender: args.sender}))
-        // .setImageStyle(CardService.ImageStyle.CIRCLE)
-        // .setImageUrl(imgIndex);
+        .setSubtitle(doGet("Templates/headerSubtitle", {sender: args.sender}));
 
     return this.header;
 }
