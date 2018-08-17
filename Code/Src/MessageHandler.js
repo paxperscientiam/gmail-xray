@@ -1,10 +1,13 @@
 // -*- mode: typescript -*-
 
 function MessageData(message) {
+
     this.sender = message.getFrom();
     this.subject = message.getSubject();
-    this.date = message.getDate();
+    this.date = formatDateService(message.getDate());
+    this.time = formatTimeService(message.getDate());
     this.starred = message.isStarred();
+    this.age = formatAge(this.date);
 
     return this;
 }

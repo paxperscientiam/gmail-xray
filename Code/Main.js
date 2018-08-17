@@ -15,10 +15,10 @@ function CardSection(args) {
     // var tmp = output.asTemplate();
     // Logger.log(tmp.evaluate().getContent());
     //
-    var date = formatDateService(msg.date);
-    var time = formatTimeService(msg.date);
+    var date = msg.date;
+    var time = msg.time;
 
-    var msgAge = formatAge(msg.date);
+    var msgAge = msg.age;
 
     var ifInbox = args.message.isInInbox() ? "inbox" : "&nbsp;";
 
