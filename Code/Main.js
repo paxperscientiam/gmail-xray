@@ -31,7 +31,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent(body)
+        .setContent("ROFL")
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
