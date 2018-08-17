@@ -115,6 +115,10 @@ function buildAddOn() {
                    .setName("Card name")
                    .build());
 
+        cards.push(card
+                   .setName("Card name")
+                   .build());
+
     }
     return cards;
 }
