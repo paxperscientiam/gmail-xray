@@ -97,11 +97,13 @@ function buildAddOn() {
         });
 
         var textParagraph = CardService.newTextParagraph().setText("ROF");
-
+        var cardSection = CardService.newCardSection()
+            .setHeader("Section header")
+            .addWidget(textParagraph);
 
         var card = CardService.newCardBuilder()
             .setHeader(cardHeader)
-            .addSection(textParagraph);
+            .addSection(cardSection);
 
         for (var j = 0; j < count; j++) {
             //
