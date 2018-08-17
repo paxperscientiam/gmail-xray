@@ -4,4 +4,5 @@ var props = (PropertiesService.getScriptProperties())
         BRAND_NAME: "Email X-Ray",
         MAILBOX_QUERY: "in:inbox newer_than:5d",
         MAX_THREADS: 10,
+        MAX_THREAD_DEPTH: 10,
     });

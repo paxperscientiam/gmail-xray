@@ -66,14 +66,9 @@ function buildAddOn() {
         messageData = new MessageData(message);
 
         var count = threadData.count;
-        var msgAge = messageData.date;
-
-        var msgStatus = message.isPriority;
-
-        cardHeader = new CardHeader(threadData);
 
         var card = CardService.newCardBuilder()
-            .setHeader(cardHeader);
+            .setHeader(( new CardHeader(threadData) ));
 
         for (var j = 0; j < count; j++) {
             //
