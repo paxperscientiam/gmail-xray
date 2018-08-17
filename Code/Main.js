@@ -96,8 +96,12 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
+        var textParagraph = CardService.newTextParagraph();
+
+
         var card = CardService.newCardBuilder()
-            .setHeader(cardHeader);
+            .setHeader(cardHeader)
+            .addWidget(textParagraph);
 
         for (var j = 0; j < count; j++) {
             //
@@ -110,10 +114,6 @@ function buildAddOn() {
             }).setCollapsible(false);
             card = SectionChainer({card: card, msg: msg});
         }
-
-        cards.push(card
-                   .setName("Card name")
-                   .build());
 
         cards.push(card
                    .setName("Card name")
