@@ -27,10 +27,10 @@
     "secondaryColor": "#6c71c4",
     "version": "TRUSTED_TESTER_V2",
       "universalActions": [{
-          "text": "🇵🇷 Help Puerto Rico",
+          "text": "Help Puerto Rico 🇵🇷",
           "openLink": "https://www.charitynavigator.org/index.cfm?bay=content.view&cpid=5356"
       },{
-          "text": "🌐 Project site",
+          "text": "Project site",
           "openLink": "https://github.com/search?l=&p=1&q=user%3Apaxperscientiam&ref=advsearch&type=Repositories&utf8=%E2%9C%93"
       },{
           "text": "🌐 My website",
