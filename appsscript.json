@@ -26,15 +26,15 @@
     "primaryColor": "#935499",
     "secondaryColor": "#0000FF",
     "version": "TRUSTED_TESTER_V2",
-    "universalActions": [{
-      "text": "🇵🇷 Help Puerto Rico",
-      "openLink": "https://www.charitynavigator.org/index.cfm?bay=content.view&cpid=5356"
-    },{
-      "text": "🌐 My GitHub projects",
-      "openLink": "https://github.com/search?l=&p=1&q=user%3Apaxperscientiam&ref=advsearch&type=Repositories&utf8=%E2%9C%93"
-    },{
-      "text": "🌐 My website",
-        "runFunction": "openLinkUniversalAction
+      "universalActions": [{
+          "text": "🇵🇷 Help Puerto Rico",
+          "openLink": "https://www.charitynavigator.org/index.cfm?bay=content.view&cpid=5356"
+      },{
+          "text": "🌐 My GitHub projects",
+          "openLink": "https://github.com/search?l=&p=1&q=user%3Apaxperscientiam&ref=advsearch&type=Repositories&utf8=%E2%9C%93"
+      },{
+          "text": "🌐 My website",
+          "runFunction": "openLinkUniversalAction"
     }]
   }
 }
