@@ -29,6 +29,7 @@ function CardSection(args) {
 
     var widgetLabels = WidgetHandler("<p style=\"margin: 0;padding: 0 0 10px 0;background:#ee;\">" + ifPriority + "</p>");
 
+
     var widgetBody = CardService
         .newKeyValue()
         .setContent("ROFL")
@@ -40,9 +41,10 @@ function CardSection(args) {
         .setMultiline(true)
         .setBottomLabel(time);
 
-    var widgetPerson = CardService.newKeyValue()
-        .setIcon(CardService.Icon.PERSON)
-        .setContent(sender);
+    var widgetPerson = new WidgetBuider({
+        content: sender,
+        icon: "PERSON",
+    });
 
     var widgetButton = CardService
         .newButtonSet()
