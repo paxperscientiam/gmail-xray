@@ -10,7 +10,6 @@ function openLinkUniversalAction() {
     // A universal action that shows two static cards.
     return CardService.newUniversalActionResponseBuilder()
         .displayAddOnCards([
-            cardBuilder1.build();
-            cardBuilder2.build();
+            cardBuilder1.build(),
         ]).build();
 }
