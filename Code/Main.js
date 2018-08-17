@@ -96,14 +96,14 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
-        var textParagraph = CardService.newTextParagraph().setText("ROF");
-        var cardSection = CardService.newCardSection()
-            .setHeader("Soothing actions")
-            .addWidget(textParagraph);
+        // var textParagraph = CardService.newTextParagraph().setText("ROF");
+        // var cardSection = CardService.newCardSection()
+        //     .setHeader("Soothing actions")
+        //     .addWidget(textParagraph);
 
         var card = CardService.newCardBuilder()
             .setHeader(cardHeader)
-            .addSection(cardSection);
+           // .addSection(cardSection);
 
         for (var j = 0; j < count; j++) {
             //
