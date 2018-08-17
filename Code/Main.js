@@ -1,7 +1,4 @@
-// -*- mode:typescript -*-
-/*
-  CONSTANTS
-*/
+//
 function CardSection(args) {
     var messageData = new MessageData(args.message);
 
@@ -64,8 +61,8 @@ function buildAddOn() {
     var messageData = {};
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-        var message = threadData.message[0];
         threadData = new ThreadData(threads[i]);
+        var message = threadData.message[0];
         messageData = new MessageData(message);
 
         var count = threadData.count;
