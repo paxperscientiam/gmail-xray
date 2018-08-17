@@ -96,12 +96,12 @@ function buildAddOn() {
             subject: Message.subject,
         });
 
-        var textParagraph = CardService.newTextParagraph();
+        var textParagraph = CardService.newTextParagraph().setText("ROF");
 
 
         var card = CardService.newCardBuilder()
             .setHeader(cardHeader)
-            .addWidget(textParagraph);
+            .addSection(textParagraph);
 
         for (var j = 0; j < count; j++) {
             //
