@@ -37,7 +37,7 @@ function CardSection(args) {
 
     var widgetBody = CardService
         .newKeyValue()
-        .setContent("<a href='#'>BALLS<a>")
+        .setContent("<a href='https://www.google.com'>BALLS<a>")
         .setMultiline(true);
 
     var widgetTime = CardService.newKeyValue()
