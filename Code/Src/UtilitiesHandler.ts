@@ -39,3 +39,22 @@ function formatAge(date) {
 
     return age;
 }
+
+
+/**
+ * Returns an object with the values of the argument objects.
+ * If multiple objects have the same property value, the last value set is retained.
+ * @param {...Object}
+ * @returns {Object}
+ */
+
+function mergeObjs() {
+  var obj = arguments[0];
+  for (i = 1; i < arguments.length; i++) {
+    var src = arguments[i];
+    for (var key in src) {
+      if (src.hasOwnProperty(key)) obj[key] = src[key];
+    }
+  }
+  return obj;
+}

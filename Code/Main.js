@@ -86,6 +86,7 @@ function buildAddOn() {
 }
 
 function testing() {
-    Logger.log(props.getProperties());
+    // Logger.log(props.getProperties());
+    var oo = mergeObjs({a:4, b: 5}, {c:345, d:2341});
 
 }
