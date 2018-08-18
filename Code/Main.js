@@ -55,8 +55,19 @@ function CardSectionSecondary() {
 }
 
 function CardSectionActionCenter() {
+    var action = CardService.newAction().setFunctionName('openLinkCallback');
+
+    function openLinkCallback() {
+  return CardService.newActionResponseBuilder()
+      .setOpenLink(CardService.newOpenLink()
+          .setUrl('https://www.google.com'))
+      .build();
+}
+
     var textButton = CardService.newTextButton()
-        .setText('Open Thread');
+        .setText('Open Thread')
+        .setOnClickOpenLinkAction(action);
+
 
     var buttonSet = CardService.newButtonSet()
         .addButton(textButton)
