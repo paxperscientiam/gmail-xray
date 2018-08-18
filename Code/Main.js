@@ -28,9 +28,6 @@ function CardSection(args) {
                                 .setOpenAs(CardService.OpenAs.FULL_SIZE)
                                 .setOnClose(CardService.OnClose.NOTHING)));
 
-    var widgetDonate = CardService.newTextParagraph()
-        .setText(doGet("Templates/donationContent", {}));
-
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
@@ -41,11 +38,18 @@ function CardSection(args) {
         .addWidget(widgetPerson)
         .addWidget(widgetTime)
         .addWidget(widgetBody)
-        .addWidget(widgetButton)
-        .addWidget(widgetDonate);
+        .addWidget(widgetButton);
 
     return this.section;
+}
 
+function CardSectionSecondary() {
+    var widgetDonate = CardService.newTextParagraph()
+        .setText(doGet("Templates/donationContent", {}));
+
+    this.section = CardService.newCardSection()
+        .setHeader("Donations")
+        .addWidget(widgetDonate);
 }
 
 function buildAddOn() {
@@ -71,9 +75,10 @@ function buildAddOn() {
             // threaData -> count, link, message
             var Obj = mergeObjs({index: j}, threadData);
             var msg = new CardSection(Obj).setCollapsible(false);
+            var foot = new CardSectionSecondary().setCollapsible(false);
 
             card = SectionChainer(card, {msg: msg});
-            card = SectionChainer(card, {msg: msg});
+            card = SectionChainer(card, {msg: foot});
         }
 
         cards.push(card
