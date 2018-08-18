@@ -55,7 +55,14 @@ function CardSectionSecondary() {
 }
 
 function CardSectionActionCenter() {
-    //
+    var textButton = CardService.newTextButton()
+        .setText('Open Thread');
+
+    var buttonSet = CardService.newButtonSet()
+        .addButton(textButton)
+        .addButton(textButton)
+        .addButton(textButton)
+        .addButton(textButton);
 }
 
 
@@ -82,10 +89,12 @@ function buildAddOn() {
             // threaData -> count, link, message
             var Obj = mergeObjs({index: j}, threadData);
             var msg = new CardSection(Obj).setCollapsible(false);
-            var foot = new CardSectionSecondary();
-
+            var action = new CardSectionActionCenter();
             card = SectionChainer(card, {msg: msg});
+            card = SectionChainer(card, {msg: action});
         }
+
+        var foot = new CardSectionSecondary();
 
         card = SectionChainer(card, {msg: foot});
 

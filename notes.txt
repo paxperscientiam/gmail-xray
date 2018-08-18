@@ -5,3 +5,6 @@ don't define auth scopes in the manfiest, better to let google deduce what's nee
 
 info on widgets
 https://developers.google.com/gmail/add-ons/concepts/widgets
+
+
+https://developers.google.com/apps-script/reference/card-service/card-service
