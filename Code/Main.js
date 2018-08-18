@@ -65,10 +65,10 @@ function CardSectionActionCenter() {
         .addButton(textButton);
 
     this.section = CardService.newCardSection()
+        .setHeader("Action Center")
         .addWidget(buttonSet);
     return this.section;
 }
-
 
 function buildAddOn() {
     var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
