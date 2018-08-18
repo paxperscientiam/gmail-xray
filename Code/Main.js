@@ -54,6 +54,11 @@ function CardSectionSecondary() {
     return this.section;
 }
 
+function CardSectionActionCenter() {
+    //
+}
+
+
 function buildAddOn() {
     var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
     var MAX_THREADS = props.getProperty("MAX_THREADS");
@@ -80,8 +85,9 @@ function buildAddOn() {
             var foot = new CardSectionSecondary();
 
             card = SectionChainer(card, {msg: msg});
-            card = SectionChainer(card, {msg: foot});
         }
+
+        card = SectionChainer(card, {msg: foot});
 
         cards.push(card
                    .setName("Card name")
