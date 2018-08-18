@@ -29,9 +29,7 @@ function CardSection(args) {
                                 .setOnClose(CardService.OnClose.NOTHING)));
 
     var widgetDonate = CardService
-        .newKeyValue()
-        .setContent(doGet("Templates/donationContent", {}))
-        .setMultiline(true);
+        .setText(doGet("Templates/donationContent", {}))
 
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
