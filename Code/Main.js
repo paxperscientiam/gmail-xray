@@ -50,6 +50,8 @@ function CardSectionSecondary() {
     this.section = CardService.newCardSection()
         .setHeader("Donations")
         .addWidget(widgetDonate);
+
+    return this.section;
 }
 
 function buildAddOn() {
