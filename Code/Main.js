@@ -75,7 +75,7 @@ function buildAddOn() {
             // threaData -> count, link, message
             var Obj = mergeObjs({index: j}, threadData);
             var msg = new CardSection(Obj).setCollapsible(false);
-            var foot = new CardSectionSecondary().setCollapsible(false);
+            var foot = new CardSectionSecondary();
 
             card = SectionChainer(card, {msg: msg});
             card = SectionChainer(card, {msg: foot});
