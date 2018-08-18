@@ -68,7 +68,6 @@ function CardSectionActionCenter() {
         .setText('Open Thread')
         .setOnClickOpenLinkAction(action);
 
-
     var buttonSet = CardService.newButtonSet()
         .addButton(textButton)
         .addButton(textButton)
