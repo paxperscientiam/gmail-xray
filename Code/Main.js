@@ -63,6 +63,10 @@ function CardSectionActionCenter() {
         .addButton(textButton)
         .addButton(textButton)
         .addButton(textButton);
+
+    this.section = CardService.newCardSection()
+        .addWidget(buttonSet);
+    return this.section;
 }
 
 
