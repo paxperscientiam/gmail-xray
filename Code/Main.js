@@ -28,8 +28,8 @@ function CardSection(args) {
                                 .setOpenAs(CardService.OpenAs.FULL_SIZE)
                                 .setOnClose(CardService.OnClose.NOTHING)));
 
-    var widgetDonate = CardService
-        .setText(doGet("Templates/donationContent", {}))
+    var widgetDonate = CardService.newTextParagraph()
+        .setText(doGet("Templates/donationContent", {}));
 
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
