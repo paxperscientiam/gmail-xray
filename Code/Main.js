@@ -58,11 +58,11 @@ function CardSectionActionCenter() {
     var action = CardService.newAction().setFunctionName('openLinkCallback');
 
     function openLinkCallback() {
-  return CardService.newActionResponseBuilder()
-      .setOpenLink(CardService.newOpenLink()
-          .setUrl('https://www.google.com'))
-      .build();
-}
+        return CardService.newActionResponseBuilder()
+            .setOpenLink(CardService.newOpenLink()
+                         .setUrl('https://www.google.com'))
+            .build();
+    }
 
     var textButton = CardService.newTextButton()
         .setText('Open Thread')
@@ -81,7 +81,13 @@ function CardSectionActionCenter() {
     return this.section;
 }
 
-function buildAddOn() {
+function buildAddOn(e) {
+    // Activate temporary Gmail add-on scopes.
+    var accessToken = e.messageMetadata.accessToken;
+    GmailApp.setCurrentMessageAccessToken(accessToken);
+    var messageId = e.messageMetadata.messageId;
+    var senderData = extractSenderData(messageId);
+
     var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
     var MAX_THREADS = props.getProperty("MAX_THREADS");
 
