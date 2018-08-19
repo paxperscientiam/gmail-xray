@@ -1,4 +1,6 @@
 function CardSection(args) {
+    var messageData = new MessageData(args.message);
+    //
     this.section = CardService.newCardSection()
         .setHeader(doGet("Tem3Mplates/sectionHeader", {
             count: args.count,
@@ -25,10 +27,10 @@ function CardSectionSecondary() {
 }
 
 function CardSectionActionCenter() {
-    var action = CardService.newAction()
+    const action = CardService.newAction()
         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
-    var buttonReply = CardService.newTextButton()
+    const buttonReply = CardService.newTextButton()
         .setText("Reply")
         .setOnClickOpenLinkAction(action);
 
