@@ -1,9 +1,10 @@
 function CardSection(args) {
+    var index = parseInt(args.index + 1);
     var messageData = new MessageData(args.message);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
-            index: args.index + 1,
+            index: index,
             msgAge: messageData.age,
         }))
         .addWidget(getWidget("EMAIL_PRIORITY", messageData))
