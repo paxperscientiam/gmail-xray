@@ -56,7 +56,7 @@ function CardSectionSecondary() {
 
 function CardSectionActionCenter() {
     var action = CardService.newAction()
-        .setFunctionName("openLinkCallback", "https://www.google.com");
+        .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
     var buttonReply = CardService.newTextButton()
         .setText("Reply")
