@@ -1,5 +1,4 @@
-
-
+// -*- mode:typescript -*-
 function buildAddOn(e) {
     // Activate temporary Gmail add-on scopes.
     // var accessToken = e.messageMetadata.accessToken;
@@ -30,8 +29,7 @@ function buildAddOn(e) {
             var Obj = mergeObjs({index: j}, threadData);
             var msg = new CardSection(Obj).setCollapsible(false);
             var action = new CardSectionActionCenter();
-            card = SectionChainer(card, {msg: msg});
-            card = SectionChainer(card, {msg: action});
+            card = SectionChainer(card, [{section: msg}, {section: action}]);
         }
 
         var foot = new CardSectionSecondary();

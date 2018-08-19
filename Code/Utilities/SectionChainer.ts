@@ -1,4 +1,6 @@
 function SectionChainer(card, sections) {
-    card.addSection(sections.msg);
+    sections.forEach(function(element) {
+        card.addSection(element.section);
+    });
     return card;
 }
