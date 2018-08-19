@@ -1,8 +1,8 @@
 // Set multiple script properties in one call.
-var props = (PropertiesService.getScriptProperties())
+const props = (PropertiesService.getScriptProperties())
     .setProperties({
         BRAND_NAME: "Email X-Ray",
-        MAILBOX_QUERY: "from:cht-brightstreet@googlegroups.com",
+        MAILBOX_QUERY: "in:inbox and is:starred and is:unread",
         MAX_THREADS: 10,
         MAX_THREAD_DEPTH: 10,
     });
