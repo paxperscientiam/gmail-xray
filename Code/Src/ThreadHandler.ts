@@ -1,5 +1,4 @@
 function ThreadData(thread) {
-
     this.messages = thread.getMessages();
     this.message = this.messages[0];
     this.labels = thread.getLabels();
