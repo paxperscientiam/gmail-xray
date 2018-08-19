@@ -7,10 +7,10 @@ function CardSection(args) {
             index: args.index + 1,
             msgAge: messageData.age,
         }))
-        .addWidget(getWidget("EMAIL_PRIORITY"))
-        .addWidget(getWidget("EMAIL_BODY"))
-        .addWidget(getWidget("EMAIL_RECEIPT"))
-        .addWidget(getWidget("THREAD_LINK"));
+        .addWidget(getWidget("EMAIL_PRIORITY", messageData))
+        .addWidget(getWidget("EMAIL_BODY", messageData))
+        .addWidget(getWidget("EMAIL_RECEIPT", messageData))
+        .addWidget(getWidget("THREAD_LINK", messageData));
 
     return this.section;
 }

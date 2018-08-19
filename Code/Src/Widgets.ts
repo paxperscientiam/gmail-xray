@@ -1,4 +1,4 @@
-function getWidget(widgetName) {
+function getWidget(widgetName, args) {
     var messageData = new MessageData(args.message);
 
     if (widgetName === "EMAIL_PRIORITY") {
