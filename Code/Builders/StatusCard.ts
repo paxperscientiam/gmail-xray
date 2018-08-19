@@ -1,6 +1,4 @@
 function StatusCard() {
-    var today =
-
 
     return CardService.newCardBuilder()
         .setName("Card name")
