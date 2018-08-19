@@ -11,7 +11,13 @@ function buildAddOn(e) {
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
     var cards = [];
 
-    var cardSection = CardService.newCardSection();
+    var textParagraph = CardService.newTextParagraph()
+        .setText("SHIT");
+
+    var cardSection = CardService.newCardSection()
+        .setHeader("Section header")
+        .addWidget(textParagraph);
+
 
     var cardTop = CardService.newCardBuilder()
         .setName("Card name")
