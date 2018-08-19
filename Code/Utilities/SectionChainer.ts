@@ -1,6 +1,6 @@
 function SectionChainer(card, sections) {
-    sections.forEach(function(element) {
-        card.addSection(element.section);
+    sections.forEach(function(section) {
+        card.addSection(section);
     });
     return card;
 }

@@ -15,21 +15,29 @@ function buildAddOn(e) {
     var threadData = {};
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-        threadData = new ThreadData(threads[i]);
-        var message = threadData.message[0];
+        threadData = new ThreadData(threads[i]); // a thread from set of threads
+        var message = threadData.message[0]; // a message from set of messages in a thread
 
-        var count = threadData.count;
+        var threadLength = threadData.threadLength;
 
         var card = CardService.newCardBuilder()
             .setHeader(( new CardHeader(threadData) ));
 
-        for (var j = 0; j < count; j++) {
+        for (var j = 0; j < threadLength; j++) {
             //
+            //
+            // var msg = new CardSection({
+            //     count: count,
+            //     index: j,
+            //     link: Thread.link,
+            //     message: Thread.message[j],
+            // }).setCollapsible(false);
+            // card = SectionChainer({card: card, msg: msg});
             // threaData -> count, link, message
             var Obj = mergeObjs({index: j}, threadData, message);
             var msgSection = new CardSection(Obj).setCollapsible(false);
-            var action = new CardSectionActionCenter();
-            card = SectionChainer(card, [{section: msgSection}, {section: action}]);
+            var actionSection = new CardSectionActionCenter();
+            card = SectionChainer(card, [msgSection, actionSection]);
         }
 
         var foot = new CardSectionSecondary();
