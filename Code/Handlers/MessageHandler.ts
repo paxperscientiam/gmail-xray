@@ -1,6 +1,8 @@
 // -*- mode: typescript -*-
 
 function MessageData(message) {
+    Logger.log(message);
+
     this.sender = message.getFrom();
     this.subject = message.getSubject();
     this.date = formatDateService(message.getDate());
