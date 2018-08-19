@@ -1,7 +1,7 @@
 function CardSection(args) {
     var messageData = new MessageData(args.message);
     //
-    Logger.log(args.index);
+    Logger.log(args);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
