@@ -27,34 +27,34 @@ function buildAddOn(e) {
 
     cards.push(cardTop);
 
-  //   var threadData = {};
+    var threadData = {};
 
-//     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-//         threadData = new ThreadData(threads[i]); // a thread from set of threads
-//         var message = threadData.message[0]; // a message from set of messages in a thread
+    for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
+        threadData = new ThreadData(threads[i]); // a thread from set of threads
+        var message = threadData.message[0]; // a message from set of messages in a thread
 
-//         var threadLength = threadData.threadLength;
+        var threadLength = threadData.threadLength;
 
-//         var card = CardService.newCardBuilder()
-//             .setHeader(( new CardHeader(threadData) ));
+        var card = CardService.newCardBuilder()
+            .setHeader(( new CardHeader(threadData) ));
 
-//         for (var j = 0; j < threadLength; j++) {
-//             var Obj = mergeObjs({index: j}, threadData, message);
-//             var msgSection = new CardSection(Obj).setCollapsible(false);
-//             var actionSection = new CardSectionActionCenter();
-//             card = SectionChainer(card, [msgSection, actionSection]);
-//         }
+        for (var j = 0; j < threadLength; j++) {
+            var Obj = mergeObjs({index: j}, threadData, message);
+            var msgSection = new CardSection(Obj).setCollapsible(false);
+            var actionSection = new CardSectionActionCenter();
+            card = SectionChainer(card, [msgSection, actionSection]);
+        }
 
-//         // this is causing errors!
-//   //      var foot = new CardSectionSecondary();
-//     //    foot.setCollapsible(true);
-// //        card = SectionChainer(card, {msg: foot});
+        // this is causing errors!
+        //      var foot = new CardSectionSecondary();
+        //    foot.setCollapsible(true);
+        //        card = SectionChainer(card, {msg: foot});
 
-//         cards.push(card
-//                    .setName("Card name")
-//                    .build());
+        cards.push(card
+                   .setName("Card name")
+                   .build());
 
-//     }
+    }
     return cards;
 }
 
