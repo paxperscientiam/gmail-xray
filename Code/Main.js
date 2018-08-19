@@ -18,14 +18,7 @@ function buildAddOn(e) {
         .setHeader("Section header")
         .addWidget(textParagraph);
 
-
-    var cardTop = CardService.newCardBuilder()
-        .setName("Card name")
-        .setHeader(CardService.newCardHeader().setTitle("Card title"))
-        .addSection(cardSection.setCollapsible(false))
-        .build();
-
-    cards.push(cardTop);
+    cards.push(StatusCard());
 
     var threadData = {};
 

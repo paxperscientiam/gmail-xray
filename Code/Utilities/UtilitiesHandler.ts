@@ -1,13 +1,25 @@
 // -*- mode: typescript -*-
 
 function formatDateService(date) {
+    var timeZone = props.getProperty("TIME_ZONE");
     var date = new Date(date);
-    return Utilities.formatDate(date, "GMT-4", "E, d MMM y");
+    return Utilities.formatDate(date, timeZone, "E, d MMM y");
 }
 
 function formatTimeService(date) {
+    var timeZone = props.getProperty("TIME_ZONE");
     var date = new Date(date);
-    return Utilities.formatDate(date, "GMT-4", "h:mm a");
+    return Utilities.formatDate(date, timeZone, "h:mm a");
+}
+
+function dateArray() {
+    var timeZone = props.getProperty("TIME_ZONE");
+    var date = new Date();
+
+    this.WEEKDAY = Utilities.formatDate(date, timeZone, "EEEE");
+    this.MONTH = Utilities.formatDate(date, timeZone, "MMMM");
+    this.TIME = Utilities.formatDate(date, timeZone, "h:mm a");
+
 }
 
 function timeConversion(millisec) {

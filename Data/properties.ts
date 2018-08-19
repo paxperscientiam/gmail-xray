@@ -5,4 +5,5 @@ var props = (PropertiesService.getScriptProperties())
         MAILBOX_QUERY: "in:inbox and is:starred and is:unread",
         MAX_THREADS: 10,
         MAX_THREAD_DEPTH: 10,
+        TIME_ZONE: "GMT-4",
     });
