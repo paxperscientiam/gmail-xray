@@ -2,7 +2,7 @@ function CardSection(args) {
     var messageData = new MessageData(args.message);
     //
     this.section = CardService.newCardSection()
-        .setHeader(doGet("Tem3Mplates/sectionHeader", {
+        .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
             index: args.index + 1,
             msgAge: messageData.age,
