@@ -1,35 +1,4 @@
-function CardSectionSecondary() {
-    var widgetDonate = CardService.newTextParagraph()
-        .setText(doGet("Templates/donationContent", {}));
 
-    this.section = CardService.newCardSection()
-        .setHeader("Donations")
-        .addWidget(widgetDonate);
-
-    return this.section;
-}
-
-function CardSectionActionCenter() {
-    var action = CardService.newAction()
-        .setFunctionName(["openLinkCallback", "https://www.google.com"]);
-
-    var buttonReply = CardService.newTextButton()
-        .setText("Reply")
-        .setOnClickOpenLinkAction(action);
-
-    var buttonReplyAll = CardService.newTextButton()
-        .setText("Reply all")
-        .setOnClickOpenLinkAction(action);
-
-    var buttonSet = CardService.newButtonSet()
-        .addButton(buttonReply)
-        .addButton(buttonReplyAll);
-
-    this.section = CardService.newCardSection()
-        .setHeader("Action Center")
-        .addWidget(buttonSet);
-    return this.section;
-}
 
 function buildAddOn(e) {
     // Activate temporary Gmail add-on scopes.
