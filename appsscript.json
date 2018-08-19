@@ -1,44 +1,37 @@
 {
-    "urlFetchWhitelist":[
-        "https://flattr.com/@paxperscientiam",
-        "https://cash.me/$paxperscientiam",
-        "https://github.com/search",
-        "https://paxperscientiam.com/",
-        "https://www.charitynavigator.org/index.cfm",
-        "https://www.buymeacoffee.com/paxperscientiam",
-        "http://habitatpr.org/"
+  "urlFetchWhitelist":[
+    "https://flattr.com/@paxperscientiam",
+    "https://cash.me/$paxperscientiam",
+    "https://github.com/search",
+    "https://paxperscientiam.com/",
+      "https://www.buymeacoffee.com/paxperscientiam"
+  ],
+  "gmail": {
+    "name": "Email X-Ray",
+    "useLocaleFromApp": true,
+    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
+    "contextualTriggers": [{
+      "unconditional": {
+      },
+      "onTriggerFunction": "buildAddOn"
+    }],
+    "openLinkUrlPrefixes": [
+      "https://mail.google.com/",
+      "https://flattr.com/@paxperscientiam",
+      "https://cash.me/$paxperscientiam",
+      "https://github.com/search",
+      "https://paxperscientiam.com/",
+        "https://www.buymeacoffee.com/paxperscientiam"
     ],
-    "gmail": {
-        "name": "Email X-Ray",
-        "useLocaleFromApp": true,
-        "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
-        "contextualTriggers": [{
-            "unconditional": {
-            },
-            "onTriggerFunction": "buildAddOn"
-        }],
-        "openLinkUrlPrefixes": [
-            "https://mail.google.com/",
-            "https://flattr.com/@paxperscientiam",
-            "https://cash.me/$paxperscientiam",
-            "https://github.com/search",
-            "https://paxperscientiam.com/",
-            "https://www.charitynavigator.org/index.cfm",
-            "https://www.buymeacoffee.com/paxperscientiam",
-            "http://habitatpr.org/"
-        ],
-        "primaryColor": "#935499",
-        "secondaryColor": "#6c71c4",
-        "version": "TRUSTED_TESTER_V2",
-        "universalActions": [{
-            "text": "Help Puerto Rico 🇵🇷",
-            "openLink": "https://www.charitynavigator.org/index.cfm?bay=content.view&cpid=5356"
-        },{
-            "text": "Project site",
-            "openLink": "https://github.com/paxperscientiam/gmail-xray"
-        },{
-            "text": "Do stuff",
-            "runFunction": "openLinkUniversalAction"
-        }]
-    }
+    "primaryColor": "#935499",
+    "secondaryColor": "#6c71c4",
+    "version": "TRUSTED_TESTER_V2",
+      "universalActions": [{
+          "text": "Project site",
+          "openLink": "https://github.com/paxperscientiam/gmail-xray"
+      },{
+          "text": "Do stuff",
+          "runFunction": "openLinkUniversalAction"
+    }]
+  }
 }
