@@ -1,6 +1,7 @@
 function CardSection(args) {
     var messageData = new MessageData(args.message);
     //
+    Logger.log(args.index);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
@@ -30,17 +31,13 @@ function CardSectionActionCenter() {
     const action = CardService.newAction()
         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
-    const buttonReply = CardService.newTextButton()
-        .setText("Reply")
-        .setOnClickOpenLinkAction(action);
-
-    var buttonReplyAll = CardService.newTextButton()
-        .setText("Reply all")
-        .setOnClickOpenLinkAction(action);
-
     var buttonSet = CardService.newButtonSet()
-        .addButton(buttonReply)
-        .addButton(buttonReplyAll);
+        .addButton(CardService.newTextButton()
+                   .setText("Reply")
+                   .setOnClickOpenLinkAction(action))
+        .addButton(CardService.newTextButton()
+                   .setText("Reply all")
+                   .setOnClickOpenLinkAction(action));
 
     this.section = CardService.newCardSection()
         .setHeader("Action Center")
