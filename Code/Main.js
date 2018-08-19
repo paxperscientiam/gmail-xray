@@ -22,7 +22,7 @@ function buildAddOn(e) {
     var cardTop = CardService.newCardBuilder()
         .setName("Card name")
         .setHeader(CardService.newCardHeader().setTitle("Card title"))
-        .addSection(cardSection)
+        .addSection(cardSection.setCollapsible(false))
         .build();
 
     cards.push(cardTop);
