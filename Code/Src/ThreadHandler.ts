@@ -1,5 +1,4 @@
 function ThreadData(thread) {
-    var sender = extractEmailAddress(this.message.getFrom());
 
     this.messages = thread.getMessages();
     this.message = this.messages[0];
@@ -7,6 +6,6 @@ function ThreadData(thread) {
     this.count = thread.getMessageCount();
     this.link = thread.getPermalink();
     //
-    this.sender = sender;
+    this.sender = extractEmailAddress(this.message.getFrom());
     this.subject = this.message.getSubject();
 }
