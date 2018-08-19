@@ -16,11 +16,19 @@ function dateArray() {
     var timeZone = props.getProperty("TIME_ZONE");
     var date = new Date();
 
+    this.HOUR = Utilities.formatDate(date, timeZone, "H");
     this.WEEKDAY = Utilities.formatDate(date, timeZone, "EEEE");
     this.WEEK_DAY = this.WEEKDAY;
     this.MONTH = Utilities.formatDate(date, timeZone, "MMMM");
     this.TIME = Utilities.formatDate(date, timeZone, "h:mm a");
 
+    if (this.HOUR >= 0 && this.HOUR < 12 ) {
+        this.GREETING = "Good morning";
+    } else if (this.HOUR >= 12 && this.HOUR < 18) {
+        this.GREETING = "Good afternoon";
+    } else {
+        this.GREETING = "Good evening";
+    }
 }
 
 function timeConversion(millisec) {
@@ -62,12 +70,12 @@ function formatAge(date) {
  */
 
 function mergeObjs() {
-  var obj = arguments[0];
-  for (i = 1; i < arguments.length; i++) {
-    var src = arguments[i];
-    for (var key in src) {
-      if (src.hasOwnProperty(key)) obj[key] = src[key];
+    var obj = arguments[0];
+    for (i = 1; i < arguments.length; i++) {
+        var src = arguments[i];
+        for (var key in src) {
+            if (src.hasOwnProperty(key)) obj[key] = src[key];
+        }
     }
-  }
-  return obj;
+    return obj;
 }
