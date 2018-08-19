@@ -17,6 +17,7 @@ function dateArray() {
     var date = new Date();
 
     this.WEEKDAY = Utilities.formatDate(date, timeZone, "EEEE");
+    this.WEEK_DAY = this.WEEKDAY;
     this.MONTH = Utilities.formatDate(date, timeZone, "MMMM");
     this.TIME = Utilities.formatDate(date, timeZone, "h:mm a");
 

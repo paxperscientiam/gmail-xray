@@ -1,8 +1,13 @@
 function StatusCard() {
+    var dt = new dateArray();
+    var sectionOne = CardService.newCardSection()
+        .setHeader("section one");
 
     return CardService.newCardBuilder()
-        .setName("Card name")
-        .setHeader(CardService.newCardHeader().setTitle("Card title"))
-        .addSection(cardSection.setCollapsible(false))
+        .setName("status card")
+        .setHeader(CardService
+                   .newCardHeader()
+                   .setTitle("Today is " + dt.WEEKDAY))
+        .addSection(sectionOne)
         .build();
 }
