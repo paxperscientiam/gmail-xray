@@ -1,48 +1,3 @@
-//
-function CardSection(args) {
-    var messageData = new MessageData(args.message);
-
-    var widgetPriority = WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
-
-    var widgetBody = CardService
-        .newKeyValue()
-        .setContent(messageData.body)
-        .setMultiline(true);
-
-    var widgetTime = CardService.newKeyValue()
-        .setIcon(CardService.Icon.CLOCK)
-        .setContent(messageData.date)
-        .setMultiline(true)
-        .setBottomLabel(messageData.time);
-
-    var widgetPerson = CardService.newKeyValue()
-        .setIcon(CardService.Icon.PERSON)
-        .setContent(messageData.sender);
-
-    var widgetButton = CardService
-        .newButtonSet()
-        .addButton(CardService.newTextButton()
-                   .setText("Open Thread" + " (" + args.count + ") ↗️" )
-                   .setOpenLink(CardService.newOpenLink()
-                                .setUrl(args.link)
-                                .setOpenAs(CardService.OpenAs.FULL_SIZE)
-                                .setOnClose(CardService.OnClose.NOTHING)));
-
-    this.section = CardService.newCardSection()
-        .setHeader(doGet("Templates/sectionHeader", {
-            count: args.count,
-            index: args.index + 1,
-            msgAge: messageData.age,
-        }))
-        .addWidget(widgetPriority)
-        .addWidget(widgetPerson)
-        .addWidget(widgetTime)
-        .addWidget(widgetBody)
-        .addWidget(widgetButton);
-
-    return this.section;
-}
-
 function CardSectionSecondary() {
     var widgetDonate = CardService.newTextParagraph()
         .setText(doGet("Templates/donationContent", {}));
@@ -111,7 +66,7 @@ function buildAddOn(e) {
         }
 
         var foot = new CardSectionSecondary();
-
+        foot.setCollapsible(true);
         card = SectionChainer(card, {msg: foot});
 
         cards.push(card
@@ -123,7 +78,5 @@ function buildAddOn(e) {
 }
 
 function testing() {
-    // Logger.log(props.getProperties());
-    var oo = mergeObjs({a:4, b: 5}, {c:345, d:2341});
 
 }
