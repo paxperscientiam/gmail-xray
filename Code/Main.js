@@ -5,7 +5,8 @@ function buildAddOn(e) {
     // GmailApp.setCurrentMessageAccessToken(accessToken);
     // var messageId = e.messageMetadata.messageId;
     // var senderData = extractSenderData(messageId);
-
+    var accessToken = e.messageMetadata.accessToken;
+    Logger.log(accessToken);
     var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
     var MAX_THREADS = props.getProperty("MAX_THREADS");
 
@@ -24,25 +25,16 @@ function buildAddOn(e) {
             .setHeader(( new CardHeader(threadData) ));
 
         for (var j = 0; j < threadLength; j++) {
-            //
-            //
-            // var msg = new CardSection({
-            //     count: count,
-            //     index: j,
-            //     link: Thread.link,
-            //     message: Thread.message[j],
-            // }).setCollapsible(false);
-            // card = SectionChainer({card: card, msg: msg});
-            // threaData -> count, link, message
             var Obj = mergeObjs({index: j}, threadData, message);
             var msgSection = new CardSection(Obj).setCollapsible(false);
             var actionSection = new CardSectionActionCenter();
             card = SectionChainer(card, [msgSection, actionSection]);
         }
 
-        var foot = new CardSectionSecondary();
-        foot.setCollapsible(true);
-        card = SectionChainer(card, {msg: foot});
+        // this is causing errors!
+  //      var foot = new CardSectionSecondary();
+    //    foot.setCollapsible(true);
+//        card = SectionChainer(card, {msg: foot});
 
         cards.push(card
                    .setName("Card name")
