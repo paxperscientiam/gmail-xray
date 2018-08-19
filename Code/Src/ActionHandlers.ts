@@ -2,7 +2,7 @@
 ////var composeActionResponse = CardService.newComposeActionResponseBuilder()
 ////     .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
 ////     .build();
-////  
+////
 ////}
 //
 //
@@ -28,9 +28,13 @@
 //     .setOpenLink(CardService.newOpenLink()
 //         .setUrl("https://airplane.com"));
 
-var action = CardService.newAction();
- // Finish building the action...
+// var action = CardService.newAction();
+//  // Finish building the action...
 
- var cardAction = CardService.newCardAction()
-     .setText("Card action")
-     .setOnClickAction(action);
+//  var cardAction = CardService.newCardAction()
+//      .setText("Card action")
+//      .setOnClickAction(action);
+
+function ActionHandler() {
+    //
+}

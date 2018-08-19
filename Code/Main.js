@@ -58,15 +58,17 @@ function CardSectionActionCenter() {
     var action = CardService.newAction()
         .setFunctionName("openLinkCallback", "https://www.google.com");
 
-    var textButton = CardService.newTextButton()
-        .setText("Open Thread")
+    var buttonReply = CardService.newTextButton()
+        .setText("Reply")
+        .setOnClickOpenLinkAction(action);
+
+    var buttonReplyAll = CardService.newTextButton()
+        .setText("Reply all")
         .setOnClickOpenLinkAction(action);
 
     var buttonSet = CardService.newButtonSet()
-        .addButton(textButton)
-        .addButton(textButton)
-        .addButton(textButton)
-        .addButton(textButton);
+        .addButton(buttonReply)
+        .addButton(buttonReplyAll);
 
     this.section = CardService.newCardSection()
         .setHeader("Action Center")
