@@ -6,9 +6,7 @@ function StatusCard() {
 
     return CardService.newCardBuilder()
         .setName("status card")
-        .setHeader(CardService
-                   .newCardHeader()
-                   //.setTitle(dt.GREETING ", today is " + dt.WEEKDAY))
+        .setHeader(new CardHeader({}))
         .addSection(sectionOne)
         .build();
 }
