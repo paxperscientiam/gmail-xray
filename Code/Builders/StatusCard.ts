@@ -1,13 +1,13 @@
 function StatusCard() {
     var dt = new dateArray();
     var sectionOne = CardService.newCardSection()
-        .setHeader("section one")
+        .setHeader("Weather")
         .addWidget(WidgetHandler("balls"));
 
     var calData =  new CalendarHandler();
 
     var sectionTwo = CardService.newCardSection()
-        .setHeader("What's up?")
+        .setHeader("Upcoming events")
         .addWidget(WidgetHandler(calData.name))
         .addWidget(CardService.newTextParagraph()
                    .setText(doGet("Templates/wxSection", calData)));
