@@ -9,7 +9,8 @@ function StatusCard() {
     var sectionTwo = CardService.newCardSection()
         .setHeader("What's up?")
         .addWidget(WidgetHandler(calData.name))
-        .addWidget(WidgetHandler(calData.eventsToday[0].getTitle()))
+        .addWidget(CardService.newTextParagraph()
+                   .setText(doGet("Templates/wxSection", calData)));
     ;
 
     return CardService.newCardBuilder()
