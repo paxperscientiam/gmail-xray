@@ -8,7 +8,9 @@ function StatusCard() {
 
     var sectionTwo = CardService.newCardSection()
         .setHeader("What's up?")
-        .addWidget(WidgetHandler(calData.name));
+        .addWidget(WidgetHandler(calData.name))
+        .addWidget(WidgetHandler(calData.eventsToday[0].getTitle()))
+    ;
 
     return CardService.newCardBuilder()
         .setName("status card")
