@@ -7,8 +7,8 @@ function StatusCard() {
     return CardService.newCardBuilder()
         .setName("status card")
         .setHeader(CardService.newCardHeader()
-                   .setTitle("title")
-                   .setSubtitle("subtitle"))
+                   .setTitle("Status center")
+                   .setSubtitle(dt.GREETING ", today is " + dt.WEEKDAY))
         .addSection(sectionOne)
         .build();
 }
