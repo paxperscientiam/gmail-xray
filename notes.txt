@@ -19,3 +19,7 @@ https://github.com/gsuitedevs/apps-script-samples/blob/master/gmail/add-ons/quic
 
 java
 http://www.sdfonlinetester.info/#
+
+
+
+https://www.weather.gov/documentation/services-web-api
