@@ -6,7 +6,9 @@ function StatusCard() {
 
     return CardService.newCardBuilder()
         .setName("status card")
-        .setHeader(new CardHeader({}))
+        .setHeader(CardService.newCardHeader()
+                   .setTitle("title")
+                   .setSubtitle("subtitle"))
         .addSection(sectionOne)
         .build();
 }
