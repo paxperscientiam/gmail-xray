@@ -7,8 +7,7 @@ function StatusCard() {
     var calData =  new CalendarHandler();
 
     var sectionTwo = CardService.newCardSection()
-        .setHeader("Upcoming events")
-        .addWidget(WidgetHandler(calData.name))
+        .setHeader("Upcoming events in your primary calendar")
         .addWidget(CardService.newTextParagraph()
                    .setText(doGet("Templates/wxSection", calData)));
     ;
