@@ -1,14 +1,10 @@
 <ul>
  <? data.eventsToday.forEach(function(event) { ?>
  <li>
-  <b><?= event.getTitle() ?>
-  </b>
+  <b><?= event.getTitle() ?></b> <?= formatTimeService(event.getStartTime()) ?> to <?= formatTimeService(event.getEndTime()) ?>
+
  </li>
  <li>
-  starts at <?= formatDateService(event.getStartTime()) ?>
- </li>
- <li>
-  starts at <?= formatDateService(event.getEndTime()) ?>
  </li>
  <? }) ?>
 </ul>
