@@ -1,6 +1,6 @@
 function CardSection(args) {
     var index = parseInt(args.index + 1);
-    var messageData = new MessageData(args.message);
+    var messageData = new MessageData(args.messages[index]);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: args.count,
