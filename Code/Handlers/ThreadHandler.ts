@@ -8,8 +8,8 @@ function ThreadData(thread) {
     this.link = thread.getPermalink();
     //
     // first message
-    this.sender = extractEmailAddress(this.message.getFrom());
-    this.subject = this.message.getSubject();
+    this.sender = extractEmailAddress(this.firstMessage.getFrom());
+    this.subject = this.firstMessage.getSubject();
     this.lastDate = thread.getLastMessageDate().toDateString();
 
     // last message
