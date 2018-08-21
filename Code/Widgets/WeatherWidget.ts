@@ -17,6 +17,5 @@ function WeatherWidget() {
 
     var wx = data.properties.presentWeather[0].weather;
 
-    //return CardService.newTextParagraph().setText(wx);
-    return "Stay tuned!";
+    return CardService.newTextParagraph().setText("Stay tuned!");
 }
