@@ -1,10 +1,10 @@
 function StatusCard() {
-    var dt = new dateArray();
+    const dt = new dateArray();
     // var sectionOne = CardService.newCardSection()
     //     .setHeader("Weather")
     //     .addWidget(WeatherWidget());
 
-    var sectionTwo = CardService.newCardSection()
+    const sectionTwo = CardService.newCardSection()
         .setHeader("Upcoming events in your primary calendar")
         .addWidget(CalendarWidget());
 

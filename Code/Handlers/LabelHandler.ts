@@ -1,4 +1,3 @@
-function LabelHandler () {
+function LabelHandler() {
 //
-
 }

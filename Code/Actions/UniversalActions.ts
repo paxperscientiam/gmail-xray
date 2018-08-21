@@ -1,10 +1,10 @@
 
 function openLinkUniversalAction() {
-    var cardBuilder1 = CardService.newCardBuilder()
+    const cardBuilder1 = CardService.newCardBuilder()
         .setHeader(CardService.newCardHeader()
                    .setTitle("ROFL"));
 
-    var cardBuilder2 = CardService.newCardBuilder();
+    const cardBuilder2 = CardService.newCardBuilder();
     // Finish building the cards ...
 
     // A universal action that shows two static cards.

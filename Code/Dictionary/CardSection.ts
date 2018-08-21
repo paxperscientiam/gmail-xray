@@ -1,25 +1,25 @@
 function CardSection(args) {
-    var index = parseInt(args.index + 1);
+    const index = parseInt(args.index + 1);
 
-    var threadData = args.threadData;
+    const threadData = args.threadData;
 
-    var messageData = new MessageData(args.message);
+    const messageData = new MessageData(args.message);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: threadData.count,
-            index: index,
+            index,
             msgAge: messageData.age,
         }))
         .addWidget(getWidget("EMAIL_PRIORITY", {threadData, messageData}))
         .addWidget(getWidget("EMAIL_BODY", {threadData, messageData}))
-        .addWidget(getWidget("EMAIL_RECEIPT",{threadData, messageData}))
+        .addWidget(getWidget("EMAIL_RECEIPT", {threadData, messageData}))
         .addWidget(getWidget("THREAD_LINK", {threadData, messageData}));
 
     return this.section;
 }
 
 function CardSectionSecondary() {
-    var widgetDonate = CardService.newTextParagraph()
+    const widgetDonate = CardService.newTextParagraph()
         .setText(doGet("Templates/donationContent", {}));
 
     this.section = CardService.newCardSection()
@@ -33,7 +33,7 @@ function CardSectionActionCenter() {
     const action = CardService.newAction()
         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
-    var buttonSet = CardService.newButtonSet()
+    const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
                    .setOnClickOpenLinkAction(action))

@@ -1,9 +1,9 @@
 function WeatherWidget() {
     //   var query = '';
-    var url = "https://api.weather.gov/stations/KMKC/observations/current";
+    const url = "https://api.weather.gov/stations/KMKC/observations/current";
     // + '?sort=stars'
     // + '&q=' + encodeURIComponent(query);
-    var params = {
+    const params = {
         headers: {
             "Accept": "application/vnd.noaa.dwml+xml;version=1",
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0",
@@ -11,11 +11,14 @@ function WeatherWidget() {
         muteHttpExceptions: true,
     };
 
-    var response = UrlFetchApp.fetch(url, params);
-    var json = response.getContentText();
-    var data = JSON.parse(json);
+    try {
+        const response = UrlFetchApp.fetch(url, params);
+        const json = response.getContentText();
+        const data = JSON.parse(json);
 
-    var wx = Math.round(data.properties.temperature.value);
-
-    return CardService.newTextParagraph().setText(wx);
+        const wx = Math.round(data.properties.temperature.value);
+        return CardService.newTextParagraph().setText(wx);
+    } catch (e) {
+        return CardService.newTextParagraph().setText("Check back later :(");
+    }
 }

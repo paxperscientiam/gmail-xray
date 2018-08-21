@@ -7,15 +7,15 @@
  */
 function extractSenderData(messageId) {
     // Use the Gmail service to access information about this message.
-    var mail = GmailApp.getMessageById(messageId);
-    var threadId = mail.getThread().getId();
-    var senderEmail = extractEmailAddress(mail.getFrom());
+    const mail = GmailApp.getMessageById(messageId);
+    const threadId = mail.getThread().getId();
+    const senderEmail = extractEmailAddress(mail.getFrom());
 
-    var recentThreads = GmailApp.search("from:" + senderEmail);
-    var recents = [];
+    const recentThreads = GmailApp.search("from:" + senderEmail);
+    const recents = [];
 
     // Retrieve information about up to 5 recent threads from the same sender.
-    recentThreads.slice(0,MAX_THREADS).forEach(function(thread) {
+    recentThreads.slice(0, MAX_THREADS).forEach(function(thread) {
         if (thread.getId() !== threadId && ! thread.isInChats()) {
             recents.push({
                 count: thread.getMessageCount(),
@@ -26,9 +26,9 @@ function extractSenderData(messageId) {
         }
     });
 
-    var senderData = {
-        email: senderEmail,
-        recents: recents
+    const senderData = {
+        recents,
+        senderEmail,
     };
 
     return senderData;

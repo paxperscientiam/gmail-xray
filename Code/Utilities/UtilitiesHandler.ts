@@ -1,20 +1,20 @@
 // -*- mode: typescript -*-
 
 function formatDateService(date) {
-    var timeZone = props.getProperty("TIME_ZONE");
-    var date = new Date(date);
+    const timeZone = props.getProperty("TIME_ZONE");
+    const date = new Date(date);
     return Utilities.formatDate(date, timeZone, "E, d MMM y");
 }
 
 function formatTimeService(date) {
-    var timeZone = props.getProperty("TIME_ZONE");
-    var date = new Date(date);
+    const timeZone = props.getProperty("TIME_ZONE");
+    const date = new Date(date);
     return Utilities.formatDate(date, timeZone, "h:mm a");
 }
 
 function dateArray() {
-    var timeZone = props.getProperty("TIME_ZONE");
-    var date = new Date();
+    const timeZone = props.getProperty("TIME_ZONE");
+    const date = new Date();
 
     this.HOUR = Utilities.formatDate(date, timeZone, "H");
     this.WEEKDAY = Utilities.formatDate(date, timeZone, "EEEE");
@@ -33,13 +33,13 @@ function dateArray() {
 
 function timeConversion(millisec) {
     // https://stackoverflow.com/a/32180863
-    var seconds = Math.round((millisec / 1000).toFixed(1));
+    const seconds = Math.round((millisec / 1000).toFixed(1));
 
-    var minutes = Math.round((millisec / (1000 * 60)).toFixed(1));
+    const minutes = Math.round((millisec / (1000 * 60)).toFixed(1));
 
-    var hours = Math.round((millisec / (1000 * 60 * 60)).toFixed(1));
+    const hours = Math.round((millisec / (1000 * 60 * 60)).toFixed(1));
 
-    var days = Math.round((millisec / (1000 * 60 * 60 * 24)).toFixed(1));
+    const days = Math.round((millisec / (1000 * 60 * 60 * 24)).toFixed(1));
 
     if (seconds < 60) {
         return seconds + " Sec";
@@ -53,10 +53,10 @@ function timeConversion(millisec) {
 }
 
 function formatAge(date) {
-    var msgDate = new Date(date).getTime();
-    var todayDate = Date.now(); // milliseconds
+    const msgDate = new Date(date).getTime();
+    const todayDate = Date.now(); // milliseconds
 
-    var age = timeConversion(todayDate - msgDate);
+    const age = timeConversion(todayDate - msgDate);
 
     return age;
 }
@@ -73,7 +73,9 @@ function mergeObjs() {
     for (i = 1; i < arguments.length; i++) {
         const src = arguments[i];
         for (const key in src) {
-            if (src.hasOwnProperty(key)) { obj[key] = src[key] };
+            if (src.hasOwnProperty(key)) {
+                obj[key] = src[key];
+            }
         }
     }
     return obj;

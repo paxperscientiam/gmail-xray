@@ -7,9 +7,9 @@
  *  @return {String} Only the email address.
  */
 function extractEmailAddress(sender) {
-  var regex = /\<([^\@]+\@[^\>]+)\>/;
-  var email = sender;  // Default to using the whole string.
-  var match = regex.exec(sender);
+  const regex = /\<([^\@]+\@[^\>]+)\>/;
+  const email = sender;  // Default to using the whole string.
+  const match = regex.exec(sender);
   if (match) {
     email = match[1];
   }

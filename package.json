@@ -1,3 +1,6 @@
 {
-  "dependencies": {}
+    "dependencies": {},
+    "scripts": {
+        "lint": "tslint ./Code/**/*.ts"
+    }
 }
