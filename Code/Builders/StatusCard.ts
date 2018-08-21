@@ -4,13 +4,9 @@ function StatusCard() {
         .setHeader("Weather")
         .addWidget(WidgetHandler("balls"));
 
-    var calData =  new CalendarHandler();
-
     var sectionTwo = CardService.newCardSection()
         .setHeader("Upcoming events in your primary calendar")
-        .addWidget(CardService.newTextParagraph()
-                   .setText(doGet("Templates/wxSection", calData)));
-    ;
+        .addWidget(CalendarWidget());
 
     return CardService.newCardBuilder()
         .setName("status card")

@@ -11,10 +11,6 @@ function buildAddOn(e) {
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
     var cards = [];
 
-    var cardSection = CardService.newCardSection()
-        .setHeader("Section header")
-        .addWidget(CalendarWidget());
-
     cards.push(StatusCard());
 
     var threadData = {};
