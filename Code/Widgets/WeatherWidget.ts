@@ -15,13 +15,7 @@ function WeatherWidget() {
     var json = response.getContentText();
     var data = JSON.parse(json);
 
-    Logger.log(data.city);
+    var wx = data.properties.presentWeather[0].weather;
 
-    // var response = UrlFetchApp.fetch();
-    // Logger.log(response.properties.presentWeather[0].weather);
-
-    // return CardService.newTextParagraph().setText(
-    //     "These widgets are display-only. " +
-    //         'A text paragraph can have multiple lines and ' +
- //           'formatting.');
+    return CardService.newTextParagraph().setText(wx);
 }
