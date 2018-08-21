@@ -12,7 +12,10 @@ function WeatherWidget() {
     };
 
     var response = UrlFetchApp.fetch(url, params);
-    Logger.log(response.getContentText());
+    var json = response.getContentText();
+    var data = JSON.parse(json);
+
+    Logger.log(data.city);
 
     // var response = UrlFetchApp.fetch();
     // Logger.log(response.properties.presentWeather[0].weather);
