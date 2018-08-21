@@ -7,3 +7,7 @@ function CalendarHandler() {
     this.eventsToday = this.calendar.getEventsForDay(today);
 
 }
+
+function CalendarEventHandler(event) {
+    //
+}
