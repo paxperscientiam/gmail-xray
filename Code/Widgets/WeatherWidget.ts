@@ -11,14 +11,14 @@ function WeatherWidget() {
         muteHttpExceptions: true,
     };
 
-    var response = UrlFetchApp.fetch(url, headers);
+    var response = UrlFetchApp.fetch(url, params);
     Logger.log(response.getContentText());
 
-    var response = UrlFetchApp.fetch();
-    Logger.log(response.properties.presentWeather[0].weather);
+    // var response = UrlFetchApp.fetch();
+    // Logger.log(response.properties.presentWeather[0].weather);
 
-    return CardService.newTextParagraph().setText(
-        "These widgets are display-only. " +
-            'A text paragraph can have multiple lines and ' +
-            'formatting.');
+    // return CardService.newTextParagraph().setText(
+    //     "These widgets are display-only. " +
+    //         'A text paragraph can have multiple lines and ' +
+ //           'formatting.');
 }
