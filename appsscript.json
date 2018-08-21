@@ -1,4 +1,5 @@
 {
+    "oauthScopes":["https://www.googleapis.com/auth/script.locale"],
   "urlFetchWhitelist":[
     "https://flattr.com/@paxperscientiam",
     "https://cash.me/$paxperscientiam",
