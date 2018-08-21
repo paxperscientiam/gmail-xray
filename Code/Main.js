@@ -15,6 +15,11 @@ function buildAddOn(e) {
 
     var threadData = {};
 
+    var x = new ThreadData(threads[0]);
+    var y = x[0];
+    Logger.log(y);
+
+    return
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
         threadData = new ThreadData(threads[i]); // a thread from set of threads
         var messages = threadData.messages; // a message from set of messages in a thread
