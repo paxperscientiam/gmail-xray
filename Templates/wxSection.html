@@ -1,7 +1,14 @@
 <ul>
  <? data.eventsToday.forEach(function(event) { ?>
- <li><b><?= event.getTitle() ?></b></li>
- <li>&nbps;&nbsp;starts at <?= formatDateService(event.getStartTime()) ?></li>
- <li>starts at <?= formatDateService(event.getEndTime()) ?></li>
+ <li>
+  <b><?= event.getTitle() ?>
+  </b>
+ </li>
+ <li>
+  starts at <?= formatDateService(event.getStartTime()) ?>
+ </li>
+ <li>
+  starts at <?= formatDateService(event.getEndTime()) ?>
+ </li>
  <? }) ?>
 </ul>
