@@ -2,7 +2,7 @@ function StatusCard() {
     var dt = new dateArray();
     var sectionOne = CardService.newCardSection()
         .setHeader("Weather")
-        .addWidget(WidgetHandler("balls"));
+        .addWidget(WeatherWidget());
 
     var sectionTwo = CardService.newCardSection()
         .setHeader("Upcoming events in your primary calendar")
