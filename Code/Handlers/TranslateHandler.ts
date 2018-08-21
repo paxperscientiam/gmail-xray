@@ -1,8 +1,8 @@
 function Translate(text) {
     const lang = Session.getActiveUserLocale();
-    if (lang !== "en") {
-        return LanguageApp.translate(text, "en", lang);
-    } else {
+    if (lang === "en") {
         return text;
+    } else {
+        return LanguageApp.translate(text, "en", lang);
     }
 }
