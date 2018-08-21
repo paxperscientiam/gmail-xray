@@ -6,7 +6,7 @@ function CardSection(args) {
     var messageData = new MessageData(args.message);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
-            count: args.thread.count,
+            count: threadData.count,
             index: index,
             msgAge: messageData.age,
         }))
