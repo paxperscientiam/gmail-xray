@@ -15,7 +15,7 @@ function WeatherWidget() {
     var json = response.getContentText();
     var data = JSON.parse(json);
 
-    var wx = data.properties.presentWeather[0].weather;
+    var wx = Math.round(data.properties.temperature.value);
 
     return CardService.newTextParagraph().setText(wx);
 }
