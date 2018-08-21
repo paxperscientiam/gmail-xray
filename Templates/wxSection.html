@@ -1,6 +1,6 @@
 <? data.eventsToday.forEach(function(event) { ?>
 <ul>
- <b><?= event.getTitle() ?></b> <?= formatTimeService(event.getStartTime()) ?> to <?= formatTimeService(event.getEndTime()) ?>
+ <b><?= event.getTitle() ?></b> at <?= formatTimeService(event.getStartTime()) ?>
  <li>comment</li>
  <? }) ?>
 </ul>
