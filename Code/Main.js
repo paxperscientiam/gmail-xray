@@ -17,7 +17,7 @@ function buildAddOn(e) {
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
         threadData = new ThreadData(threads[i]); // a thread from set of threads
-        var message = threadData.messages; // a message from set of messages in a thread
+        var messages = threadData.messages; // a message from set of messages in a thread
 
         var threadLength = threadData.threadLength;
 
