@@ -17,7 +17,7 @@ function buildAddOn(e) {
 
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
         threadData = new ThreadData(threads[i]); // a thread from set of threads
-        var message = threadData.message[0]; // a message from set of messages in a thread
+        var message = threadData.message; // a message from set of messages in a thread
 
         var threadLength = threadData.threadLength;
 
@@ -28,7 +28,7 @@ function buildAddOn(e) {
             var Obj = mergeObjs({index: j}, threadData, message);
             var msgSection = new CardSection(Obj).setCollapsible(false);
             var actionSection = new CardSectionActionCenter();
-            card = SectionChainer(card, [msgSection, actionSection]);
+            card = SectionChainer(card, [msgSection]);
         }
 
         // this is causing errors!
