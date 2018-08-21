@@ -1,5 +1,5 @@
 function CardSection(args) {
-    const index = parseInt(args.index + 1);
+    const index = parseInt(args.index + 1, 10);
 
     const threadData = args.threadData;
 

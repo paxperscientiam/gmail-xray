@@ -15,7 +15,7 @@ function extractSenderData(messageId) {
     const recents = [];
 
     // Retrieve information about up to 5 recent threads from the same sender.
-    recentThreads.slice(0, MAX_THREADS).forEach(function(thread) {
+    recentThreads.slice(0, MAX_THREADS).forEach((thread) => {
         if (thread.getId() !== threadId && ! thread.isInChats()) {
             recents.push({
                 count: thread.getMessageCount(),
