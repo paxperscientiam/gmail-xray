@@ -7,7 +7,6 @@ function ThreadData(thread) {
     //
     this.count = thread.getMessageCount();
     this.length = this.count;
-    this.threadLength = this.count;
     //
     this.link = thread.getPermalink();
     //
