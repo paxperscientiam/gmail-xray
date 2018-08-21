@@ -1,5 +1,5 @@
 function getWidget(widgetName, args) {
-    var messageData = new MessageData(args.message);
+    var messageData = args.messageData;
 
     if (widgetName === "EMAIL_PRIORITY") {
         return WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
