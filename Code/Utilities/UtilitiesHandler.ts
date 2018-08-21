@@ -23,12 +23,11 @@ function dateArray() {
     this.TIME = Utilities.formatDate(date, timeZone, "h:mm a");
 
     if (this.HOUR >= 0 && this.HOUR < 12 ) {
-        this.GREETING = Session.getActiveUserLocale();
-            //Translate("Good morning");
+        this.GREETING = Translate("Good morning");
     } else if (this.HOUR >= 12 && this.HOUR < 18) {
-        this.GREETING = Session.getActiveUserLocale();
+        this.GREETING = Translate("Good afternoon");
     } else {
-        this.GREETING = Session.getActiveUserLocale();
+        this.GREETING = Translate("Good evening");
     }
 }
 
