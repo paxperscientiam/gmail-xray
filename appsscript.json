@@ -1,7 +1,4 @@
 {
-    "oauthScopes":["https://www.googleapis.com/auth/script.locale",
-                   "https://www.googleapis.com/auth/gmail.addons.execute"
-                  ],
   "urlFetchWhitelist":[
     "https://flattr.com/@paxperscientiam",
     "https://cash.me/$paxperscientiam",
