@@ -1,40 +1,40 @@
 {
-  "urlFetchWhitelist":[
-    "https://flattr.com/@paxperscientiam",
-    "https://cash.me/$paxperscientiam",
-    "https://github.com/search",
-    "https://paxperscientiam.com/",
-      "https://www.buymeacoffee.com/paxperscientiam",
-      "https://api.weather.gov/"
-  ],
-  "gmail": {
-    "name": "Email X-Ray",
-    "useLocaleFromApp": true,
-    "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
-    "contextualTriggers": [{
-      "unconditional": {
-      },
-      "onTriggerFunction": "buildAddOn"
-    }],
-    "openLinkUrlPrefixes": [
-      "https://mail.google.com/",
-      "https://flattr.com/@paxperscientiam",
-      "https://cash.me/$paxperscientiam",
-      "https://github.com/search",
-      "https://paxperscientiam.com/",
+    "urlFetchWhitelist":[
+        "https://flattr.com/@paxperscientiam",
+        "https://cash.me/$paxperscientiam",
+        "https://github.com/search",
+        "https://paxperscientiam.com/",
         "https://www.buymeacoffee.com/paxperscientiam",
-        "https://www.google.org/",
         "https://api.weather.gov/"
     ],
-    "primaryColor": "#935499",
-    "secondaryColor": "#6c71c4",
-    "version": "TRUSTED_TESTER_V2",
-      "universalActions": [{
-          "text": "Project site",
-          "openLink": "https://github.com/paxperscientiam/gmail-xray"
-      },{
-          "text": "Do stuff",
-          "runFunction": "openLinkUniversalAction"
-    }]
-  }
+    "gmail": {
+        "name": "Email X-Ray",
+        "useLocaleFromApp": true,
+        "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
+        "contextualTriggers": [{
+            "unconditional": {
+            },
+            "onTriggerFunction": "buildAddOn"
+        }],
+        "openLinkUrlPrefixes": [
+            "https://mail.google.com/",
+            "https://flattr.com/@paxperscientiam",
+            "https://cash.me/$paxperscientiam",
+            "https://github.com/search",
+            "https://paxperscientiam.com/",
+            "https://www.buymeacoffee.com/paxperscientiam",
+            "https://www.google.org/",
+            "https://api.weather.gov/"
+        ],
+        "primaryColor": "#935499",
+        "secondaryColor": "#6c71c4",
+        "version": "TRUSTED_TESTER_V2",
+        "universalActions": [{
+            "text": "Project site",
+            "openLink": "https://github.com/paxperscientiam/gmail-xray"
+        },{
+            "text": "Do stuff",
+            "runFunction": "openLinkUniversalAction"
+        }]
+    }
 }
