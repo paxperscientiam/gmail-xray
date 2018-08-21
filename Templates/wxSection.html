@@ -1,5 +1,6 @@
 <ul>
  <? data.eventsToday.forEach(function(event) { ?>
  <li><b><?= event.getTitle() ?></b></li>
+ <li>starts at <?= formatDateService(event.getStartTime()) ?></li>
  <? }) ?>
 </ul>
