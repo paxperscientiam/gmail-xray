@@ -1,5 +1,6 @@
 function getWidget(widgetName, args) {
     var messageData = args.messageData;
+    var threadData = args.threadData;
 
     if (widgetName === "EMAIL_PRIORITY") {
         return WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
@@ -30,9 +31,9 @@ function getWidget(widgetName, args) {
         return  CardService
             .newButtonSet()
             .addButton(CardService.newTextButton()
-                       .setText("Open Thread" + " (" + args.count + ") ↗️" )
+                       .setText("Open Thread" + " (" + threadData.count + ") ↗️" )
                        .setOpenLink(CardService.newOpenLink()
-                                    .setUrl(args.link)
+                                    .setUrl(threadData.link)
                                     .setOpenAs(CardService.OpenAs.FULL_SIZE)
                                     .setOnClose(CardService.OnClose.NOTHING)));
     }
