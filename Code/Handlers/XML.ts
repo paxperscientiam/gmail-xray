@@ -1,16 +1,3 @@
-
-// function doGet() {
-//   var html = UrlFetchApp.fetch('http://en.wikipedia.org/wiki/Document_Object_Model').getContentText();
-//   var doc = XmlService.parse(html);
-//   var html = doc.getRootElement();
-//   var menu = getElementsByClassName(html, 'vertical-navbox nowraplinks')[0];
-//   var output = '';
-//   var linksInMenu = getElementsByTagName(menu, 'a');
-//   for(i in linksInMenu) output+= XmlService.getRawFormat().format(linksInMenu[i])+'<br>';
-//   return HtmlService.createHtmlOutput(output);
-// }
-
-
 function getElementById(element, idToFind) {
     var descendants = element.getDescendants();
     for(i in descendants) {
