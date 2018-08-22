@@ -4,6 +4,7 @@ function CardSection(args) {
     const threadData = args.threadData;
 
     const messageData = new MessageData(args.message);
+    Logger.log(messageData.isPriority);
     this.section = CardService.newCardSection()
         .setHeader(doGet("Templates/sectionHeader", {
             count: threadData.count,

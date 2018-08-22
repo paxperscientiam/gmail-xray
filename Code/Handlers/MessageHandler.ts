@@ -16,6 +16,4 @@ function MessageData(message) {
 
     // this gets me the HTML as pure text
     this.htmlBody = message.getBody();
-
-
 }
