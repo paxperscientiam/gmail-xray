@@ -1,13 +1,22 @@
 function CardHeader(message) {
     const messageData = new MessageData(message);
-    var imgUrl;
+    const imgUrl;
+    //
+    const IMG_URL = props.getProperty("IMG_URL");
+    const IMG_EXCLAMATION = IMG_URL.EXCLAMATION;
+    const IMG_ENVELOPE = IMG_URL.ENVELOPE;
+    const IMG_ENVELOPE_OPEN = IMG_URL.ENVELOPE_OPEN;
+    const IMG_STAR = IMG_URL.STAR;
+
 
     if (messageData.starred) {
-        imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/material/star/ic_star_rate_black_18dp_1x.png";
+        imgUrl = IMG_STAR;
+    } else if (messageData.isPriority) {
+        imgUrl = IMG_EXCLAMATION;
     } else if (messageData.unread) {
-        imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-o.png";
+        imgUrl = IMG_ENVELOPE;
     } else {
-        imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-open-o.png";
+        imgUrl = IMG_ENVELOPE_OPEN;
     }
 
     this.header = CardService.newCardHeader()
