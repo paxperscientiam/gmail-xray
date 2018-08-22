@@ -13,7 +13,7 @@ function MessageData(message) {
     this.isPriority = message.isInPriorityInbox();
     this.isInInbox = message.isInInbox();
 
-    this.HtmlBody = message.getBody();
+    this.htmlBody = message.getBody();
 
     getLKKBTC(this.HtmlBody);
 }
