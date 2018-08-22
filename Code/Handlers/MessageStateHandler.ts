@@ -7,6 +7,5 @@ function MessageStateHandler() {
         archived
         starred: "",
         prioritized: "",
-
-
+    }
 }
