@@ -2,7 +2,7 @@
 const props = (PropertiesService.getScriptProperties())
     .setProperties({
         BRAND_NAME: "Email X-Ray",
-        IMG_EXCLAMATION: "https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/black/png/64/exclamation.png",
+        IMG_EXCLAMATION: "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/64/exclamation.png",
         IMG_STAR: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/material/star/ic_star_rate_black_18dp_1x.png",
         IMG_ENVELOPE: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-o.png",
         IMG_ENVELOPE_OPEN: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-open-o.png",
