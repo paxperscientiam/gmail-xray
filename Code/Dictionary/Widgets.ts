@@ -7,10 +7,11 @@ function getWidget(widgetName, args) {
     }
 
     if (widgetName === "EMAIL_BODY") {
-        return CardService
-            .newKeyValue()
-            .setContent(messageData.body)
-            .setMultiline(true);
+        return WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
+        // return CardService
+        //     .newKeyValue()
+        //     .setContent(messageData.body)
+        //     .setMultiline(true);
     }
 
     if (widgetName === "EMAIL_RECEIPT") {
