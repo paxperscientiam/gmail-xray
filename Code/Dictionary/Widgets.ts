@@ -2,8 +2,12 @@ function getWidget(widgetName, args) {
     const messageData = args.messageData;
     const threadData = args.threadData;
 
-    if (widgetName === "EMAIL_PRIORITY") {
-        return WidgetHandler(doGet("Templates/paragraph", messageData));
+    if (widgetName === "EMAIL_STARRED") {
+        // return WidgetHandler(doGet("Templates/paragraph", messageData));
+        return  CardService.newKeyValue()
+            .setIcon(CardService.Icon.STAR)
+            .setContent("OMG");
+
     }
 
     if (widgetName === "EMAIL_BODY") {
