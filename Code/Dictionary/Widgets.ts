@@ -4,9 +4,10 @@ function getWidget(widgetName, args) {
 
     if (widgetName === "EMAIL_STARRED") {
         // return WidgetHandler(doGet("Templates/paragraph", messageData));
-        return  CardService.newKeyValue()
+        return CardService.newKeyValue()
             .setIcon(CardService.Icon.STAR)
-            .setContent("OMG");
+            .setContent("OMG")
+            .setMultiline(true)
 
     }
 
