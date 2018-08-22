@@ -7,7 +7,7 @@ function getWidget(widgetName, args) {
     }
 
     if (widgetName === "EMAIL_BODY") {
-        return WidgetHandler(doGet("Templates/paragraph", messageData));
+        return WidgetHandler(doGet("Templates/body", messageData));
         // return CardService
         //     .newKeyValue()
         //     .setContent(messageData.body)
