@@ -3,10 +3,10 @@ function CardHeader(message) {
     const imgUrl;
     //
     const IMG_URL = props.getProperty("IMG_URL");
-    const IMG_EXCLAMATION = IMG_URL.EXCLAMATION;
-    const IMG_ENVELOPE = IMG_URL.ENVELOPE;
-    const IMG_ENVELOPE_OPEN = IMG_URL.ENVELOPE_OPEN;
-    const IMG_STAR = IMG_URL.STAR;
+    const IMG_EXCLAMATION = props.getProperty("IMG_EXCLAMATION");
+    const IMG_ENVELOPE = props.getProperty("IMG_ENVELOPE");
+    const IMG_ENVELOPE_OPEN = props.getProperty("IMG_ENVELOPE_OPEN");
+    const IMG_STAR = props.getProperty("IMG_STAR");
 
 
     if (messageData.starred) {
