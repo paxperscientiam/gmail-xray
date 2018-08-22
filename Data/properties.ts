@@ -2,10 +2,12 @@
 const props = (PropertiesService.getScriptProperties())
     .setProperties({
         BRAND_NAME: "Email X-Ray",
-        IMG_EXCLAMATION: "https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/black/png/64/exclamation.png",
-        IMG_STAR: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/material/star/ic_star_rate_black_18dp_1x.png",
-        IMG_ENVELOPE: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-o.png",
-        IMG_ENVELOPE_OPEN: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-open-o.png",
+        //
+        IMG_EXCLAMATION: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/332f172e7b729d48ea0c61e111b4926d99550833/Img/exclamation-circle_64.png",
+        IMG_STAR: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/332f172e7b729d48ea0c61e111b4926d99550833/Img/star-o_64.png",
+        IMG_ENVELOPE: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/332f172e7b729d48ea0c61e111b4926d99550833/Img/envelope-o_64.png",
+        IMG_ENVELOPE_OPEN: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/332f172e7b729d48ea0c61e111b4926d99550833/Img/envelope-open-o_64.png",
+        //
         MAILBOX_QUERY: "in:inbox and is:starred and is:unread",
         MAX_THREADS: 10,
         MAX_THREAD_DEPTH: 10,
