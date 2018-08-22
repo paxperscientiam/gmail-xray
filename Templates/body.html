@@ -1,2 +1,23 @@
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-<?= data.htmlBody ?>
+<p>List of things:</p>
+<ul id="things">
+    <li>Loading...</li>
+</ul>
+
+<script
+src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script>
+// The code in this function runs when the page is loaded.
+$(function() {
+  google.script.run.withSuccessHandler(showThings)
+      .getLotsOfThings();
+});
+
+function showThings(things) {
+  var list = $('#things');
+  list.empty();
+  for (var i = 0; i < things.length; i++) {
+    list.append('<li>' + things[i] + '</li>');
+  }
+}
+</script>
