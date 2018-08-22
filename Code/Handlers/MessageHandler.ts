@@ -13,5 +13,8 @@ function MessageData(message) {
     this.isPriority = message.isInPriorityInbox();
     this.isInInbox = message.isInInbox();
 
+    // this gets me the HTML as pure text
     this.htmlBody = message.getBody();
+
+
 }
