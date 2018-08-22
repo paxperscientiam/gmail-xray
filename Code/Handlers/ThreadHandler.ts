@@ -3,6 +3,7 @@ function ThreadData(thread) {
 
     this.messages = thread.getMessages();
     this.firstMessage = this.messages[0];
+
     this.labels = thread.getLabels();
     //
     this.count = thread.getMessageCount();

@@ -1,8 +1,8 @@
-// -*- mode:typescript -*-
+function CardHeader(message) {
+    const messageData = new MessageData(message);
 
-function CardHeader(threadData) {
     this.header = CardService.newCardHeader()
-        .setTitle(doGet("Templates/headerTitle", threadData))
-        .setSubtitle(doGet("Templates/headerSubtitle", threadData));
+        .setTitle(doGet("Templates/headerTitle", messageData))
+        .setSubtitle(doGet("Templates/headerSubtitle", messageData));
     return this.header;
 }

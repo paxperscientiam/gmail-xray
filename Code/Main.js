@@ -22,7 +22,7 @@ function buildAddOn(e) {
         var threadLength = threadData.length;
 
         var card = CardService.newCardBuilder()
-            .setHeader(( new CardHeader(threadData) ));
+            .setHeader(( new CardHeader(messages[0]) ));
 
         for (var j = 0; j < threadLength; j++) {
             var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});

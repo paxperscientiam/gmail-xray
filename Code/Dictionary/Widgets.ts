@@ -7,7 +7,7 @@ function getWidget(widgetName, args) {
         return CardService.newKeyValue()
             .setIcon(CardService.Icon.STAR)
             .setContent("OMG")
-            .setMultiline(true)
+            .setMultiline(true);
 
     }
 
