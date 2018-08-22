@@ -17,7 +17,8 @@ function MessageData(message) {
 
 
     this.HtmlBody = message.getBody();
-    var output = HtmlService.createHtmlOutput(this.HtmlBody);
-    Logger.log(output.getMetaTags());
+    var doc = XmlService.parse(this.HtmlBody)
+//    var output = HtmlService.createHtmlOutput(this.HtmlBody);
+  //  Logger.log(output.getMetaTags());
 
 }
