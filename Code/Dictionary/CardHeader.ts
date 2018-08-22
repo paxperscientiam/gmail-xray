@@ -2,7 +2,6 @@ function CardHeader(message) {
     const messageData = new MessageData(message);
     const imgUrl;
     //
-    const IMG_URL = props.getProperty("IMG_URL");
     const IMG_EXCLAMATION = props.getProperty("IMG_EXCLAMATION");
     const IMG_ENVELOPE = props.getProperty("IMG_ENVELOPE");
     const IMG_ENVELOPE_OPEN = props.getProperty("IMG_ENVELOPE_OPEN");
