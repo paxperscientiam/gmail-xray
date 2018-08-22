@@ -5,7 +5,7 @@ function CardHeader(message) {
     if (messageData.starred) {
         imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/material/star/ic_star_rate_black_18dp_1x.png";
     } else {
-        imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/icons8-secured-letter-64.png";
+        imgUrl = "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/encharm/Font-Awesome-SVG-PNG/master/black/png/64/envelope-o.png";
     }
 
     this.header = CardService.newCardHeader()
