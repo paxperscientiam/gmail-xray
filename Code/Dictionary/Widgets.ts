@@ -3,11 +3,11 @@ function getWidget(widgetName, args) {
     const threadData = args.threadData;
 
     if (widgetName === "EMAIL_PRIORITY") {
-        return WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
+        return WidgetHandler(doGet("Templates/paragraph", messageData));
     }
 
     if (widgetName === "EMAIL_BODY") {
-        return WidgetHandler(doGet("Templates/paragraph", {md: messageData}));
+        return WidgetHandler(doGet("Templates/paragraph", messageData));
         // return CardService
         //     .newKeyValue()
         //     .setContent(messageData.body)
