@@ -14,14 +14,4 @@ function MessageData(message) {
     this.isInInbox = message.isInInbox();
 
     this.htmlBody = message.getBody();
-
-    getLKKBTC(this.HtmlBody);
-}
-
-
-function getLKKBTC(html) {
-  var searchstring = '<h2 id="mp-dyk-h2"';
-  var index = html.search(searchstring);
-  Logger.log(index);
-
 }
