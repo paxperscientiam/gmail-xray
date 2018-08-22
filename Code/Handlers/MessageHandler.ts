@@ -9,6 +9,7 @@ function MessageData(message) {
     this.body = message.getPlainBody();
 
     this.starred = message.isStarred();
+    this.unread = message.isUnread();
     this.age = formatAge(this.date);
     this.isPriority = message.isInPriorityInbox();
     this.isInInbox = message.isInInbox();
