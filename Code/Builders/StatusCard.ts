@@ -7,7 +7,10 @@ function StatusCard() {
 
     const sectionTwo = CardService.newCardSection()
         .setHeader("Upcoming events in your primary calendar")
-        .addWidget(getWidget("INPUT_MAIL_SEARCH");
+        .addWidget(getWidget("INPUT_MAIL_SEARCH"))
+        .addWidget(CardService.newTextButton()
+                   .setText('Search')
+                   .setOnClickAction(MailSearchAction());
 //        .addWidget(CalendarWidget());
 
     return CardService.newCardBuilder()

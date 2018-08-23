@@ -52,8 +52,9 @@ function getWidget(widgetName:string, args?:object) {
     if (widgetName === "INPUT_MAIL_SEARCH") {
         return  CardService.newTextInput()
             .setFieldName("INPUT_MAIL_SEARCH_KEY")
-            .setTitle("Text input title")
-            .setHint("Search mail")
+            .setMultiline(true)
+            .setTitle("Search mail")
+            .setHint("Try 'in:inbox and is:starred'")
             .setValue(DEFAULT_MAILBOX_QUERY)
     };
 }
