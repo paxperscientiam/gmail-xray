@@ -1,6 +1,9 @@
 function getWidget(widgetName:string, args?:object) {
-    const messageData = args.messageData;
-    const threadData = args.threadData;
+
+    if (args !== undefined) {
+        const messageData = args.messageData;
+        const threadData = args.threadData;
+    }
 
     const DEFAULT_MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
 
