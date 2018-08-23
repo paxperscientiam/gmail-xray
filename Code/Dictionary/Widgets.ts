@@ -2,6 +2,8 @@ function getWidget(widgetName, args) {
     const messageData = args.messageData;
     const threadData = args.threadData;
 
+    const DEFAULT_MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
+
     if (widgetName === "EMAIL_STARRED") {
         // return WidgetHandler(doGet("Templates/paragraph", messageData));
         return CardService.newKeyValue()
@@ -43,4 +45,12 @@ function getWidget(widgetName, args) {
                                     .setOpenAs(CardService.OpenAs.FULL_SIZE)
                                     .setOnClose(CardService.OnClose.NOTHING)));
     }
+
+    if (widgetName === "INPUT_MAIL_SEARCH") {
+        return  CardService.newTextInput()
+            .setFieldName("INPUT_MAIL_SEARCH_KEY")
+            .setTitle("Text input title")
+            .setHint("Search mail")
+            .setValue(DEFAULT_MAILBOX_QUERY)
+    };
 }
