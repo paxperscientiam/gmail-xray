@@ -15,9 +15,6 @@ function buildAddOn(e) {
     var cards = [];
 
 
-
-    return;
-
     cards.push(StatusCard());
 
     var threadData = {};
@@ -35,7 +32,7 @@ function buildAddOn(e) {
             var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
             var msgSection = new CardSection(Obj).setCollapsible(false);
             var actionSection = new CardSectionActionCenter();
-            card = SectionChainer(card, [msgSection, actionSection]);
+            card = ChainSections(card, [msgSection, actionSection]);
         }
 
         // this is causing errors!

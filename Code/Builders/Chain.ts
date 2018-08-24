@@ -1,4 +1,4 @@
-function SectionChainer(card, sections) {
+function ChainSections(card, sections) {
     sections.forEach((section) => {
         card.addSection(section);
     });
