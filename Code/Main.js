@@ -8,8 +8,15 @@ function buildAddOn(e) {
     var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
     var MAX_THREADS = props.getProperty("MAX_THREADS");
 
-    var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
+    var Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
+
+    var threads = Search.threads;
+
     var cards = [];
+
+
+
+    return;
 
     cards.push(StatusCard());
 
