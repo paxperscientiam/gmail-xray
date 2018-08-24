@@ -1,5 +1,6 @@
 function getWidget(widgetName:string, args?:object) {
 
+
     if (args !== undefined) {
         const messageData = args.messageData;
         const threadData = args.threadData;
