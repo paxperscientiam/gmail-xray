@@ -22,7 +22,7 @@ function StatusCard() {
                    .setText('Search')
                    .setOnClickAction(MailSearchAction(card)));
 
-    card
+    return card
         .addSection(sectionTwo)
         .build();
 
