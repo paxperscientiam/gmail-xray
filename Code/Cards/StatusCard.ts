@@ -17,7 +17,7 @@ function StatusCard() {
                    .setOnClickAction(MailSearchAction(card)));
 
     return card
-        .addSection(sectionTwo)
-           .build();
+        //.addSection(sectionTwo)
+        .build();
 
 }
