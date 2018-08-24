@@ -7,6 +7,6 @@ function MailSearchAction() {
 
 function MailSearchButtonHandler(e) {
    // GmailApp.search(
-    Logger.log("SEARCHING!!! "+ e);
+    Logger.log(e);
 
 }
