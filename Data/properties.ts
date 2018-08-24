@@ -10,7 +10,7 @@ const props = (PropertiesService.getScriptProperties())
         IMG_STAR_EXCLAMATION: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/1bfa288678ca5a6826c474102b1d317abd89282c/Img/star%2Bexclamation.png",
         IMG_BARS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/bars_64.png",
         //
-        MAILBOX_QUERY: "in:inbox",
+        MAILBOX_QUERY: "in:inbox and newer_than:10d",
         MAX_THREADS: 20,
         MAX_THREAD_DEPTH: 10,
         TIME_ZONE: "GMT-4",
