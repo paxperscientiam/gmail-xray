@@ -11,8 +11,9 @@ function SearchResults(query, args) {
     Logger.log(options);
 
     this.threads = GmailApp.search(query,
-                                  options.startingThread,
-                                  options.endingThread);
+                                   options.startingThread,
+                                   options.endingThread);
+
 
 
 
