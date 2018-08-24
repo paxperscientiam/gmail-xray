@@ -14,28 +14,28 @@ function buildAddOn(e) {
 
     var cards = [];
 
-
     cards.push(StatusCard());
     //
-    //    for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-    //         var threadData = new ThreadData(threads[i]); // a thread from set of threads
-    //         var messages = threadData.messages; // a message from set of messages in a thread
+    for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
+        var threadData = new ThreadData(threads[i]); // a thread from set of threads
+        var messages = threadData.messages; // a message from set of messages in a thread
 
-    //         var threadCount = threadData.length;
+        var threadCount = threadData.length;
 
-    //         var card = CardService.newCardBuilder()
-    //             .setHeader(( new CardHeader(messages[0]) ));
+        var card = CardService.newCardBuilder()
+            .setHeader(( new CardHeader(messages[0]) ));
 
-    //         for (var j = 0; j < threadCount; j++) {
-    //             var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
-    //             var msgSection = new CardSection(Obj).setCollapsible(false);
-    //             var actionSection = new CardSectionActionCenter();
-    //             cards.push(ChainSections(card, [msgSection, actionSection]));
-    //         }
-    //         cards.push(card.build());
-    //     }
+        for (var j = 0; j < threadCount; j++) {
+            var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
+            var msgSection = new CardSection(Obj).setCollapsible(false);
+            var actionSection = new CardSectionActionCenter();
+            cards.push(ChainSections(card, [msgSection, actionSection]));
+        }
+        cards.push(card.build());
+    }
     return cards;
 }
+
 
 function testing() {
 
