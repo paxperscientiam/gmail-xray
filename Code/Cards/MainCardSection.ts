@@ -11,7 +11,6 @@ function CardSection(args) {
             index,
             msgAge: messageData.age,
         }))
-        .addWidget(getWidget("EMAIL_STARRED", {threadData, messageData}))
         .addWidget(getWidget("EMAIL_RECEIPT", {threadData, messageData}))
         .addWidget(getWidget("EMAIL_BODY", {threadData, messageData}))
         .addWidget(getWidget("THREAD_LINK", {threadData, messageData}));
