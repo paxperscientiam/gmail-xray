@@ -41,9 +41,7 @@ function CardSectionActionCenter() {
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
-                   .setComposeAction(composeAction, CardService.ComposedEmailType.STANDALONE_DRAFT);
-
-
+                   .setComposeAction(composeAction, CardService.ComposedEmailType.STANDALONE_DRAFT))
         .addButton(CardService.newTextButton()
                    .setText("Reply all")
                    .setOnClickOpenLinkAction(action));

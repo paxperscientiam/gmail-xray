@@ -1,4 +1,7 @@
-function MailSearchAction() {
+function MailSearchAction(card) {
+    Logger.log(card);
+
+
     return CardService
         .newAction()
         .setFunctionName('MailSearchButtonHandler');

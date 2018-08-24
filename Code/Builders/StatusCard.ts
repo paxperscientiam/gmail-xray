@@ -6,7 +6,7 @@ function StatusCard() {
     //     .addWidget(WeatherWidget());
 
 
-//        .addWidget(CalendarWidget());
+    //        .addWidget(CalendarWidget());
 
     const card = CardService.newCardBuilder()
         .setName("status card")
@@ -22,7 +22,7 @@ function StatusCard() {
                    .setText('Search')
                    .setOnClickAction(MailSearchAction(card)));
 
-    const card
+    card
         .addSection(sectionTwo)
         .build();
 
