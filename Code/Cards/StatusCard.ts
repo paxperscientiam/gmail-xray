@@ -1,15 +1,9 @@
 function StatusCard() {
     const dt = new dateArray();
     const IMG_BARS = props.getProperty("IMG_BARS");
-    // var sectionOne = CardService.newCardSection()
-    //     .setHeader("Weather")
-    //     .addWidget(WeatherWidget());
-
-
-    //        .addWidget(CalendarWidget());
 
     const card = CardService.newCardBuilder()
-        .setName("status card")
+        .setName("Status Card")
         .setHeader(CardService.newCardHeader()
                    .setTitle("STATUS CENTER")
                    .setSubtitle(dt.GREETING + ", today is " + dt.WEEKDAY)
@@ -24,6 +18,6 @@ function StatusCard() {
 
     return card
         .addSection(sectionTwo)
-        .build();
+           .build();
 
 }

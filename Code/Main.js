@@ -17,33 +17,22 @@ function buildAddOn(e) {
 
     cards.push(StatusCard());
 
-    var threadData = {};
-
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-        threadData = new ThreadData(threads[i]); // a thread from set of threads
+        var threadData = new ThreadData(threads[i]); // a thread from set of threads
         var messages = threadData.messages; // a message from set of messages in a thread
 
-        var threadLength = threadData.length;
+        var threadCount = threadData.length;
 
         var card = CardService.newCardBuilder()
             .setHeader(( new CardHeader(messages[0]) ));
 
-        for (var j = 0; j < threadLength; j++) {
+        for (var j = 0; j < threadCount; j++) {
             var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
             var msgSection = new CardSection(Obj).setCollapsible(false);
             var actionSection = new CardSectionActionCenter();
-            card = ChainSections(card, [msgSection, actionSection]);
+            cards.push(ChainSections(card, [msgSection, actionSection]));
         }
-
-        // this is causing errors!
-        //      var foot = new CardSectionSecondary();
-        //    foot.setCollapsible(true);
-        //        card = SectionChainer(card, {msg: foot});
-
-        cards.push(card
-                   .setName("Card name")
-                   .build());
-
+        cards.push(card.build());
     }
     return cards;
 }
