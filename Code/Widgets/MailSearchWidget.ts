@@ -1,7 +1,7 @@
 function MailSearchWidget() {
     const DEFAULT_MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
     //
-    return  CardService.newTextInput()
+    return CardService.newTextInput()
         .setFieldName("INPUT_MAIL_SEARCH_KEY")
         .setMultiline(true)
         .setTitle("Search mail")

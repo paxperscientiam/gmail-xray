@@ -15,8 +15,8 @@ function buildAddOn(e) {
     var cards = [];
 
 
-    cards.push(StatusCard());
-
+    //  cards.push(StatusCard());
+//
     for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
         var threadData = new ThreadData(threads[i]); // a thread from set of threads
         var messages = threadData.messages; // a message from set of messages in a thread
