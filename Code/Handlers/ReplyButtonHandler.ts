@@ -1,0 +1,4 @@
+function StandAloneDraftHandler() {
+//    GmailApp.createDraft(
+
+}

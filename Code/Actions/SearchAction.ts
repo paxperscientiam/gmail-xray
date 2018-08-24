@@ -13,7 +13,5 @@ function MailSearchButtonHandler(e) {
     var MAX_THREADS = props.getProperty("MAX_THREADS");
 
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
-
-    Logger.log(threads.length);
-
+    return threads;
 }

@@ -5,21 +5,24 @@ function StatusCard() {
     //     .setHeader("Weather")
     //     .addWidget(WeatherWidget());
 
+
+//        .addWidget(CalendarWidget());
+
+    const card = CardService.newCardBuilder()
+        .setName("status card")
+        .setHeader(CardService.newCardHeader()
+                   .setTitle("STATUS CENTER")
+                   .setSubtitle(dt.GREETING + ", today is " + dt.WEEKDAY)
+                   .setImageUrl(IMG_BARS));
+
     const sectionTwo = CardService.newCardSection()
         .setHeader("Upcoming events in your primary calendar")
         .addWidget(getWidget("INPUT_MAIL_SEARCH"))
         .addWidget(CardService.newTextButton()
                    .setText('Search')
-                   .setOnClickAction(MailSearchAction());
-//        .addWidget(CalendarWidget());
+                   .setOnClickAction(MailSearchAction(card)));
 
-    return CardService.newCardBuilder()
-        .setName("status card")
-        .setHeader(CardService.newCardHeader()
-                   .setTitle("STATUS CENTER")
-                   .setSubtitle(dt.GREETING + ", today is " + dt.WEEKDAY)
-                   .setImageUrl(IMG_BARS))
-    //        .addSection(sectionOne)
+    const card
         .addSection(sectionTwo)
         .build();
 
