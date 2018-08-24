@@ -5,16 +5,6 @@ function getWidget(widgetName:string, args?:object) {
         const threadData = args.threadData;
     }
 
-
-    //     if (widgetName === "EMAIL_STARRED") {
-    //         // return WidgetHandler(doGet("Templates/paragraph", messageData));
-    //         return CardService.newKeyValue()
-    //             .setIcon(CardService.Icon.STAR)
-    //             .setContent("OMG")
-    //             .setMultiline(true);
-
-    //     }
-
     if (widgetName === "EMAIL_BODY") {
         return EmailBodyWidget(messageData);
     }
@@ -29,6 +19,7 @@ function getWidget(widgetName:string, args?:object) {
 
     if (widgetName === "THREAD_LINK") {
         return ThreadLinkWidget(threadData);
+    }
 
     if (widgetName === "INPUT_MAIL_SEARCH") {
         return MailSearchWidget();
