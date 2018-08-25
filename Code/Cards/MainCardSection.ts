@@ -32,22 +32,22 @@ function CardSectionSecondary() {
 function CardSectionActionCenter() {
     // will need encodeURI
 
-    const action = CardService.newAction()
-        .setFunctionName(["openLinkCallback", "https://www.google.com"]);
+    //     const action = CardService.newAction()
+    //         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
-//     const actionReply = CardService.newAction()
-//         .setFunctionName(["openlinkCallback", encodeURI("https://mail.google.com/mail/?view=cm&fs=1&tf=1")]);
+    //     const actionReply = CardService.newAction()
+    //         .setFunctionName(["openlinkCallback", encodeURI("https://mail.google.com/mail/?view=cm&fs=1&tf=1")]);
 
-//     var actionCompose = CardService.newAction()
-//         .setFunctionName("StandAloneDraftHandler");
+    //     var actionCompose = CardService.newAction()
+    //         .setFunctionName("StandAloneDraftHandler");
 
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
                    .setComposeAction(action, CardService.ComposedEmailType.REPLY_AS_DRAFT));
-      //   .addButton(CardService.newTextButton()
-//                    .setText("Reply all")
-//                    .setOnClickOpenLinkAction(action));
+    //   .addButton(CardService.newTextButton()
+    //                    .setText("Reply all")
+    //                    .setOnClickOpenLinkAction(action));
 
     this.section = CardService.newCardSection()
         .setHeader("Action Center")
