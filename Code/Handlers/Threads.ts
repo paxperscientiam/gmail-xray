@@ -10,6 +10,7 @@ function ThreadData(thread) {
     this.length = this.count;
     //
     this.link = thread.getPermalink();
+    this.id = thread.getId();
     //
     // first message
     this.sender = extractEmailAddress(this.firstMessage.getFrom());
