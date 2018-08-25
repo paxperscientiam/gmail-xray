@@ -29,14 +29,21 @@ function CardSectionSecondary() {
     return this.section;
 }
 
+function composeEmailCallback() {
+    var thread = GmailApp.getThreadById(e.threadId);
+    var draft = thread.createDraftReply('This is a reply');
+    return CardService.newComposeActionResponseBuilder()
+        .setGmailDraft(draft)
+        .build();
+}
+
 function CardSectionActionCenter() {
     // will need encodeURI
 
     //     const action = CardService.newAction()
-    //         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
+    //         .setFunctionName("openLinkCallback", "https://www.google.com"]);
 
-    //     const actionReply = CardService.newAction()
-    //         .setFunctionName(["openlinkCallback", encodeURI("https://mail.google.com/mail/?view=cm&fs=1&tf=1")]);
+    const actionReply = CardService.newAction().setFunctionName("composeEmailCallback");
 
     //     var actionCompose = CardService.newAction()
     //         .setFunctionName("StandAloneDraftHandler");
@@ -44,7 +51,7 @@ function CardSectionActionCenter() {
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
-                   .setComposeAction(action, CardService.ComposedEmailType.REPLY_AS_DRAFT));
+                   .setComposeAction(actionReply, CardService.ComposedEmailType.REPLY_AS_DRAFT));
     //   .addButton(CardService.newTextButton()
     //                    .setText("Reply all")
     //                    .setOnClickOpenLinkAction(action));
