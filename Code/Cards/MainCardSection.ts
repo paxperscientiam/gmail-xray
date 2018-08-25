@@ -38,9 +38,10 @@ function composeEmailCallback(e) {
 }
 
 function composeEmailNewCallback(e) {
-    return CardService.newComposeActionResponseBuilder()
-        .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
-        .build();
+    GmailApp.createDraft("recipient", "subject", "body");
+  //   return CardService.newComposeActionResponseBuilder()
+//         .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
+//         .build();
 }
 
 function CardSectionActionCenter() {
