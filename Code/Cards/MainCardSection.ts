@@ -38,7 +38,7 @@ function composeEmailCallback(e) {
 }
 
 function composeEmailNewCallback(e) {
-    GmailApp.createDraft("recipient", "subject", "body");
+    GmailApp.createDraft("recipient@yahoo.com", "subject", "body");
   //   return CardService.newComposeActionResponseBuilder()
 //         .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
 //         .build();
