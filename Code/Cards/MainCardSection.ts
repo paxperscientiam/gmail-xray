@@ -29,7 +29,7 @@ function CardSectionSecondary() {
     return this.section;
 }
 
-function composeEmailCallback() {
+function composeEmailCallback(e) {
     var thread = GmailApp.getThreadById(e.threadId);
     var draft = thread.createDraftReply('This is a reply');
     return CardService.newComposeActionResponseBuilder()
