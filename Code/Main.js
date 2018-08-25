@@ -1,4 +1,5 @@
 // -*- mode:typescript -*-
+
 function buildAddOn(e) {
     // Activate temporary Gmail add-on scopes.
     // var accessToken = e.messageMetadata.accessToken;
