@@ -38,14 +38,13 @@ function CardSectionActionCenter() {
     const actionReply = CardService.newAction()
         .setFunctionName(["openlinkCallback", encodeURI("https://mail.google.com/mail/?view=cm&fs=1&tf=1")]);
 
-    var composeAction = CardService.newAction()
-      .setFunctionName('StandAloneDraftHandler');
+    var actionCompose = CardService.newAction()
+        .setFunctionName("StandAloneDraftHandler");
 
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
-                   .setOnClickOpenLinkAction(actionReply))
-//                   .setComposeAction(composeAction, CardService.ComposedEmailType.STANDALONE_DRAFT))
+                   .setComposeAction(action, CardService.ComposedEmailType.REPLY_AS_DRAFT))
         .addButton(CardService.newTextButton()
                    .setText("Reply all")
                    .setOnClickOpenLinkAction(action));
