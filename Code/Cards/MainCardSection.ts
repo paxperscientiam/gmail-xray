@@ -37,8 +37,15 @@ function composeEmailCallback(e) {
         .build();
 }
 
+function composeEmailNewCallback(e) {
+    return CardService.newComposeActionResponseBuilder()
+        .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
+        .build();
+}
+
 function CardSectionActionCenter() {
 
+    const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
 
     //     var actionCompose = CardService.newAction()
@@ -53,7 +60,7 @@ function CardSectionActionCenter() {
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
         .addButton(CardService.newTextButton()
                    .setText("New")
-                   .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.STANDALONE_DRAFT));
+                   .setComposeAction(actionComposeNew, CardService.ComposedEmailType.STANDALONE_DRAFT));
 
     this.section = CardService.newCardSection()
         .setHeader("Action Center")
