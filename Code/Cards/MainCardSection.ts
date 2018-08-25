@@ -45,11 +45,11 @@ function composeEmailNewCallback(e) {
 //         .build();
 }
 
-function CardSectionActionCenter() {
+function CardSectionActionCenter(threadData) {
 
     const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
-    const actionReplyToSide = CardService.newAction().setFunctionName(["composeEmailCallback", args.id] );
+    const actionReplyToSide = CardService.newAction().setFunctionName(["composeEmailCallback", threadData.id] );
 
     //     var actionCompose = CardService.newAction()
     //         .setFunctionName("StandAloneDraftHandler");
