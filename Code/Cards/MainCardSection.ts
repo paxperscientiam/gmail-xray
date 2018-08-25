@@ -33,14 +33,16 @@ function CardSectionActionCenter() {
     const action = CardService.newAction()
         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
+    const actionReply = CardService.newAction()
+        .setFunctionName(["openlinkCallback", "https://mail.google.com/mail/?view=cm&fs=1&tf=1"]);
+
     var composeAction = CardService.newAction()
       .setFunctionName('StandAloneDraftHandler');
-
 
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
                    .setText("Reply")
-                   .setOnClickOpenLinkAction(action))
+                   .setOnClickOpenLinkAction(actionReply))
 //                   .setComposeAction(composeAction, CardService.ComposedEmailType.STANDALONE_DRAFT))
         .addButton(CardService.newTextButton()
                    .setText("Reply all")
