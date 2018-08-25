@@ -30,13 +30,12 @@ function buildAddOn(e) {
             var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
             var msgSection = new CardSection(Obj).setCollapsible(false);
             var actionSection = new CardSectionActionCenter();
-            let card = ChainSections(card, [msgSection, actionSection]);
+            cards.push(ChainSections(card, [msgSection, actionSection]).build());
         }
         cards.push(card.build());
     }
     return cards;
 }
-
 
 function testing() {
 
