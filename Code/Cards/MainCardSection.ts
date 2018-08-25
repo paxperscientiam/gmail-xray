@@ -38,23 +38,22 @@ function composeEmailCallback(e) {
 }
 
 function CardSectionActionCenter() {
-    // will need encodeURI
 
-    //     const action = CardService.newAction()
-    //         .setFunctionName("openLinkCallback", "https://www.google.com"]);
-
-    const actionReply = CardService.newAction().setFunctionName("composeEmailCallback");
+    const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
 
     //     var actionCompose = CardService.newAction()
     //         .setFunctionName("StandAloneDraftHandler");
 
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
-                   .setText("Reply")
-                   .setComposeAction(actionReply, CardService.ComposedEmailType.REPLY_AS_DRAFT));
-    //   .addButton(CardService.newTextButton()
-    //                    .setText("Reply all")
-    //                    .setOnClickOpenLinkAction(action));
+                   .setText("Reply that")
+                   .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
+        .addButton(CardService.newTextButton()
+                   .setText("Reply this")
+                   .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
+        .addButton(CardService.newTextButton()
+                   .setText("New")
+                   .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.STANDALONE_DRAFT));
 
     this.section = CardService.newCardSection()
         .setHeader("Action Center")
