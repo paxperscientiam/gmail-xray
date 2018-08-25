@@ -29,8 +29,8 @@ function CardSectionSecondary() {
     return this.section;
 }
 
-function composeEmailCallback(e, args) {
-    Logger.log(args.id);
+function composeEmailCallback(e) {
+    Logger.log(e);
     var thread = GmailApp.getThreadById(e.threadId);
     var draft = thread.createDraftReply('This is a reply');
     return CardService.newComposeActionResponseBuilder()
@@ -40,13 +40,13 @@ function composeEmailCallback(e, args) {
 
 function composeEmailNewCallback(e) {
     GmailApp.createDraft("recipient@yahoo.com", "subject", "body");
-  //   return CardService.newComposeActionResponseBuilder()
-//         .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
-//         .build();
+    //   return CardService.newComposeActionResponseBuilder()
+    //         .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
+    //         .build();
 }
 
 function CardSectionActionCenter(threadData) {
-
+    Logger.log(threadData);
     const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
     const actionReplyToSide = CardService.newAction().setFunctionName(["composeEmailCallback", threadData.id] );
