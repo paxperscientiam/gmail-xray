@@ -30,11 +30,13 @@ function CardSectionSecondary() {
 }
 
 function CardSectionActionCenter() {
+    // will need encodeURI
+
     const action = CardService.newAction()
         .setFunctionName(["openLinkCallback", "https://www.google.com"]);
 
     const actionReply = CardService.newAction()
-        .setFunctionName(["openlinkCallback", "https://mail.google.com/mail/?view=cm&fs=1&tf=1"]);
+        .setFunctionName(["openlinkCallback", encodeURI("https://mail.google.com/mail/?view=cm&fs=1&tf=1")]);
 
     var composeAction = CardService.newAction()
       .setFunctionName('StandAloneDraftHandler');
