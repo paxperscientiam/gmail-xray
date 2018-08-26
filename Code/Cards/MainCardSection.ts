@@ -47,6 +47,13 @@ function composeEmailNewCallback(e) {
 
 function CardSectionActionCenter(threadData) {
     Logger.log(threadData);
+
+    var composeNewButton = CardService.newImageButton()
+        .setAltText("Compose new email.")
+        .setIcon(CardService.Icon.AIRPLANE)
+        .setOpenLink(CardService.newOpenLink()
+                     .setUrl("https://airplane.com"));
+
     const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
     const actionReplyToSide = CardService.newAction().setFunctionName(["composeEmailCallback", threadData.id] );
@@ -61,8 +68,9 @@ function CardSectionActionCenter(threadData) {
         .addButton(CardService.newTextButton()
                    .setText("Reply this")
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
-        .addButton(CardService.newTextButton()
-                   .setText("New")
+        .addButton(CardService.newImageButton()
+                   .setAltText("Compose new email.")
+                   .setIcon(CardService.Icon.AIRPLANE)
                    .setComposeAction(actionComposeNew, CardService.ComposedEmailType.STANDALONE_DRAFT));
 
     this.section = CardService.newCardSection()
