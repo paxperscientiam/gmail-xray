@@ -64,7 +64,7 @@ function CardSectionActionCenter(threadData) {
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
         .addButton(CardService.newImageButton()
                    .setAltText("Compose new email.")
-                   .setImageUrl(IMG_COMPOSE_NEW)
+                   .setIcon(CardService.Icon.EMAIL)
                    .setComposeAction(actionComposeNew, CardService.ComposedEmailType.STANDALONE_DRAFT));
 
     this.section = CardService.newCardSection()
