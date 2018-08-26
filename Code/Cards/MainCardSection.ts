@@ -47,6 +47,8 @@ function composeEmailNewCallback(e) {
 
 function CardSectionActionCenter(threadData) {
     const IMG_COMPOSE_NEW = props.getProperty("IMG_COMPOSE_NEW");
+    const IMG_REPLY_THIS = props.getProperty("IMG_REPLY_THIS");
+    const IMG_REPLY_THAT = props.getProperty("IMG_REPLY_THAT");
 
     const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
@@ -57,10 +59,12 @@ function CardSectionActionCenter(threadData) {
 
     const buttonSet = CardService.newButtonSet()
         .addButton(CardService.newTextButton()
-                   .setText("Reply that")
+                   .setAltText("Reply that")
+                   .setIconUrl(IMG_REPLY_THAT)
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
         .addButton(CardService.newTextButton()
-                   .setText("Reply this")
+                   .setAltText("Reply this")
+                   .setIconUrl(IMG_REPLY_THIS)
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
         .addButton(CardService.newImageButton()
                    .setAltText("Compose new email.")
