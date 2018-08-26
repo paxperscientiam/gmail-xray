@@ -58,11 +58,11 @@ function CardSectionActionCenter(threadData) {
     //         .setFunctionName("StandAloneDraftHandler");
 
     const buttonSet = CardService.newButtonSet()
-        .addButton(CardService.newTextButton()
+        .addButton(CardService.newImageButton()
                    .setAltText("Reply that")
                    .setIconUrl(IMG_REPLY_THAT)
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
-        .addButton(CardService.newTextButton()
+        .addButton(CardService.newImageButton()
                    .setAltText("Reply this")
                    .setIconUrl(IMG_REPLY_THIS)
                    .setComposeAction(actionReplyToMain, CardService.ComposedEmailType.REPLY_AS_DRAFT))
