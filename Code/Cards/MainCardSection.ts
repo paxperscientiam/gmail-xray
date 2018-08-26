@@ -41,7 +41,7 @@ function composeEmailCallback(e) {
 function composeEmailNewCallback(e) {
     Logger.log("Composing new draft.");
     return CardService.newComposeActionResponseBuilder()
-        .setGmailDraft(GmailApp.createDraft("", "", ""))
+        .setGmailDraft(GmailApp.createDraft({}))
         .build();
 }
 
