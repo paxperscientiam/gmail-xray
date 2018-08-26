@@ -30,19 +30,19 @@ function CardSectionSecondary() {
 }
 
 function composeEmailCallback(e) {
-    Logger.log(e);
-    var thread = GmailApp.getThreadById(e.threadId);
-    var draft = thread.createDraftReply('This is a reply');
+    //    Logger.log(e);
+    const thread = GmailApp.getThreadById(e.threadId);
+    const draft = thread.createDraftReply("");
     return CardService.newComposeActionResponseBuilder()
         .setGmailDraft(draft)
         .build();
 }
 
 function composeEmailNewCallback(e) {
-    GmailApp.createDraft("recipient@yahoo.com", "subject", "body");
-    //   return CardService.newComposeActionResponseBuilder()
-    //         .setGmailDraft(GmailApp.createDraft("recipient", "subject", "body"))
-    //         .build();
+    Logger.log("Coming new draft.");
+    return CardService.newComposeActionResponseBuilder()
+        .setGmailDraft(GmailApp.createDraft("recipient@gaymore.com", "subject", "body"))
+        .build();
 }
 
 function CardSectionActionCenter(threadData) {
