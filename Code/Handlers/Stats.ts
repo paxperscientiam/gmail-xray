@@ -5,5 +5,6 @@ function StatsHandler(threads) {
         const rez = new ThreadData(thread);
         length.push(rez.count);
     });
-    Logger.log(mean(length));
+
+    this.length = mean(length);
 }
