@@ -1,6 +1,9 @@
 function StatsHandler(threads) {
+    const length = [];
+
     threads.forEach((thread) => {
-        const rez = new ThreadData(threads[0]);
-        Logger.log(rez.sender);
+        const rez = new ThreadData(thread);
+        length.push(res.count);
     });
+    Logger.log(length);
 }
