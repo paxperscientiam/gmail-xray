@@ -1,4 +1,5 @@
 function getWidget(widgetName: string, args?: object) {
+    Logger.log("getWidget " + args.threads);
 
     if (args !== undefined) {
         const messageData = args.messageData;
