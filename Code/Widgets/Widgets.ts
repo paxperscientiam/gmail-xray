@@ -1,5 +1,4 @@
 function getWidget(widgetName: string, args?: object) {
-    Logger.log("getWidget " + args.threads);
 
     if (args !== undefined) {
         const messageData = args.messageData;
@@ -28,6 +27,8 @@ function getWidget(widgetName: string, args?: object) {
     }
 
     if (widgetName === "MAIL_STATS") {
+        Logger.log("getWidget " + args.threads);
+
         return StatsWidget(threads);
     }
 }
