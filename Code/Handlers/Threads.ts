@@ -19,3 +19,10 @@ function ThreadData(thread) {
 
     // last message
 }
+
+
+function analyzeThread(threads) {
+
+
+
+}

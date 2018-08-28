@@ -1,12 +1,8 @@
 function MailSearchAction(card) {
-    Logger.log(card);
-
-
     return CardService
         .newAction()
         .setFunctionName('MailSearchButtonHandler');
 }
-
 
 function MailSearchButtonHandler(e) {
     // GmailApp.search(

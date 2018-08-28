@@ -1,9 +1,9 @@
-function getWidget(widgetName:string, args?:object) {
-
+function getWidget(widgetName: string, args?: object) {
 
     if (args !== undefined) {
         const messageData = args.messageData;
         const threadData = args.threadData;
+        const threads = args.threads;
     }
 
     if (widgetName === "EMAIL_BODY") {
@@ -24,5 +24,9 @@ function getWidget(widgetName:string, args?:object) {
 
     if (widgetName === "INPUT_MAIL_SEARCH") {
         return MailSearchWidget();
-    };
+    }
+
+    if (widgetName === "MAIL_STATS") {
+        return StatsWidget(threads);
+    }
 }

@@ -1,4 +1,4 @@
-function StatusCard() {
+function StatusCard(args) {
     const dt = new dateArray();
     const IMG_BARS = props.getProperty("IMG_BARS");
 
@@ -9,12 +9,16 @@ function StatusCard() {
                    .setSubtitle(dt.GREETING + ", today is " + dt.WEEKDAY)
                    .setImageUrl(IMG_BARS));
 
-    const sectionTwo = CardService.newCardSection()
-        .setHeader("Upcoming events in your primary calendar")
+    const sectionMailSearch = CardService.newCardSection()
+        .setHeader("Mail search")
         .addWidget(getWidget("INPUT_MAIL_SEARCH"))
         .addWidget(CardService.newTextButton()
-                   .setText('Search')
+                   .setText("Search")
                    .setOnClickAction(MailSearchAction(card)));
+
+    const mailStats = CardService.newCardSection()
+        .setHeader("Mail stats")
+        .addWidget(getWidget("MAIL_STATS", args.threads));
 
     return card
         .addSection(sectionTwo)

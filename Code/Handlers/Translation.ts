@@ -7,7 +7,7 @@ function Translate(text) {
             return LanguageApp.translate(text, "en_US", lang);
         }
     } catch (e) {
-        Logger.log(e);
+        //
     }
     return text;
 }
