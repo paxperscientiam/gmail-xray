@@ -9,6 +9,7 @@ function StatusCard(args) {
                    .setSubtitle(dt.GREETING + ", today is " + dt.WEEKDAY)
                    .setImageUrl(IMG_BARS));
 
+    Logger.log("thread object" + args.threads);
     const sectionMailSearch = CardService.newCardSection()
         .setHeader("Mail search")
         .addWidget(getWidget("INPUT_MAIL_SEARCH"))
