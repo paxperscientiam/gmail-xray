@@ -21,7 +21,7 @@ function StatusCard(args) {
         .addWidget(getWidget("MAIL_STATS", args.threads));
 
     return card
-        .addSection(sectionTwo)
+        .addSection(sectionMailSearch)
         .build();
 
 }
