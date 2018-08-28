@@ -22,6 +22,7 @@ function StatusCard(args) {
 
     return card
         .addSection(sectionMailSearch)
+        .addSection(mailStats)
         .build();
 
 }
