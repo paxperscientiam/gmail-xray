@@ -16,6 +16,8 @@ function StatusCard(args) {
                    .setText("Search")
                    .setOnClickAction(MailSearchAction(card)));
 
+    // works?
+    Logger.log(args.threads);
     const mailStats = CardService.newCardSection()
         .setHeader("Mail stats")
         .addWidget(getWidget("MAIL_STATS", args.threads));
