@@ -10,6 +10,6 @@ function StatsHandler(threads) {
 
     this.length = mean(length);
 
-    Logger.log(compressArray(sender));
+    Logger.log(compressArray(sender).slice(0, 1));
 
 }
