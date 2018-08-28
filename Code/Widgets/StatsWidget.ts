@@ -1,4 +1,4 @@
 function StatsWidget(threads) {
     return CardService.newTextParagraph()
-        .setText(doGet("Templates/calSection", new StatsHandler(threads)));
+        .setText(doGet("Templates/mailStats", new StatsHandler(threads)));
 }
