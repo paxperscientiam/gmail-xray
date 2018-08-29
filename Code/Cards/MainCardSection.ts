@@ -38,7 +38,7 @@ function composeEmailCallback(e) {
         .build();
 }
 
-function composeEmailNewCallback(e, id?: string) {
+function composeEmailNewCallback(e, optional?: object) {
     Logger.log("Composing new draft." + id);
     return CardService.newComposeActionResponseBuilder()
         .setGmailDraft(GmailApp.createDraft("", "", ""))
@@ -52,7 +52,8 @@ function CardSectionActionCenter(threadData) {
 
     const actionComposeNew = CardService.newAction().setFunctionName("composeEmailNewCallback");
     const actionReplyToMain = CardService.newAction().setFunctionName("composeEmailCallback");
-    const actionReplyToThis = CardService.newAction().setFunctionName(["composeEmailCallback", threadData.id] );
+    const actionReplyToThis = CardService.newAction().setFunctionName("composeEmailCallback")
+        .setParameters({threadId: threadData.id});
 
     //     var actionCompose = CardService.newAction()
     //         .setFunctionName("StandAloneDraftHandler");
