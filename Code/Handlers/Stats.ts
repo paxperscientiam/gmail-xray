@@ -11,12 +11,12 @@ function StatsHandler(threads) {
     this.length = mean(length);
 
     const comp = compressArray(sender);
-    const derp = [];
+    const rotated = {};
 
     comp.forEach((thing) => {
-        derp.push(thing);
+        rotated[thing.value] = thing.count;
       //   Logger.log(thing.count);
 //         Logger.log(thing.value);
     });
-    Logger.log(derp);
+    Logger.log(rotated);
 }
