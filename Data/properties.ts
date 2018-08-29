@@ -13,7 +13,7 @@ const props = (PropertiesService.getScriptProperties())
         IMG_REPLY_THIS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/reply-64.png",
         IMG_REPLY_THAT: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/reply-64.png",
         //
-        MAILBOX_QUERY: "in:inbox and newer_than:10d",
+        MAILBOX_QUERY: "from:@googlegroups.com",
         MAX_THREADS: 20,
         MAX_THREAD_DEPTH: 10,
         TIME_ZONE: "GMT-4",
