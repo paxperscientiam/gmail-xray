@@ -30,9 +30,16 @@ function CardSectionSecondary() {
 }
 
 function composeEmailCallback(e) {
-    Logger.log("Composing new draft." + e.parameters.threadId);
 
-    const thread = GmailApp.getThreadById(e.threadId);
+
+    const threadId = e.parameters.threadId;
+
+    if (threadId === undefined) {
+        threadId = e.threadId;
+    }
+
+    Logger.log("Composing new draft." + threadId);
+    const thread = GmailApp.getThreadById(threadId);
     const draft = thread.createDraftReply("");
     return CardService.newComposeActionResponseBuilder()
         .setGmailDraft(draft)
