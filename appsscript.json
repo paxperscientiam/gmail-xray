@@ -38,7 +38,7 @@
             "text": "Do stuff",
             "runFunction": "openLinkUniversalAction"
         },{
-            "text": "Help",
+            "text": "� Help",
             "runFunction": "openLinkUniversalAction"
         }
                             ]
