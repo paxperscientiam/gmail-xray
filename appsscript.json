@@ -37,6 +37,10 @@
         },{
             "text": "Do stuff",
             "runFunction": "openLinkUniversalAction"
-        }]
+        },{
+            "text": "Help",
+            "runFunction": "openLinkUniversalAction"
+        }
+                            ]
     }
 }
