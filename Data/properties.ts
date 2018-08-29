@@ -18,6 +18,6 @@ const props = (PropertiesService.getScriptProperties())
         MAX_THREAD_DEPTH: 10,
         TIME_ZONE: "GMT-4",
 
-        QUERY_SUGGESTION_A: this.MAILBOX_QUERY,
+        QUERY_SUGGESTION_A: "in:inbox and newer_than:10d",
         QUERY_SUGGESTION_B: "is:starred and newer_than:10d",
     });
