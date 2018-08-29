@@ -18,5 +18,5 @@ function StatsHandler(threads) {
       //   Logger.log(thing.count);
 //         Logger.log(thing.value);
     });
-    Logger.log(rotated);
+    Logger.log(rankedFirst(rotated));
 }

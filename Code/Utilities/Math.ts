@@ -7,6 +7,11 @@ function mean(v) {
     });
 }
 
+function rankedFirst(Obj) {
+    return Object.keys(obj).reduce((a, b) => {
+        return obj[a] > obj[b] ? a : b;
+    });
+}
 
 function compressArray(original) {
     //https://gist.github.com/ralphcrisostomo/3141412
