@@ -7,7 +7,7 @@ function mean(v) {
     });
 }
 
-function rankedFirst(Obj) {
+function rankedFirst(obj) {
     return Object.keys(obj).reduce((a, b) => {
         return obj[a] > obj[b] ? a : b;
     });
