@@ -1,7 +1,7 @@
 function MailSearchAction(card) {
     return CardService
         .newAction()
-        .setFunctionName('MailSearchButtonHandler');
+        .setFunctionName("MailSearchButtonHandler");
 }
 
 function MailSearchButtonHandler(e) {

@@ -6,5 +6,10 @@ function MailSearchWidget() {
         .setMultiline(true)
         .setTitle("Search mail")
         .setHint("Try 'in:inbox and is:starred'")
-        .setValue(DEFAULT_MAILBOX_QUERY)
+        .setSuggestions(CardService.newSuggestions()
+                        .addSuggestion('Red')
+                        .addSuggestion('Yellow')
+                        .addSuggestions(['Blue', 'Black', 'Green']));
+
+    //    .setValue(DEFAULT_MAILBOX_QUERY)
 }
