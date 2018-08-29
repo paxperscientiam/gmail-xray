@@ -10,6 +10,13 @@ function StatsHandler(threads) {
 
     this.length = mean(length);
 
-    Logger.log(compressArray(sender).slice(0, 1));
+    const comp = compressArray(sender);
+    const derp = [];
 
+    comp.forEach((thing) => {
+        derp.push(thing);
+      //   Logger.log(thing.count);
+//         Logger.log(thing.value);
+    });
+    Logger.log(derp);
 }
