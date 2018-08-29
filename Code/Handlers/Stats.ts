@@ -15,8 +15,7 @@ function StatsHandler(threads) {
 
     comp.forEach((thing) => {
         rotated[thing.value] = thing.count;
-      //   Logger.log(thing.count);
-//         Logger.log(thing.value);
     });
-    Logger.log(rankedFirst(rotated));
+
+    this.topSender = rankedFirst(rotated);
 }
