@@ -32,10 +32,10 @@
         "secondaryColor": "#6c71c4",
         "version": "TRUSTED_TESTER_V2",
         "universalActions": [{
-            "text": "Project site",
+            "text": "⚒ Project site",
             "openLink": "https://github.com/paxperscientiam/gmail-xray"
         },{
-            "text": "Do stuff",
+            "text": "◼ Do stuff",
             "runFunction": "openLinkUniversalAction"
         },{
             "text": "� Help",
