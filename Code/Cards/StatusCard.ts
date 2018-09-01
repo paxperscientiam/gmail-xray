@@ -20,6 +20,10 @@ function StatusCard(args) {
         .setHeader("Mail stats")
         .addWidget(getWidget("MAIL_STATS", {threads: args.threads}));
 
+    const sectionWx = CardService.newCardSection()
+        .setHeader("Wx")
+        .addWidget(WeatherWidget());
+
     return card
         .addSection(sectionMailSearch)
         .addSection(mailStats)

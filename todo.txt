@@ -1,0 +1,2 @@
+catch search exception
+include weather in status

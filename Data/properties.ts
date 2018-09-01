@@ -1,6 +1,7 @@
 // Set multiple script properties in one call.
 const props = (PropertiesService.getScriptProperties())
     .setProperties({
+        API_IPSTACK: "b2e5ad187eeafde9d9e1de4e777091da",
         BRAND_NAME: "Email X-Ray",
         //
         IMG_EXCLAMATION: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/332f172e7b729d48ea0c61e111b4926d99550833/Img/exclamation-circle_64.png",
