@@ -28,8 +28,10 @@ function WeatherWidget() {
         const ip = dataIP.ip;
         const city = dataIP.city;
         const region = dataIP.region;
-        Logger.log(ip);
-        return CardService.newTextParagraph().setText(ip);
+
+        const txt = "Nice weather in " + data.city + ".";
+
+        return CardService.newTextParagraph().setText(txt);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Check back later :(");
