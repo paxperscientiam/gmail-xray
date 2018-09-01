@@ -40,7 +40,7 @@ function WeatherWidget() {
 
 
     try {
-        const responseWx = UrlFetchApp.fetch(url, paramsWx);
+        const responseWx = UrlFetchApp.fetch(urlWx, paramsWx);
         const jsonWx = responseWx.getContentText();
         const dataWx = JSON.parse(jsonWx);
 
