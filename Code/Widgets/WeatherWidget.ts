@@ -10,6 +10,7 @@ function WeatherWidget() {
     const urlIPINFO = "https://ipinfo.io/geo?token=" + API_IPINFO;
 
 
+
     try {
         const responseIP = UrlFetchApp.fetch(urlIPINFO, params);
         const jsonIP = responseIP.getContentText();
@@ -18,10 +19,10 @@ function WeatherWidget() {
         const ip = dataIP.ip;
         const city = dataIP.city;
         const region = dataIP.region;
-        var coord = dataIP.loc;
+        const coordData = dataIP.loc;
 
-        var lat = Number(coord.split(",")[0]);
-        var lon = Number(coord.split(",")[0]);
+        var lat = Number(coordData.split(",")[0]);
+        var lon = Number(coordData.split(",")[0]);
 
         // weather service api limit precision to 4 decimal places
         lat = lat.toFixed(4);
@@ -36,7 +37,7 @@ function WeatherWidget() {
         return CardService.newTextParagraph().setText("IP service not working :(");
     }
 
-
+    Logger.log("coo:" + coord);
     var queryWx = '';
     const urlWx_1 = "https://api.weather.gov/points/" + coord;
     const paramsWx = {
