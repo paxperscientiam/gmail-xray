@@ -21,7 +21,6 @@ function WeatherWidget() {
 
         const txt = "Nice weather in " + city + ".";
 
-        return CardService.newTextParagraph().setText(txt);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("IP service not working :(");
@@ -48,7 +47,7 @@ function WeatherWidget() {
         const dataWx = JSON.parse(jsonWx);
 
         const wx = Math.round(dataWx.properties.temperature.value);
-        return CardService.newTextParagraph().setText(wx);
+        return CardService.newTextParagraph().setText(txt + "," + wx);
 
     } catch (e) {
         return CardService.newTextParagraph().setText("Wx service not working :(");
