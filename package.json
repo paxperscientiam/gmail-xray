@@ -3,6 +3,7 @@
         "font-awesome-svg-png": "^1.2.2"
     },
     "scripts": {
-        "lint": "tslint ./Code/**/*.ts"
+        "lint": "tslint ./Code/**/*.ts",
+        "push": "git bump && clasp push"
     }
 }
