@@ -22,7 +22,7 @@ function WeatherWidget() {
 
     try {
         const responseIP = UrlFetchApp.fetch(urlIPINFO, params);
-        const jsonIP = response.getContentText();
+        const jsonIP = responseIP.getContentText();
         const dataIP = JSON.parse(jsonIP);
 
         const ip = dataIP.ip;
