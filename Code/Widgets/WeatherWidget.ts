@@ -15,22 +15,44 @@ function WeatherWidget() {
         muteHttpExceptions: true,
     };
 
+    const API_IPINFO = props.getProperty("API_IPINFO");
 
-    const url = "http://api.ipstack.com/check?access_key=b2e5ad187eeafde9d9e1de4e777091da"
+    const urlIPINFO = "https://ipinfo.io/geo?token=" + API_IPINFO;
+
 
     try {
-        const response = UrlFetchApp.fetch(url, params);
-        const json = response.getContentText();
-        const data = JSON.parse(json);
+        const responseIP = UrlFetchApp.fetch(urlIPINFO, params);
+        const jsonIP = response.getContentText();
+        const dataIP = JSON.parse(jsonIP);
 
-       // const wx = Math.round(data.properties.temperature.value);
-        // return CardService.newTextParagraph().setText(wx);
-        const ip = data.ip;
+        const ip = dataIP.ip;
+        const city = dataIP.city;
+        const region = dataIP.region;
+        Logger.log(ip);
         return CardService.newTextParagraph().setText(ip);
-
     } catch (e) {
+        Logger.log(e);
         return CardService.newTextParagraph().setText("Check back later :(");
     }
+
+
+
+
+    //  const url = "http://api.ipstack.com/check?access_key=b2e5ad187eeafde9d9e1de4e777091da"
+
+    //     try {
+    //         const response = UrlFetchApp.fetch(url, params);
+    //         const json = response.getContentText();
+    //         const data = JSON.parse(json);
+
+    //        // const wx = Math.round(data.properties.temperature.value);
+    //         // return CardService.newTextParagraph().setText(wx);
+    //         const ip = data.ip;
+    //         return CardService.newTextParagraph().setText(ip);
+
+    //     } catch (e) {
+    //         return CardService.newTextParagraph().setText("Check back later :(");
+    //     }
 
     //    return CardService.newTextParagraph().setText("Check back later :(");
 
