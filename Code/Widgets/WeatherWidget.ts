@@ -38,7 +38,7 @@ function WeatherWidget() {
 
 
     var queryWx = '';
-    const urlWx_1 = "https://api.weather.gov/points/coord";
+    const urlWx_1 = "https://api.weather.gov/points/" + coord;
     const paramsWx = {
         headers: {
             "Accept": "application/geo+json;version=1",
