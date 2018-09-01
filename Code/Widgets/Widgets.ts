@@ -27,8 +27,6 @@ function getWidget(widgetName: string, args?: object) {
     }
 
     if (widgetName === "MAIL_STATS") {
-        Logger.log("getWidget " + args.threads);
-
         return StatsWidget(threads);
     }
 }

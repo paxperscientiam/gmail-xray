@@ -29,8 +29,6 @@ function WeatherWidget() {
 
     var queryWx = '';
     const urlWx = "https://api.weather.gov/stations/KMKC/observations/current";
-       //  + '?sort=stars'
-//         + '&q=' + encodeURIComponent(queryWx);
     const paramsWx = {
         headers: {
             "Accept": "application/vnd.noaa.dwml+xml;version=1",
@@ -50,6 +48,7 @@ function WeatherWidget() {
         return CardService.newTextParagraph().setText(txt + "," + wx);
 
     } catch (e) {
+        Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");
     }
 

@@ -8,7 +8,6 @@ function SearchResults(query, args) {
     }
 
     var options = OptionsHandler(defaultArgs, args);
-    Logger.log(options);
 
     this.threads = GmailApp.search(query,
                                    options.startingThread,
