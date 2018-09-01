@@ -1,2 +1,3 @@
 catch search exception
 include weather in status
+figure out optimization

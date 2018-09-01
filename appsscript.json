@@ -6,7 +6,8 @@
         "https://paxperscientiam.com/",
         "https://www.buymeacoffee.com/paxperscientiam",
         "https://api.weather.gov/",
-        "https://en.wikipedia.org/"
+        "https://en.wikipedia.org/",
+        "http://api.ipstack.com/"
     ],
     "gmail": {
         "name": "Email X-Ray",
@@ -26,7 +27,8 @@
             "https://www.buymeacoffee.com/paxperscientiam",
             "https://www.google.org/",
             "https://api.weather.gov/",
-            "https://en.wikipedia.org/"
+            "https://en.wikipedia.org/",
+            "http://api.ipstack.com/"
         ],
         "primaryColor": "#935499",
         "secondaryColor": "#6c71c4",
