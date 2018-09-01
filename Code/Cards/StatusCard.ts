@@ -25,6 +25,7 @@ function StatusCard(args) {
         .addWidget(WeatherWidget());
 
     return card
+        .addSection(sectionWx)
         .addSection(sectionMailSearch)
         .addSection(mailStats)
         .build();
