@@ -45,7 +45,7 @@ function WeatherWidget() {
         const dataWx = JSON.parse(jsonWx);
 
         const wx = Math.round(dataWx.properties.temperature.value);
-        return CardService.newTextParagraph().setText(txt + "," + wx);
+        return CardService.newTextParagraph().setText(txt + ", " + wx + "°C");
 
     } catch (e) {
         Logger.log(e);
