@@ -22,7 +22,7 @@ function WeatherWidget() {
         const coordData = dataIP.loc;
 
         var lat = Number(coordData.split(",")[0]);
-        var lon = Number(coordData.split(",")[0]);
+        var lon = Number(coordData.split(",")[1]);
 
         // weather service api limit precision to 4 decimal places
         lat = lat.toFixed(4);
@@ -37,7 +37,6 @@ function WeatherWidget() {
         return CardService.newTextParagraph().setText("IP service not working :(");
     }
 
-    Logger.log("coo:" + coord);
     var queryWx = '';
     const urlWx_1 = "https://api.weather.gov/points/" + coord;
     const paramsWx = {
@@ -51,9 +50,11 @@ function WeatherWidget() {
 
 
     try {
+        Logger.log("url:"+urlWx_1);
         const responseWx_1 = UrlFetchApp.fetch(urlWx_1, paramsWx);
         const jsonWx_1 = responseWx_1.getContentText();
         const dataWx_1 = JSON.parse(jsonWx_1);
+        Logger.log("data:" + dataWx_1);
 
         const urlWx_2 = dataWx_1.properties.forecast;
 
