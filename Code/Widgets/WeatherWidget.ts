@@ -11,14 +11,16 @@ function WeatherWidget() {
         muteHttpExceptions: true,
     };
 
-    try {
-        const response = UrlFetchApp.fetch(url, params);
-        const json = response.getContentText();
-        const data = JSON.parse(json);
+//     try {
+//         const response = UrlFetchApp.fetch(url, params);
+//         const json = response.getContentText();
+//         const data = JSON.parse(json);
 
-        const wx = Math.round(data.properties.temperature.value);
-        return CardService.newTextParagraph().setText(wx);
-    } catch (e) {
-        return CardService.newTextParagraph().setText("Check back later :(");
-    }
+//         const wx = Math.round(data.properties.temperature.value);
+//         return CardService.newTextParagraph().setText(wx);
+//     } catch (e) {
+//         return CardService.newTextParagraph().setText("Check back later :(");
+    //     }
+    return CardService.newTextParagraph().setText("Check back later :(");
+
 }
