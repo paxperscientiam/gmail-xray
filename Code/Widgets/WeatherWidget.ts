@@ -29,7 +29,7 @@ function WeatherWidget() {
         const city = dataIP.city;
         const region = dataIP.region;
 
-        const txt = "Nice weather in " + data.city + ".";
+        const txt = "Nice weather in " + city + ".";
 
         return CardService.newTextParagraph().setText(txt);
     } catch (e) {
