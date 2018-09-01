@@ -11,7 +11,8 @@ const props = (PropertiesService.getScriptProperties())
         IMG_BARS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/bars_64.png",
         IMG_COMPOSE_NEW: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/plus-circle-64.png",
         IMG_REPLY_THIS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/reply-64.png",
-        IMG_REPLY_THAT: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/reply-64.png",
+        IMG_REPLY_THAT: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/long-arrow-left-64.png",
+
         //
         MAILBOX_QUERY: "in:inbox and is:starred",
         MAX_THREADS: 20,
