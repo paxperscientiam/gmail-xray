@@ -6,11 +6,10 @@ function JsonResponseHandler(url: string, query?: object, params?: object) {
         };
     }
 
-    const strQuery;
+    const strQuery = "";
 
     if (query) {
         strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
-
     }
 
     const uri = url + strQuery;
