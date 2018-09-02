@@ -12,7 +12,7 @@
     "gmail": {
         "name": "Email X-Ray",
         "useLocaleFromApp": true,
-        "logoUrl": "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/radiation-64.png",
+        "logoUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAAmJLR0QA/4ePzL8AAADPSURBVGje7daxCkFhAIbhF2VgsTIoo+zcgNEdcAmyWt2FwQ3YDSYZDMogm8GmTGzKoHQskiMni/6v9D3nAr63U+f8P5iZmZmZfVdixUw3X2FHRKSar3Eg0gU0OD3mJQEtLs95QUCb68t88IAut9h84ID+23jQgDTDD/O/fpZJ81nGAeYT32ieaaD5hIB5sPmEgK06oMhGGwAFFtoAyDFRfoYAGUbKHxFAioE2AKD3dhoIdGLnoUSTszYA6hy1AVBlrw2AMmvltdzMzMzM/t0d6Wn7Bhz4MCEAAAAASUVORK5CYII=",
         "contextualTriggers": [{
             "unconditional": {
             },
