@@ -30,7 +30,7 @@ function WeatherWidget() {
 
         var coord = String(lat) + "," + String(lon);
 
-        const txt = "Weather in " + city;
+        //        const txt = "Weather in " + city;
 
     } catch (e) {
         Logger.log(e);
@@ -66,7 +66,9 @@ function WeatherWidget() {
         const temp = dataWx_2.properties.periods[0].temperature;
         const unit = dataWx_2.properties.periods[0].temperatureUnit;
 
-        return CardService.newTextParagraph().setText(txt + ", " + temp + "°" + unit);
+        const txt  = `It's ${temp}° ${unit} in ${city}, ${region}."`
+
+        return CardService.newTextParagraph().setText(txt);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");

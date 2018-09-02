@@ -17,11 +17,11 @@ function StatusCard(args) {
                    .setOnClickAction(MailSearchAction(card)));
 
     const mailStats = CardService.newCardSection()
-        .setHeader("Mail stats")
+        .setHeader("Mail statistics")
         .addWidget(getWidget("MAIL_STATS", {threads: args.threads}));
 
     const sectionWx = CardService.newCardSection()
-        .setHeader("Wx")
+        .setHeader("Local weather")
         .addWidget(WeatherWidget());
 
     return card
