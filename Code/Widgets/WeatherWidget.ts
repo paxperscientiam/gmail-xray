@@ -44,11 +44,11 @@ function WeatherWidget() {
     };
 
     try {
-        const dataWx1 = (new JsonResponseHandler(urlWx1)).data;
+        const dataWx1 = (new JsonResponseHandler(urlWx1, , paramsWx)).data;
         //
         const urlWx2 = dataWx1.properties.forecast;
 
-        const dataWx2 = (new JsonResponseHandler(urlWx2)).data;
+        const dataWx2 = (new JsonResponseHandler(urlWx2, , paramsWx)).data;
 
         const temp = dataWx2.properties.periods[0].temperature;
         const unit = dataWx2.properties.periods[0].temperatureUnit;

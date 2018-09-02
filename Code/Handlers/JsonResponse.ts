@@ -1,7 +1,10 @@
-function JsonResponseHandler(url: string, query?: object) {
-    const params = {
-        muteHttpExceptions: true,
-    };
+function JsonResponseHandler(url: string, query?: object, params?: object) {
+
+    if (!params) {
+        params = {
+            muteHttpExceptions: true,
+        };
+    }
 
     const strQuery;
 
