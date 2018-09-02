@@ -1,23 +1,24 @@
-function ThreadData(thread) {
-    // thread
+function ThreadData(threads) {
+    this.threadSet = [];
 
-    this.messages = thread.getMessages();
-    this.firstMessage = this.messages[0];
+    threads.forEach((thread) => {
+        const threadObj = {};
+        threadObj.messages =  thread.getMessages();
+        threadObj.firstMessage = threadObj.messages[0];
+        threadObj.labels = thread.getLabels();
+    //
+        threadObj.count = thread.getMessageCount();
+        threadObj.length = threadObj.count;
+        //
+        threadObj.link = thread.getPermalink();
+        threadObj.id = thread.getId();
+        // first message
+        threadObj.sender = extractEmailAddress(threadObj.firstMessage.getFrom());
+        threadObj.subject = threadObj.firstMessage.getSubject();
+        threadObj.lastDate = thread.getLastMessageDate().toDateString();
 
-    this.labels = thread.getLabels();
-    //
-    this.count = thread.getMessageCount();
-    this.length = this.count;
-    //
-    this.link = thread.getPermalink();
-    this.id = thread.getId();
-    //
-    // first message
-    this.sender = extractEmailAddress(this.firstMessage.getFrom());
-    this.subject = this.firstMessage.getSubject();
-    this.lastDate = thread.getLastMessageDate().toDateString();
-
-    // last message
+        this.threadSet.push(threadObj);
+    });
 }
 
 function analyzeThread(threads) {

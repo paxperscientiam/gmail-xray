@@ -1,20 +1,7 @@
 function SearchResults(query, args) {
-    // args
-    var MAX_THREADS = props.getProperty("MAX_THREADS");
+    const MAX_THREADS = props.getProperty("MAX_THREADS");
     //
-    var defaultArgs = {
-        startingThread: 0,
-        endingThread: MAX_THREADS
-    }
-
-    var options = OptionsHandler(defaultArgs, args);
-
     this.threads = GmailApp.search(query,
-                                   options.startingThread,
-                                   options.endingThread);
-
-
-
-
-
+                                   0,
+                                   MAX_THREADS);
 }

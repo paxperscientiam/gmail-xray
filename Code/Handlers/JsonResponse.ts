@@ -8,11 +8,6 @@ function JsonResponseHandler(url: string, query = {}, params = {muteHttpExceptio
         //
         this.json = response.getContentText();
         this.data = JSON.parse(this.json);
-        Logger.log(url);
-        Logger.log(strQuery);
-        Logger.log(params);
-        Logger.log(this.data);
-
     } catch (e) {
         Logger.log(e);
         this.data = {};

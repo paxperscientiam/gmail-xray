@@ -32,6 +32,7 @@ const props = (PropertiesService.getScriptProperties())
         MAILBOX_QUERY: "in:inbox and is:starred",
         MAX_THREADS: 20,
         MAX_THREAD_DEPTH: 10,
+        BATCH_SIZE: 100,
         TIME_ZONE: "GMT-4",
 
         QUERY_SUGGESTION_A: "in:inbox and newer_than:10d",

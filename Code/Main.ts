@@ -5,30 +5,33 @@ function buildAddOn(e) {
     // GmailApp.setCurrentMessageAccessToken(accessToken);
     // var messageId = e.messageMetadata.messageId;
     // var senderData = extractSenderData(messageId);
-    var MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
-    var MAX_THREADS = props.getProperty("MAX_THREADS");
+    const MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
+    const MAX_THREADS = props.getProperty("MAX_THREADS");
+    const BATCH_SIZE = props.getProperty("BATCH_SIZE");
 
-    var Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
+    const Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
 
-    var threads = Search.threads;
+    const threads = Search.threads;
 
-    var cards = [];
+    const cards = [];
 
-    cards.push(StatusCard({threads: threads}));
+    cards.push(StatusCard({threads}));
     //
-    for (var i = 0; i < threads.length && i < MAX_THREADS; i++) {
-        var threadData = new ThreadData(threads[i]); // a thread from set of threads
-        var messages = threadData.messages; // a message from set of messages in a thread
+    return;
+    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
+        // this is a SET of threads
+        const threadSet = new ThreadData(threads.slice(i, i + BATCH_SIZE); // a thread from set of threads
+        const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
 
-        var threadCount = threadData.length;
+        const threadSetCount = threadSet.length;
 
-        var card = CardService.newCardBuilder()
-            .setHeader(( new CardHeader(messages[0]) ));
+        const card = CardService.newCardBuilder()
+            .setHeader(( new CardHeader(messagesSet[0]) ));
 
-        for (var j = 0; j < threadCount; j++) {
-            var Obj = mergeObjs({index: j}, {threadData: threadData}, {message: messages[j]});
-            var msgSection = new CardSection(Obj).setCollapsible(false);
-            var actionSection = new CardSectionActionCenter(threadData);
+        for (let j = 0; j < threadSetCount; j++) {
+            const Obj = mergeObjs({index: j}, {threadData: threadSet}, {message: messagesSet[j]});
+            const msgSection = new CardSection(Obj).setCollapsible(false);
+            const actionSection = new CardSectionActionCenter(threadSet);
             ChainSections(card, [msgSection, actionSection]);
         }
         cards.push(card.build());
