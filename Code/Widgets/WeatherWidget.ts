@@ -16,14 +16,14 @@ function WeatherWidget() {
         const region = dataIP.region;
         const coordData = dataIP.loc;
 
-        var lat = Number(coordData.split(",")[0]);
-        var lon = Number(coordData.split(",")[1]);
+        let lat = Number(coordData.split(",")[0]);
+        let lon = Number(coordData.split(",")[1]);
 
         // weather service api limit precision to 4 decimal places
         lat = lat.toFixed(4);
         lon = lon.toFixed(4);
 
-        var coord = String(lat) + "," + String(lon);
+        const coord = String(lat) + "," + String(lon);
 
         const txt = "Weather in " + city;
 
@@ -38,11 +38,10 @@ function WeatherWidget() {
         headers: {
             "Accept": "application/geo+json;version=1",
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0",
-            "From": "chrisdavidramos@gmail.com"
+            "From": "chrisdavidramos@gmail.com",
         },
         muteHttpExceptions: true,
     };
-
 
     try {
         const dataWx_1 = JsonResponseHandler(urlWx_1);
@@ -54,13 +53,12 @@ function WeatherWidget() {
         const temp = dataWx_2.properties.periods[0].temperature;
         const unit = dataWx_2.properties.periods[0].temperatureUnit;
 
-        const txt  = `It's ${temp}°${unit} in ${city}, ${region}.`
+        const txt  = `It's ${temp}°${unit} in ${city}, ${region}.`;
 
         return CardService.newTextParagraph().setText(txt);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");
     }
-
 
 }

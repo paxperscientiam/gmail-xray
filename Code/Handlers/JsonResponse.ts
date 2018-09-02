@@ -3,13 +3,13 @@ function JsonResponseHandler(url: string, query?: object) {
         muteHttpExceptions: true,
     };
 
-    const queryString;
+    const strQuery;
 
-    if (query !== undefined) {
-        queryString = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
+    if (query) {
+        strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
     }
 
-    const uri = url + queryString;
+    const uri = url + strQuery;
 
     Logger.log(url);
 
