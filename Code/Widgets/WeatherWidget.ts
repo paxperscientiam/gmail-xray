@@ -23,9 +23,6 @@ function WeatherWidget() {
         lat = lat.toFixed(4);
         lon = lon.toFixed(4);
 
-        Logger.log(`lat:${lat}`);
-        Logger.log(`lon:${lon}`);
-
         const coord = String(lat) + "," + String(lon);
 
     } catch (e) {
