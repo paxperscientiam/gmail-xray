@@ -28,9 +28,7 @@ function WeatherWidget() {
         lat = lat.toFixed(4);
         lon = lon.toFixed(4);
 
-        var coord = String(lat) + "," + String(lon);
-
-        //        const txt = "Weather in " + city;
+        var coord = `${lat},${lon}`;
 
     } catch (e) {
         Logger.log(e);
@@ -66,7 +64,7 @@ function WeatherWidget() {
         const temp = dataWx_2.properties.periods[0].temperature;
         const unit = dataWx_2.properties.periods[0].temperatureUnit;
 
-        const txt  = `It's ${temp}° ${unit} in ${city}, ${region}."`
+        const txt  = `It's ${temp}°${unit} in ${city}, ${region}.`
 
         return CardService.newTextParagraph().setText(txt);
     } catch (e) {
