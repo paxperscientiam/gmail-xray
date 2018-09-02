@@ -47,18 +47,11 @@ function WeatherWidget() {
 
 
     try {
-        Logger.log("url1:"+urlWx_1);
-        const responseWx_1 = UrlFetchApp.fetch(urlWx_1, paramsWx);
-        const jsonWx_1 = responseWx_1.getContentText();
-        const dataWx_1 = JSON.parse(jsonWx_1);
-        Logger.log("data:" + dataWx_1.properties.forecast);
-
+        const dataWx_1 = JsonResponseHandler(urlWx_1);
+        //
         const urlWx_2 = dataWx_1.properties.forecast;
 
-        const responseWx_2 = UrlFetchApp.fetch(urlWx_2, paramsWx);
-
-        const jsonWx_2 = responseWx_2.getContentText();
-        const dataWx_2 = JSON.parse(jsonWx_2);
+        const dataWx_2 = JsonResponseHandler(urlWx_2);
 
         const temp = dataWx_2.properties.periods[0].temperature;
         const unit = dataWx_2.properties.periods[0].temperatureUnit;
