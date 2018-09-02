@@ -32,6 +32,7 @@ function WeatherWidget() {
 
     const urlWx1 = "https://api.weather.gov/points/" + coord;
     const paramsWx = {
+        escaping: false,
         headers: {
             "Accept": "application/geo+json;version=1",
             "From": "chrisdavidramos@gmail.com",
