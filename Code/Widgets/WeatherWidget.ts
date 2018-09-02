@@ -50,10 +50,11 @@ function WeatherWidget() {
 
         const temp = dataWx2.properties.periods[0].temperature;
         const unit = dataWx2.properties.periods[0].temperatureUnit;
+        const condition = dataWx2.properties.periods[0].shortForecast;
 
-        const txt  = `It's ${temp}°${unit} in ${city}, ${region}.`;
+        const messageWx  = `It's ${condition} in ${city}, ${region} and ${temp}°${unit}.`;
 
-        return CardService.newTextParagraph().setText(txt);
+        return CardService.newTextParagraph().setText(messageWx);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");
