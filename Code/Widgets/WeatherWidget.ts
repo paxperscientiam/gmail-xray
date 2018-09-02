@@ -50,11 +50,11 @@ function WeatherWidget() {
 
 
     try {
-        Logger.log("url:"+urlWx_1);
+        Logger.log("url1:"+urlWx_1);
         const responseWx_1 = UrlFetchApp.fetch(urlWx_1, paramsWx);
         const jsonWx_1 = responseWx_1.getContentText();
         const dataWx_1 = JSON.parse(jsonWx_1);
-        Logger.log("data:" + dataWx_1);
+        Logger.log("data:" + dataWx_1.properties.forecast);
 
         const urlWx_2 = dataWx_1.properties.forecast;
 
