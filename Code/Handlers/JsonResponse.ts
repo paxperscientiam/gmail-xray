@@ -5,7 +5,7 @@ function JsonResponseHandler(url: string, query?: object) {
 
     const strQuery;
 
-    Logger.log(strQuery);
+    Logger.log(query);
 
     if (query) {
         strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
