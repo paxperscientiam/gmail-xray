@@ -23,35 +23,35 @@ function WeatherWidget() {
         lat = lat.toFixed(4);
         lon = lon.toFixed(4);
 
-        const coord = String(lat) + "," + String(lon);
+        Logger.log(`lat:${lat}`);
+        Logger.log(`lon:${lon}`);
 
-        const txt = "Weather in " + city;
+        const coord = String(lat) + "," + String(lon);
 
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("IP service not working :(");
     }
 
-    var queryWx = '';
-    const urlWx_1 = "https://api.weather.gov/points/" + coord;
+    const urlWx1 = "https://api.weather.gov/points/" + coord;
     const paramsWx = {
         headers: {
             "Accept": "application/geo+json;version=1",
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0",
             "From": "chrisdavidramos@gmail.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0",
         },
         muteHttpExceptions: true,
     };
 
     try {
-        const dataWx_1 = (new JsonResponseHandler(urlWx_1)).data;
+        const dataWx1 = (new JsonResponseHandler(urlWx1)).data;
         //
-        const urlWx_2 = dataWx_1.properties.forecast;
+        const urlWx2 = dataWx1.properties.forecast;
 
-        const dataWx_2 = (new JsonResponseHandler(urlWx_2)).data;
+        const dataWx2 = (new JsonResponseHandler(urlWx2)).data;
 
-        const temp = dataWx_2.properties.periods[0].temperature;
-        const unit = dataWx_2.properties.periods[0].temperatureUnit;
+        const temp = dataWx2.properties.periods[0].temperature;
+        const unit = dataWx2.properties.periods[0].temperatureUnit;
 
         const txt  = `It's ${temp}°${unit} in ${city}, ${region}.`;
 

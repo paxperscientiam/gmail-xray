@@ -5,16 +5,12 @@ function JsonResponseHandler(url: string, query?: object) {
 
     const strQuery;
 
-    Logger.log(query);
-
     if (query) {
         strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
 
     }
 
     const uri = url + strQuery;
-
-    Logger.log(uri);
 
     const response = UrlFetchApp.fetch(uri, params);
 
