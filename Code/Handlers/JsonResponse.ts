@@ -20,5 +20,5 @@ function JsonResponseHandler(url: string, query?: object) {
 
     //
     this.json = response.getContentText();
-    this.data = JSON.parse(json);
+    this.data = JSON.parse(this.json);
 }
