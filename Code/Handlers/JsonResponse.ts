@@ -10,7 +10,7 @@ function JsonResponseHandler(url: string, query?: object) {
     }
 
 
-    const uri = url + this.queryString;
+    const uri = url + queryString;
 
     const response = UrlFetchApp.fetch(uri, params);
 
