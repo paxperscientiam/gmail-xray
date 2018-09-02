@@ -45,9 +45,6 @@ function WeatherWidget() {
 
     try {
         const dataWx1 = (new JsonResponseHandler(urlWx1, , paramsWx)).data;
-        Logger.log(`url: ${urlWx1}`);
-        //
-        Logger.log(dataWx1);
 
         const urlWx2 = dataWx1.properties.forecast;
 

@@ -17,6 +17,11 @@ function JsonResponseHandler(url: string, query?: object, params?: object) {
     //
         this.json = response.getContentText();
         this.data = JSON.parse(this.json);
+        Logger.log(url);
+        Logger.log(query);
+        Logger.log(params);
+        Logger.log(data);
+
     } catch (e) {
         Logger.log(e);
         this.data = {};
