@@ -7,14 +7,11 @@ function WeatherWidget() {
 
     const API_IPINFO = props.getProperty("API_IPINFO");
 
-    const urlIPINFO = "https://ipinfo.io/geo?token=" + API_IPINFO;
-
+    const urlIPINFO = "https://ipinfo.io/geo?";
 
 
     try {
-        const responseIP = UrlFetchApp.fetch(urlIPINFO, params);
-        const jsonIP = responseIP.getContentText();
-        const dataIP = JSON.parse(jsonIP);
+        const dataIP = JsonResponseHandler(urlIPINFO, {token:API_IPINFO});
 
         const ip = dataIP.ip;
         const city = dataIP.city;
