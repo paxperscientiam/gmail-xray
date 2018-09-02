@@ -28,7 +28,9 @@ function WeatherWidget() {
         lat = lat.toFixed(4);
         lon = lon.toFixed(4);
 
-        var coord = `${lat},${lon}`;
+        var coord = String(lat) + "," + String(lon);
+
+        const txt = "Weather in " + city;
 
     } catch (e) {
         Logger.log(e);
