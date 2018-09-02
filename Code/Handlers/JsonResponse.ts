@@ -13,10 +13,9 @@ function JsonResponseHandler(url: string, query?: object, params?: object) {
     }
 
     const uri = url + strQuery;
+    Logger.log(uri);
 
     const response = UrlFetchApp.fetch(uri, params);
-
-    Logger.log(response);
     //
     this.json = response.getContentText();
     this.data = JSON.parse(this.json);
