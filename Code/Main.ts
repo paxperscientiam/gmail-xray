@@ -15,14 +15,15 @@ function buildAddOn(e) {
 
     const cards = [];
 
-    Logger.log(threads);
     cards.push(StatusCard({threads}));
     //
-    return;
     for (let i = 0; i < threads.length; i += BATCH_SIZE) {
         // this is a SET of threads
-        const threadSet = new ThreadData(threads.slice(i, i + BATCH_SIZE); // a thread from set of threads
+        const threadSet = new ThreadData(threads.slice(i, i + BATCH_SIZE)); // a thread from set of threads
+        Logger.log(threadSet);
+        return
         const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
+
 
         const threadSetCount = threadSet.length;
 
@@ -36,10 +37,10 @@ function buildAddOn(e) {
             ChainSections(card, [msgSection, actionSection]);
         }
         cards.push(card.build());
-       }
+    }
     return cards;
 }
 
 function testing() {
-//
+    //
 }
