@@ -1,5 +1,4 @@
 function JsonResponseHandler(url: string, query?: object, params?: object) {
-
     if (params) {
         params = mergeObjs({muteHttpExceptions: true}, params);
     } else {
@@ -14,7 +13,7 @@ function JsonResponseHandler(url: string, query?: object, params?: object) {
     }
 
     try {
-        const response = UrlFetchApp.fetch(uri, params);
+        const response = UrlFetchApp.fetch(url, params);
     //
         this.json = response.getContentText();
         this.data = JSON.parse(this.json);

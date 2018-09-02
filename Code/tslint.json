@@ -4,6 +4,6 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": { "no-use-before-declare": true },
     "rulesDirectory": []
 }
