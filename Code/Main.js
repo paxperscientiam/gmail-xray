@@ -33,7 +33,7 @@ function buildAddOn(e) {
             ChainSections(card, [msgSection, actionSection]);
         }
         cards.push(card.build());
-    }
+       }
     return cards;
 }
 

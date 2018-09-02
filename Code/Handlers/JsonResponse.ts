@@ -6,9 +6,8 @@ function JsonResponseHandler(url: string, query?: object) {
     const queryString = {};
 
     if (query !== undefined) {
-        queryString = Object.keys(query).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(obj[key])).join('&');
+        queryString = Object.keys(query).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
     }
-
 
     const uri = url + queryString;
 

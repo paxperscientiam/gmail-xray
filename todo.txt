@@ -6,3 +6,4 @@ wx should show low high and now
 implement caching of images
 can use greyed out color to indicate thread read
 implement thread batching
+add a refresh button
