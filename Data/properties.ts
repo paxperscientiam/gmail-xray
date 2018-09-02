@@ -13,8 +13,8 @@ const props = (PropertiesService.getScriptProperties())
         IMG_BARS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/bars_64.png",
         IMG_COMPOSE_NEW: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/plus-circle-64.png",
         IMG_REPLY_THIS: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/reply-64.png",
-        IMG_REPLY_THAT: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/long-arrow-left-64.png",
-
+        //IMG_REPLY_THAT: "https://raw.githubusercontent.com/paxperscientiam/gmail-xray/master/Img/long-arrow-left-64.png",
+        IMG_REPLY_THAT: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAAAmJLR0QA/4ePzL8AAADPSURBVGje7daxCkFhAIbhF2VgsTIoo+zcgNEdcAmyWt2FwQ3YDSYZDMogm8GmTGzKoHQskiMni/6v9D3nAr63U+f8P5iZmZmZfVdixUw3X2FHRKSar3Eg0gU0OD3mJQEtLs95QUCb68t88IAut9h84ID+23jQgDTDD/O/fpZJ81nGAeYT32ieaaD5hIB5sPmEgK06oMhGGwAFFtoAyDFRfoYAGUbKHxFAioE2AKD3dhoIdGLnoUSTszYA6hy1AVBlrw2AMmvltdzMzMzM/t0d6Wn7Bhz4MCEAAAAASUVORK5CYII="
         //
         MAILBOX_QUERY: "in:inbox and is:starred",
         MAX_THREADS: 20,
