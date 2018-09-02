@@ -7,3 +7,4 @@ implement caching of images
 can use greyed out color to indicate thread read
 implement thread batching
 add a refresh button
+optimize plugin badly

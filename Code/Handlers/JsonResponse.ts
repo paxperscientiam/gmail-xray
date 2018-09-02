@@ -3,10 +3,10 @@ function JsonResponseHandler(url: string, query?: object) {
         muteHttpExceptions: true,
     };
 
-    const queryString = {};
+    const queryString;
 
     if (query !== undefined) {
-        queryString = Object.keys(query).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
+        queryString = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
     }
 
     const uri = url + queryString;

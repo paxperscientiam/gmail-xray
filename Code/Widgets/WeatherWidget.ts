@@ -1,6 +1,5 @@
 function WeatherWidget() {
 
-
     const params = {
         muteHttpExceptions: true,
     };
@@ -9,9 +8,8 @@ function WeatherWidget() {
 
     const urlIPINFO = "https://ipinfo.io/geo?";
 
-
     try {
-        const dataIP = JsonResponseHandler(urlIPINFO, {token:API_IPINFO});
+        const dataIP = JsonResponseHandler(urlIPINFO, {token: API_IPINFO});
 
         const ip = dataIP.ip;
         const city = dataIP.city;
