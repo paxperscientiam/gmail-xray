@@ -19,11 +19,10 @@ function buildAddOn(e) {
     //
     for (let i = 0; i < threads.length; i += BATCH_SIZE) {
         // this is a SET of threads
-        const threadSet = new ThreadData(threads.slice(i, i + BATCH_SIZE)); // a thread from set of threads
+        const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet; // a thread from set of threads
         Logger.log(threadSet);
-        return
+        return;
         const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
-
 
         const threadSetCount = threadSet.length;
 
