@@ -15,6 +15,7 @@ function buildAddOn(e) {
 
     const cards = [];
 
+    Logger.log(threads);
     cards.push(StatusCard({threads}));
     //
     return;
