@@ -3,3 +3,4 @@ include weather in status
 figure out optimization
 round the thread average
 wx should show low high and now
+implement caching of images
