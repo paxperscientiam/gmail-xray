@@ -9,11 +9,12 @@ function JsonResponseHandler(url: string, query?: object) {
 
     if (query) {
         strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
+
     }
 
     const uri = url + strQuery;
 
-    Logger.log(url);
+    Logger.log(uri);
 
     const response = UrlFetchApp.fetch(uri, params);
 
