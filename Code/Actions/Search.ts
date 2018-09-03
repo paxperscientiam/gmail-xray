@@ -1,7 +1,8 @@
 function MailSearchAction(card) {
     return CardService
         .newAction()
-        .setFunctionName("MailSearchButtonHandler");
+        .setFunctionName("notificationCallback");
+        //.setFunctionName("MailSearchButtonHandler");
 }
 
 function MailSearchButtonHandler(e) {
@@ -13,4 +14,12 @@ function MailSearchButtonHandler(e) {
 
     var threads = GmailApp.search(MAILBOX_QUERY, 0, MAX_THREADS);
     return threads;
+}
+
+function notificationCallback() {
+    return CardService.newActionResponseBuilder()
+        .setNotification(CardService.newNotification()
+                         .setType(CardService.NotificationType.WARNING)
+                         .setText("Some info to display to user"))
+        .build();
 }
