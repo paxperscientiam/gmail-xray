@@ -37,9 +37,31 @@ function buildAddOn(e) {
         //             ChainSections(card, [msgSection, actionSection]);
         //         }
     }
-    return cards;
+
+
+
+
+    //return cards;
+    return createNavigationCard();
 }
 
 function testing() {
     //
+}
+
+function createNavigationCard() {
+    // Create a button set with actions to navigate to 3 different
+    // 'children' cards.
+    var buttonSet = CardService.newButtonSet();
+    for(var i = 1; i <= 3; i++) {
+        buttonSet.addButton(createToCardButton(i));
+    }
+
+    // Build the card with all the buttons (two rows)
+    var card = CardService.newCardBuilder()
+        .setHeader(CardService.newCardHeader().setTitle('Navigation'))
+        .addSection(CardService.newCardSection()
+                    .addWidget(buttonSet)
+                    .addWidget(buildPreviousAndRootButtonSet()));
+    return card.build();
 }
