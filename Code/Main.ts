@@ -19,7 +19,7 @@ function buildAddOn(e) {
 
     const thread = threadSet[0];
 
-    var textParagraph = CardService.newTextParagraph();
+    var textParagraph = CardService.newTextParagraph().setText("kgkhkj");
     // Build text paragraph ...
 
     var cardSection = CardService.newCardSection()
