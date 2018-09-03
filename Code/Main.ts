@@ -15,26 +15,27 @@ function buildAddOn(e) {
 
     const cards = [];
 
-    cards.push(StatusCard({threads}));
+    //    cards.push(StatusCard({threads}));
     //
     for (let i = 0; i < threads.length; i += BATCH_SIZE) {
         // this is a SET of threads
         const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet; // a thread from set of threads
-        Logger.log(threadSet);
-        return;
         const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
 
         const threadSetCount = threadSet.length;
 
-        const card = CardService.newCardBuilder()
-            .setHeader(( new CardHeader(messagesSet[0]) ));
+        messagesSet.forEach((messeges) => {
+            const card = CardService.newCardBuilder()
+                .setHeader(( new CardHeader(messages[0]) ));
+            cards.push(card.build());
+        });
 
-        for (let j = 0; j < threadSetCount; j++) {
-            const Obj = mergeObjs({index: j}, {threadData: threadSet}, {message: messagesSet[j]});
-            const msgSection = new CardSection(Obj).setCollapsible(false);
-            const actionSection = new CardSectionActionCenter(threadSet);
-            ChainSections(card, [msgSection, actionSection]);
-        }
+        //  for (let j = 0; j < threadSetCount; j++) {
+        //             const Obj = mergeObjs({index: j}, {threadData: threadSet}, {message: messagesSet[j]});
+        //             const msgSection = new CardSection(Obj).setCollapsible(false);
+        //             const actionSection = new CardSectionActionCenter(threadSet);
+        //             ChainSections(card, [msgSection, actionSection]);
+        //         }
         cards.push(card.build());
     }
     return cards;

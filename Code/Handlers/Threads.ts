@@ -6,7 +6,7 @@ function ThreadData(threads) {
         threadObj.messages =  thread.getMessages();
         threadObj.firstMessage = threadObj.messages[0];
         threadObj.labels = thread.getLabels();
-    //
+        //
         threadObj.count = thread.getMessageCount();
         threadObj.length = threadObj.count;
         //
