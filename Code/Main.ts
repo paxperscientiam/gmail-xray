@@ -19,13 +19,24 @@ function buildAddOn(e) {
                    .setSubtitle("Card header subtitle"));
 
 
+
     for (let i = 0; i < threads.length; i += BATCH_SIZE) {
         const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
 
+        threadSet.forEach((thread) => {
+            const msg = new MessageData((new ThreadData(thread)).firstMessage);
+            const textParagraph = CardService.newTextParagraph().setText(msg.subject);
 
-
+            const cardSection = CardService.newCardSection()
+                .setHeader("header")
+                .addWidget(EmailSenderWidget(sender))
+                .addWidget(textParagraph);
+            //
+            card.addSection(cardSection);
+        });
     }
 
+    return card.build();
 
     // const threadSet = (new ThreadData(threads.slice(0, 1))).threadSet; // a thread from set of threads
 
