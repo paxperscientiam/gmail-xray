@@ -9,3 +9,5 @@ implement thread batching
 add a refresh button
 optimize plugin badly
 how to guard against timeout error
+implement useful navigation
+cards do not need to be chained

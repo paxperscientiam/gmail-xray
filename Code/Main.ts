@@ -42,7 +42,14 @@ function buildAddOn(e) {
 
 
     //return cards;
-    return createNavigationCard();
+    var c = createNavigationCard();
+    var cc = createNavigationCard();
+
+    var k = [];
+    k.push(c);
+    k.push(cc);
+
+    return k;
 }
 
 function testing() {
