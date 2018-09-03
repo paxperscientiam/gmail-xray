@@ -36,7 +36,6 @@ function buildAddOn(e) {
         //             const actionSection = new CardSectionActionCenter(threadSet);
         //             ChainSections(card, [msgSection, actionSection]);
         //         }
-        cards.push(card.build());
     }
     return cards;
 }
