@@ -20,13 +20,13 @@ function buildAddOn(e) {
     for (let i = 0; i < threads.length; i += BATCH_SIZE) {
         // this is a SET of threads
         const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet; // a thread from set of threads
-        const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
+        //   const messagesSet = threadSet.messagesSet; // a message from set of messages in a thread
 
-        const threadSetCount = threadSet.length;
+        //        const threadSetCount = threadSet.length;
 
-        messagesSet.forEach((messeges) => {
+        threadSet.forEach((thread) => {
             const card = CardService.newCardBuilder()
-                .setHeader(( new CardHeader(messages[0]) ));
+                .setHeader(( new CardHeader(thread.firstMessage) ));
             cards.push(card.build());
         });
 
