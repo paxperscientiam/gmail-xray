@@ -13,27 +13,39 @@ function buildAddOn(e) {
 
     const threads = Search.threads;
 
-    const cards = [];
-
-    const threadSet = (new ThreadData(threads.slice(0, 1))).threadSet; // a thread from set of threads
-
-    const thread = threadSet[0];
-    const message = new MessageData(thread.firstMessage);
-    const sender = message.sender;
-
-    var textParagraph = CardService.newTextParagraph().setText("kgkhkj");
-    // Build text paragraph ...
-
-    var cardSection = CardService.newCardSection()
-        .setHeader("header")
-        .addWidget(EmailSenderWidget(sender))
-        .addWidget(textParagraph);
-
     const card = CardService.newCardBuilder()
-        .setHeader(( new CardHeader(thread.firstMessage) ))
-        .addSection(cardSection);
+        .setHeader(CardService.newCardHeader()
+                   .setTitle("Card header title")
+                   .setSubtitle("Card header subtitle"));
 
-    return card.build();
+
+    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
+        const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
+
+
+
+    }
+
+
+    // const threadSet = (new ThreadData(threads.slice(0, 1))).threadSet; // a thread from set of threads
+
+    // const thread = threadSet[0];
+    // const message = new MessageData(thread.firstMessage);
+    // const sender = message.sender;
+
+    // var textParagraph = CardService.newTextParagraph().setText("kgkhkj");
+    // // Build text paragraph ...
+
+    // var cardSection = CardService.newCardSection()
+    //     .setHeader("header")
+    //     .addWidget(EmailSenderWidget(sender))
+    //     .addWidget(textParagraph);
+
+    // const card = CardService.newCardBuilder()
+    //     .setHeader(( new CardHeader(thread.firstMessage) ))
+    //     .addSection(cardSection);
+
+    // return card.build();
 
     //    cards.push(StatusCard({threads}));
     //
