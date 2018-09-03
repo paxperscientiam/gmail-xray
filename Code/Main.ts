@@ -18,12 +18,15 @@ function buildAddOn(e) {
     const threadSet = (new ThreadData(threads.slice(0, 1))).threadSet; // a thread from set of threads
 
     const thread = threadSet[0];
+    const message = new MessageData(thread.firstMessage);
+    const sender = message.sender;
 
     var textParagraph = CardService.newTextParagraph().setText("kgkhkj");
     // Build text paragraph ...
 
     var cardSection = CardService.newCardSection()
-        .setHeader("Section header")
+        .setHeader("header")
+        .addWidget(EmailSenderWidget(sender))
         .addWidget(textParagraph);
 
     const card = CardService.newCardBuilder()

@@ -1,5 +1,5 @@
-function EmailSenderWidget() {
+function EmailSenderWidget(sender) {
     return CardService.newKeyValue()
         .setIcon(CardService.Icon.PERSON)
-        .setContent(messageData.sender);
+        .setContent(sender);
 }
