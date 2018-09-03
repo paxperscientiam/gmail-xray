@@ -8,11 +8,9 @@ function CardHeader(message) {
     const IMG_STAR = props.getProperty("IMG_STAR");
     const IMG_STAR_EXCLAMATION = props.getProperty("IMG_STAR_EXCLAMATION");
 
-
     if (messageData.starred && messageData.isPriority) {
         imgUrl = IMG_STAR_EXCLAMATION;
-    }
-    else if (messageData.starred) {
+    } else if (messageData.starred) {
         imgUrl = IMG_STAR;
     } else if (messageData.isPriority) {
         imgUrl = IMG_EXCLAMATION;
