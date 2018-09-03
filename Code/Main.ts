@@ -33,7 +33,7 @@ function buildAddOn(e) {
         .setHeader(( new CardHeader(thread.firstMessage) ))
         .addSection(cardSection);
 
-    return card;
+    return card.build();
 
     //    cards.push(StatusCard({threads}));
     //
