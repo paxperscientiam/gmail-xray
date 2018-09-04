@@ -31,11 +31,14 @@ function buildAddOn(e) {
         // });
     }
 
-    const W = EmailSenderWidget("balls@balls.net");
+    const widget = EmailSenderWidget("balls@balls.net");
+    const cardHeader = new CardHeader({title: "title", subtitle: "subtitle"});
+    const cardSectionHeader =  new SectionHeader({header: "balls"});
+    const cardSection = new Section({header: cardSectionHeader, widget});
 
     const card = CardService.newCardBuilder()
-        .setHeader(new CardHeader({title: "title", subtitle: "subtitle"}))
-        .addSection(new Section(new SectionHeader({header:"balls", widget:[W]})));
+        .setHeader(cardHeader)
+        .addSection(cardSection);
 
     return card.build();
 
