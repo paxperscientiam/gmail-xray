@@ -3,8 +3,8 @@ function MainCard() {
     const card = CardService.newCardBuilder();
 
     const header = CardService.newCardHeader()
-        .setTitle(doGet("Templates/headerTitle"))
-        .setSubtitle(doGet("Templates/headerSubtitle", messageData))
+        .setTitle("<b>TITLE</b>")
+        .setSubtitle("subtitle")
         .setImageStyle(CardService.ImageStyle.SQUARE)
         .setImageUrl(IMG_EXCLAMATION);
 
