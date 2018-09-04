@@ -14,7 +14,9 @@ function buildAddOn(e) {
 
     const threads = Search.threads;
 
-    return (MainCard()).build();
+    const card = MainCard();
+
+    return card.build();
 
     // for (let i = 0; i < threads.length; i += BATCH_SIZE) {
     //     const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
