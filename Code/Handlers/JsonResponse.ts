@@ -2,7 +2,7 @@ function JsonResponseHandler(url: string, query = {}, params = {muteHttpExceptio
     const strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
 
     url = url + strQuery;
-
+    Logger.log(`url: ${url}`);
     try {
         const response = UrlFetchApp.fetch(url, params);
         //
