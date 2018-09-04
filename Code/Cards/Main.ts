@@ -21,7 +21,8 @@ function MainCard() {
     const sectionWx = CardService.newCardSection()
         .setHeader(msgWx)
         .addWidget(WeatherWidget(0))
-        .addWidget(WeatherWidget(1));
+        .addWidget(WeatherWidget(1))
+        .addWidget(WeatherWidget(2));
 
     return card
         .addSection(sectionWx);
