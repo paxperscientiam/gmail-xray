@@ -1,4 +1,4 @@
-function WeatherService(coord) {
+function WeatherService(coord, period = 0) {
     Logger.log("Creating new WeatherService instance ... ");
 
     const url = "https://api.weather.gov/points/" + coord;
@@ -17,8 +17,8 @@ function WeatherService(coord) {
 
     const dataWx2 = (new JsonResponseHandler(data.properties.forecast, {}, params)).data;
 
-    this.temp = dataWx2.properties.periods[0].temperature;
-    this.unit = dataWx2.properties.periods[0].temperatureUnit;
-    this.condition = (dataWx2.properties.periods[0].shortForecast).toLowerCase();
+    this.temp = dataWx2.properties.periods[period].temperature;
+    this.unit = dataWx2.properties.periods[period].temperatureUnit;
+    this.condition = (dataWx2.properties.periods[periods].shortForecast).toLowerCase();
 
 }
