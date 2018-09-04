@@ -1,14 +1,14 @@
 function Location() {
     const API_IPINFO = props.getProperty("API_IPINFO");
 
-    const urlIPINFO = "https://ipinfo.io/geo?";
+    const url = "https://ipinfo.io/geo?";
 
-    const dataIP = (new JsonResponseHandler(urlIPINFO, {token: API_IPINFO})).data;
+    const data = (new JsonResponseHandler(url, {token: API_IPINFO})).data;
 
-    this.ip = dataIP.ip;
-    this.city = dataIP.city;
-    this.region = dataIP.region;
-    this.coordData = dataIP.loc;
+    this.ip = data.ip;
+    this.city = data.city;
+    this.region = data.region;
+    this.coordData = data.loc;
 
     const lat = Number(coordData.split(",")[0]);
     const lon = Number(coordData.split(",")[1]);

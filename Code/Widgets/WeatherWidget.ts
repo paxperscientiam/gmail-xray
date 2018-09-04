@@ -6,6 +6,7 @@ function WeatherWidget() {
 
     try {
         const Location = new Location();
+        Logger.log(Location);
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("IP service not working :(");
