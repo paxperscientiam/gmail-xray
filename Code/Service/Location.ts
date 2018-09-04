@@ -1,4 +1,4 @@
-function Location() {
+function LocationService() {
     Logger.log("Creating new Location instance ... ");
 
     const API_IPINFO = props.getProperty("API_IPINFO");
@@ -20,4 +20,6 @@ function Location() {
     // weather service api limit precision to 4 decimal places
     this.lat = lat.toFixed(4);
     this.lon = lon.toFixed(4);
+
+    this.coord = String(lat) + "," + String(lon);
 }

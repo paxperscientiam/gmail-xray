@@ -5,14 +5,13 @@ function WeatherWidget() {
     };
 
     try {
-     //   const Location = new Location();
-        Logger.log(Location);
+        const Location = new LocationService();
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("IP service not working :(");
     }
 
-    const urlWx1 = "https://api.weather.gov/points/" + coord;
+    const urlWx1 = "https://api.weather.gov/points/" + Location.coord;
     const paramsWx = {
         escaping: false,
         headers: {
