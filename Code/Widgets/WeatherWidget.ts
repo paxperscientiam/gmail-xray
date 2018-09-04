@@ -38,7 +38,7 @@ function WeatherWidget(period = 0) {
 
         // return CardService.newTextParagraph().setText(doGet("Templates/weatherToday", {message, name}));
         return CardService.newKeyValue()
-            .setIconUrl(WX_SUNNY)
+            .setIconUrl(icon)
             .setContent(doGet("Templates/weatherToday", {message, name}));
     } catch (e) {
         Logger.log(e);
