@@ -10,6 +10,7 @@ function MainCard() {
 
     const sectionWx = CardService.newCardSection()
         .setHeader("Local weather")
+        .addWidget(WeatherWidget())
         .addWidget(WeatherWidget());
 
     return card

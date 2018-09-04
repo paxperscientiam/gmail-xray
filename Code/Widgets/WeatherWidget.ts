@@ -1,5 +1,5 @@
-function WeatherWidget() {
-    Logger.log("Running WeatherWidget ... ");
+function WeatherWidget(period = 0) {
+    Logger.log("Running WeatherTodayWidget ... ");
     const params = {
         muteHttpExceptions: true,
     };
@@ -12,7 +12,7 @@ function WeatherWidget() {
     }
 
     try {
-        const Weather = new WeatherService(Location.coord);
+        const Weather = new WeatherService(Location.coord, period);
 
         const messageWx  = `It's ${Weather.temp}°${Weather.unit} in ${Location.city}, ${Location.region}. There is a ${Weather.condition}.`;
 
@@ -22,3 +22,6 @@ function WeatherWidget() {
         return CardService.newTextParagraph().setText("Wx service not working :(");
     }
 }
+
+function WeatherTomorrowWidget() {
+    Logger.log("Running WeatherTomorrowWidget ... ");

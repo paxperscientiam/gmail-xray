@@ -1,4 +1,4 @@
-function WeatherService(coord, period = 0) {
+function WeatherService(coord, period) {
     Logger.log("Creating new WeatherService instance ... ");
 
     const url = "https://api.weather.gov/points/" + coord;
