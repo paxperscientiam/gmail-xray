@@ -4,27 +4,8 @@ function WeatherWidget() {
         muteHttpExceptions: true,
     };
 
-    const API_IPINFO = props.getProperty("API_IPINFO");
-
-    const urlIPINFO = "https://ipinfo.io/geo?";
-
     try {
-        const dataIP = (new JsonResponseHandler(urlIPINFO, {token: API_IPINFO})).data;
-
-        const ip = dataIP.ip;
-        const city = dataIP.city;
-        const region = dataIP.region;
-        const coordData = dataIP.loc;
-
-        let lat = Number(coordData.split(",")[0]);
-        let lon = Number(coordData.split(",")[1]);
-
-        // weather service api limit precision to 4 decimal places
-        lat = lat.toFixed(4);
-        lon = lon.toFixed(4);
-
-        const coord = String(lat) + "," + String(lon);
-
+        const Location = new Location();
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("IP service not working :(");
