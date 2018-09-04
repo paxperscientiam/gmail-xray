@@ -1,5 +1,5 @@
 function WeatherWidget() {
-
+    Logger.log("Running WeatherWidget ... ");
     const params = {
         muteHttpExceptions: true,
     };

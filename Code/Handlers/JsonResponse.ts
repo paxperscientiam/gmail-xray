@@ -1,4 +1,5 @@
 function JsonResponseHandler(url: string, query = {}, params = {muteHttpExceptions: true}) {
+
     const strQuery = Object.keys(query).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(query[key])).join("&");
 
     url = url + strQuery;
