@@ -1,8 +1,12 @@
 function Section(args) {
-    const textParagraph = CardService.newTextParagraph().setText("shit");
-    //
+    const Widgets = args.widget;
+
     this.section = CardService.newCardSection()
-        .setHeader(args.header)
-        .addWidget(textParagraph);
+        .setHeader(header);
+
+    Widgets.forEach((widget) => {
+        this.section.addWidget(widget);
+    });
+    //
     return this.section;
 }

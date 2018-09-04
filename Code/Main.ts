@@ -1,44 +1,41 @@
 //
 function buildAddOn(e) {
-    // Activate temporary Gmail add-on scopes.
-    // var accessToken = e.messageMetadata.accessToken;
+    // const accessToken = e.messageMetadata.accessToken;
     // GmailApp.setCurrentMessageAccessToken(accessToken);
-    // var messageId = e.messageMetadata.messageId;
-    // var senderData = extractSenderData(messageId);
-    // const MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
-    // const MAX_THREADS = props.getProperty("MAX_THREADS");
-    // const BATCH_SIZE = props.getProperty("BATCH_SIZE");
+    // //
+    // const messageId = e.messageMetadata.messageId;
+    // const senderData = extractSenderData(messageId);
 
-    // const Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
+    const MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
+    const MAX_THREADS = props.getProperty("MAX_THREADS");
+    const BATCH_SIZE = props.getProperty("BATCH_SIZE");
 
-    // const threads = Search.threads;
+    const Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
 
-    // const card = CardService.newCardBuilder()
-    //     .setHeader(CardService.newCardHeader()
-    //                .setTitle("Card header title")
-    //                .setSubtitle("Card header subtitle"));
+    const threads = Search.threads;
 
 
+    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
+        const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
+        Logger.log(threadSet);
+        // threadSet.forEach((thread) => {
+        //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
+        //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
 
-    // for (let i = 0; i < threads.length; i += BATCH_SIZE) {
-    //     const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
-    //     Logger.log(threadSet);
-    //     // threadSet.forEach((thread) => {
-    //     //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
-    //     //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
+        //     const cardSection = CardService.newCardSection()
+        //         .setHeader("header")
+        //         .addWidget(EmailSenderWidget(sender))
+        //         .addWidget(textParagraph);
+        //     //
+        //     card.addSection(cardSection);
+        // });
+    }
 
-    //     //     const cardSection = CardService.newCardSection()
-    //     //         .setHeader("header")
-    //     //         .addWidget(EmailSenderWidget(sender))
-    //     //         .addWidget(textParagraph);
-    //     //     //
-    //     //     card.addSection(cardSection);
-    //     // });
-    // }
+    const W = EmailSenderWidget("balls@balls.net");
 
     const card = CardService.newCardBuilder()
         .setHeader(new CardHeader({title: "title", subtitle: "subtitle"}))
-        .addSection(new Section(new SectionHeader({header:"balls"})));
+        .addSection(new Section(new SectionHeader({header:"balls", widget:[W]})));
 
     return card.build();
 
