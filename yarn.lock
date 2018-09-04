@@ -183,6 +183,10 @@ underscore@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
 
+weather-underground-icons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/weather-underground-icons/-/weather-underground-icons-1.0.0.tgz#15f2951a46d1dff648b800e7adfd80af1989a09b"
+
 whet.extend@:
   version "0.9.9"
   resolved "https://registry.yarnpkg.com/whet.extend/-/whet.extend-0.9.9.tgz#f877d5bf648c97e5aa542fadc16d6a259b9c11a1"
