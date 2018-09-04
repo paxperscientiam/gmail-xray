@@ -5,6 +5,8 @@ function Location() {
 
     const data = (new JsonResponseHandler(url, {token: API_IPINFO})).data;
 
+    Logger.log(data);
+
     this.ip = data.ip;
     this.city = data.city;
     this.region = data.region;
