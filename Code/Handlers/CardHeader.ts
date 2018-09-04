@@ -1,7 +1,7 @@
 function CardHeaderHandler(args) {
     this.header = CardService.newCardHeader()
         .setTitle(args.title)
-        .setSubTitle(args.subtitle);
+        .setSubtitle(args.subtitle);
     //
     return this.header;
 }
