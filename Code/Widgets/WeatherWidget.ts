@@ -14,7 +14,7 @@ function WeatherWidget(period = 0) {
     try {
         const Weather = new WeatherService(Location.coord, period);
 
-        const message  = `It's ${Weather.temp}°${Weather.unit} in ${Location.city}, ${Location.region}. There is a ${Weather.condition}.`;
+        const message  = `It's ${Weather.temp}°${Weather.unit}. And, ${Weather.condition}.`;
         const name = Weather.name;
 
         return CardService.newTextParagraph().setText(doGet("Templates/weatherToday", {message, name}));
