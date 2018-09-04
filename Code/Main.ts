@@ -5,36 +5,39 @@ function buildAddOn(e) {
     // GmailApp.setCurrentMessageAccessToken(accessToken);
     // var messageId = e.messageMetadata.messageId;
     // var senderData = extractSenderData(messageId);
-    const MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
-    const MAX_THREADS = props.getProperty("MAX_THREADS");
-    const BATCH_SIZE = props.getProperty("BATCH_SIZE");
+    // const MAILBOX_QUERY = props.getProperty("MAILBOX_QUERY");
+    // const MAX_THREADS = props.getProperty("MAX_THREADS");
+    // const BATCH_SIZE = props.getProperty("BATCH_SIZE");
 
-    const Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
+    // const Search = new SearchResults(MAILBOX_QUERY, 0, MAX_THREADS);
 
-    const threads = Search.threads;
+    // const threads = Search.threads;
+
+    // const card = CardService.newCardBuilder()
+    //     .setHeader(CardService.newCardHeader()
+    //                .setTitle("Card header title")
+    //                .setSubtitle("Card header subtitle"));
+
+
+
+    // for (let i = 0; i < threads.length; i += BATCH_SIZE) {
+    //     const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
+    //     Logger.log(threadSet);
+    //     // threadSet.forEach((thread) => {
+    //     //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
+    //     //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
+
+    //     //     const cardSection = CardService.newCardSection()
+    //     //         .setHeader("header")
+    //     //         .addWidget(EmailSenderWidget(sender))
+    //     //         .addWidget(textParagraph);
+    //     //     //
+    //     //     card.addSection(cardSection);
+    //     // });
+    // }
 
     const card = CardService.newCardBuilder()
-        .setHeader(CardService.newCardHeader()
-                   .setTitle("Card header title")
-                   .setSubtitle("Card header subtitle"));
-
-
-
-    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
-        const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
-        Logger.log(threadSet);
-        // threadSet.forEach((thread) => {
-        //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
-        //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
-
-        //     const cardSection = CardService.newCardSection()
-        //         .setHeader("header")
-        //         .addWidget(EmailSenderWidget(sender))
-        //         .addWidget(textParagraph);
-        //     //
-        //     card.addSection(cardSection);
-        // });
-    }
+        .setHeader(new CardHeaderHandler({title: "title", subtitle: "subtitle"}));
 
     return card.build();
 
