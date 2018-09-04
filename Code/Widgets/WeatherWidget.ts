@@ -1,7 +1,13 @@
 function WeatherWidget(period = 0) {
     Logger.log("Running WeatherTodayWidget ... ");
-    const WX_SUNNY = props.getProperty("WX_SUNNY");
+    const SUNNY = props.getProperty("WX_SUNNY");
+    const CLOUDY = props.getProperty("WX_CLOUDY");
+    const RAINY = props.getProperty("WX_RAINY");
+    const MOSTLYCLOUDY = props.getProperty("WX_MOSTLYCLOUD");
+    const MOSTLYSUNNY = props.getProperty("WX_MOSTLYSUNNY");
+    const QUESTION = props.getProperty("IMG_QUESTIONMARK");
 
+    const icon;
 
     const params = {
         muteHttpExceptions: true,
@@ -19,6 +25,16 @@ function WeatherWidget(period = 0) {
 
         const message  = `${Weather.temp}°${Weather.unit}, ${Weather.condition}.`;
         const name = Weather.name;
+
+        if (/sunny/i.test(Weather.condition) ) {
+            icon = SUNNY;
+        } else if (/cloudy/i.test(Weather.condition) ) {
+            icon = CLOUDY;
+        } else if (/rain/i.test(Weather.condition) ) {
+            icon = RAINY;
+        } else {
+            icon = QUESTION;
+        }
 
         // return CardService.newTextParagraph().setText(doGet("Templates/weatherToday", {message, name}));
         return CardService.newKeyValue()
