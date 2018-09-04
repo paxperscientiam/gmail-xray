@@ -33,7 +33,7 @@ function WeatherWidget() {
         const unit = dataWx2.properties.periods[0].temperatureUnit;
         const condition = dataWx2.properties.periods[0].shortForecast;
 
-        const messageWx  = `It's ${temp}°${unit} in ${city}, ${region}. Weather is ${condition}.`;
+        const messageWx  = `It's ${temp}°${unit} in ${Location.city}, ${Location.region}. Weather is ${condition}.`;
 
         return CardService.newTextParagraph().setText(messageWx);
     } catch (e) {
