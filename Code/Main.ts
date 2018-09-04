@@ -34,7 +34,7 @@ function buildAddOn(e) {
     const widget = EmailSenderWidget("balls@balls.net");
     const cardHeader = new CardHeader({title: "title", subtitle: "subtitle"});
     const cardSectionHeader =  new SectionHeader({header: "balls"});
-    const cardSection = new Section({header: cardSectionHeader, widget});
+    const cardSection = new Section({header: cardSectionHeader, widget: [widget]});
 
     const card = CardService.newCardBuilder()
         .setHeader(cardHeader)
