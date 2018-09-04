@@ -15,8 +15,9 @@ function WeatherWidget(period = 0) {
         const Weather = new WeatherService(Location.coord, period);
 
         const message  = `It's ${Weather.temp}°${Weather.unit} in ${Location.city}, ${Location.region}. There is a ${Weather.condition}.`;
+        const name = Weather.name;
 
-        return CardService.newTextParagraph().setText(doGet("Templates/weatherToday", {message}));
+        return CardService.newTextParagraph().setText(doGet("Templates/weatherToday", {message, name}));
     } catch (e) {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");
