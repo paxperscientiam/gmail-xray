@@ -37,7 +37,8 @@ function buildAddOn(e) {
     // }
 
     const card = CardService.newCardBuilder()
-        .setHeader(new CardHeaderHandler({title: "title", subtitle: "subtitle"}));
+        .setHeader(new CardHeader({title: "title", subtitle: "subtitle"}))
+        .addSection(new Section(new SectionHeader({header:"balls"})));
 
     return card.build();
 
