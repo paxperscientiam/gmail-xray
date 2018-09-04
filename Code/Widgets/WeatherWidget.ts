@@ -21,5 +21,4 @@ function WeatherWidget() {
         Logger.log(e);
         return CardService.newTextParagraph().setText("Wx service not working :(");
     }
-
 }
