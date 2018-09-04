@@ -1,5 +1,5 @@
 function LocationService() {
-    Logger.log("Creating new Location instance ... ");
+    Logger.log("Creating new LocationService instance ... ");
 
     const API_IPINFO = props.getProperty("API_IPINFO");
 
