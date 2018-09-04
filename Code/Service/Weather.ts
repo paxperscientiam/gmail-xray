@@ -19,6 +19,6 @@ function WeatherService(coord) {
 
     this.temp = dataWx2.properties.periods[0].temperature;
     this.unit = dataWx2.properties.periods[0].temperatureUnit;
-    this.condition = dataWx2.properties.periods[0].shortForecast;
+    this.condition = (dataWx2.properties.periods[0].shortForecast).toLowerCase();
 
 }
