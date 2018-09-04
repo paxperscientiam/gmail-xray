@@ -1,4 +1,6 @@
 function Location() {
+    Logger.log("Creating new Location instance ... ");
+
     const API_IPINFO = props.getProperty("API_IPINFO");
 
     const url = "https://ipinfo.io/geo?";
