@@ -14,35 +14,34 @@ function buildAddOn(e) {
 
     const threads = Search.threads;
 
+    return (MainCard()).build();
 
-    for (let i = 0; i < threads.length; i += BATCH_SIZE) {
-        const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
-        Logger.log(threadSet);
-        // threadSet.forEach((thread) => {
-        //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
-        //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
+    // for (let i = 0; i < threads.length; i += BATCH_SIZE) {
+    //     const threadSet = (new ThreadData(threads.slice(i, i + BATCH_SIZE))).threadSet;
+    //     Logger.log(threadSet);
+    //     // threadSet.forEach((thread) => {
+    //     //     const msg = new MessageData((new ThreadData(thread)).firstMessage);
+    //     //     const textParagraph = CardService.newTextParagraph().setText(msg.subject);
 
-        //     const cardSection = CardService.newCardSection()
-        //         .setHeader("header")
-        //         .addWidget(EmailSenderWidget(sender))
-        //         .addWidget(textParagraph);
-        //     //
-        //     card.addSection(cardSection);
-        // });
-    }
+    //     //     const cardSection = CardService.newCardSection()
+    //     //         .setHeader("header")
+    //     //         .addWidget(EmailSenderWidget(sender))
+    //     //         .addWidget(textParagraph);
+    //     //     //
+    //     //     card.addSection(cardSection);
+    //     // });
+    // }
 
-    const widget = EmailSenderWidget("balls@balls.net");
-    const widget2 = EmailSubjectWidget("subject time");
+    // const widget = EmailSenderWidget("balls@balls.net");
+    // const widget2 = EmailSubjectWidget("subject time");
 
-    const cardHeader = new CardHeader({title: "title", subtitle: "subtitle"});
-    const cardSectionHeader =  new SectionHeader({header: "balls"});
-    const cardSection = new Section({header: cardSectionHeader, widget: [widget, widget2]});
+    // const cardHeader = new CardHeader({title: "title", subtitle: "subtitle"});
+    // const cardSectionHeader =  new SectionHeader({header: "balls"});
+    // const cardSection = new Section({header: cardSectionHeader, widget: [widget, widget2]});
 
-    const card = CardService.newCardBuilder()
-        .setHeader(cardHeader)
-        .addSection(cardSection);
-
-    return card.build();
+    // const card = CardService.newCardBuilder()
+    //     .setHeader(cardHeader)
+    //     .addSection(cardSection);
 
     // const threadSet = (new ThreadData(threads.slice(0, 1))).threadSet; // a thread from set of threads
 

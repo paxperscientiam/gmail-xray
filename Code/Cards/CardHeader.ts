@@ -26,5 +26,7 @@ function CardHeader(message) {
         .setImageStyle(CardService.ImageStyle.SQUARE)
         .setImageUrl(imgUrl);
 
-    return this.header;
+    card.setHeader(header);
+
+    return card;
 }
